@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
+import duncanShopLogo from "@/assets/duncan_shop_2.png.asset.json";
 import {
   Calendar,
   Users,

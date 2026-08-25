@@ -65,7 +65,7 @@ function HomeDashboard() {
           <div className="mb-3 inline-flex rounded-xl bg-neon/15 p-2.5 text-neon">
             <Megaphone className="h-5 w-5" />
           </div>
-          <h3 className="font-display text-lg font-semibold text-white uppercase">THE BOARD</h3>
+          <h3 className="font-display text-lg font-semibold text-white uppercase">TRANSMISSION</h3>
           <p className="mt-1 text-xs text-muted-foreground">Events, drops, and shop news.</p>
         </Link>
 

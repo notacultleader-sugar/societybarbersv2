@@ -109,21 +109,9 @@ function HomeDashboard() {
           </div>
         </div>
 
-        {/* Contact */}
-        <Link
-          to="/contact"
-          className="group relative overflow-hidden rounded-2xl bg-surface p-4"
-        >
-          <div className="mb-3 inline-flex rounded-xl bg-gold/15 p-2.5 text-gold">
-            <Phone className="h-5 w-5" />
-          </div>
-          <h3 className="font-display text-lg font-semibold text-white uppercase">CONTACT</h3>
-          <p className="mt-1 text-xs text-muted-foreground">Call, DM, or stop by.</p>
-        </Link>
-
-        {/* Instagram */}
+        {/* Instagram — Duncan */}
         <a
-          href="https://instagram.com/thesocietybarbers"
+          href="https://instagram.com/societybarbers"
           target="_blank"
           rel="noreferrer"
           className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 to-pink-500 p-4 text-white"
@@ -131,9 +119,35 @@ function HomeDashboard() {
           <div className="mb-3 inline-flex rounded-xl bg-white/20 p-2.5">
             <Instagram className="h-5 w-5" />
           </div>
-          <h3 className="font-display text-lg font-semibold uppercase">FOLLOW US</h3>
+          <h3 className="font-display text-lg font-semibold uppercase">DUNCAN</h3>
           <p className="mt-1 text-xs text-white/80">@societybarbers</p>
         </a>
+
+        {/* Instagram — Maple Bay */}
+        <a
+          href="https://instagram.com/societyatthehall"
+          target="_blank"
+          rel="noreferrer"
+          className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 to-pink-500 p-4 text-white"
+        >
+          <div className="mb-3 inline-flex rounded-xl bg-white/20 p-2.5">
+            <Instagram className="h-5 w-5" />
+          </div>
+          <h3 className="font-display text-lg font-semibold uppercase">MAPLE BAY</h3>
+          <p className="mt-1 text-xs text-white/80">@societyatthehall</p>
+        </a>
+
+        {/* Contact */}
+        <Link
+          to="/contact"
+          className="group relative col-span-2 overflow-hidden rounded-2xl bg-surface p-4"
+        >
+          <div className="mb-3 inline-flex rounded-xl bg-gold/15 p-2.5 text-gold">
+            <Phone className="h-5 w-5" />
+          </div>
+          <h3 className="font-display text-lg font-semibold text-white uppercase">CONTACT</h3>
+          <p className="mt-1 text-xs text-muted-foreground">Call, DM, or stop by.</p>
+        </Link>
       </section>
 
       {/* Tagline */}

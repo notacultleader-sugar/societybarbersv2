@@ -202,9 +202,10 @@ function BarbersPage() {
                     href="https://squareup.com/appointments/book/thesocietybarbers"
                     target="_blank"
                     rel="noreferrer"
-                    className={`inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold ${accentColor}`}
+                    className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 bg-background text-xs font-bold uppercase leading-none tracking-wide ${accentColor}`}
                   >
-                    BOOK NOW
+                    <span>BOOK</span>
+                    <span className="mt-0.5">NOW</span>
                   </a>
                 ) : null}
               </div>

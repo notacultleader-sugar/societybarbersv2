@@ -87,8 +87,10 @@ function AccountPage() {
             <a
               key={link.href}
               href={link.href}
-              target="_blank"
-              rel="noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                openInAppBrowser(link.href);
+              }}
               className={`flex items-center justify-between rounded-2xl p-5 ${link.className}`}
             >
               <div className="flex items-center gap-3">

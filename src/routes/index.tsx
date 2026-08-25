@@ -27,11 +27,11 @@ function HomeDashboard() {
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
       <header className="mb-8">
         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
-          Obey · Consume · Conform
+          Proudly serving the Cowichan Valley since 2017
         </p>
         <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white">
-          Wake Up
-          <span className="block text-neon-cyan text-glow-cyan">// Look Sharp</span>
+          Classic Barbering
+          <span className="block text-neon-cyan text-glow-cyan">// Upgraded</span>
         </h1>
       </header>
 

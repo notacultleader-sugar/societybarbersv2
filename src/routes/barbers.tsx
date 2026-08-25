@@ -141,10 +141,10 @@ function BarbersPage() {
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
       <header className="mb-8">
         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon-cyan">
-          They Live · We Cut
+          The Chairs
         </p>
         <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white">
-          The ones who see
+          Meet the crew
         </h1>
       </header>
 

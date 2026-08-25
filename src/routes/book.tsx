@@ -66,10 +66,21 @@ function BookPage() {
           className="flex items-center justify-between rounded-2xl bg-surface p-5 text-white"
         >
           <div>
-            <p className="font-display text-lg font-semibold">Call the shop</p>
+            <p className="font-display text-lg font-semibold">Call Downtown Duncan</p>
             <p className="text-sm text-muted-foreground">(250) 597-0155</p>
           </div>
           <Phone className="h-5 w-5 text-gold" />
+        </a>
+
+        <a
+          href="tel:+17784552858"
+          className="flex items-center justify-between rounded-2xl bg-surface p-5 text-white"
+        >
+          <div>
+            <p className="font-display text-lg font-semibold">Call Maple Bay</p>
+            <p className="text-sm text-muted-foreground">(778) 455-CULT</p>
+          </div>
+          <Phone className="h-5 w-5 text-neon-cyan" />
         </a>
 
         <a

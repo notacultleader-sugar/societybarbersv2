@@ -172,7 +172,11 @@ function BarbersPage() {
                 <div className="flex-1">
                   <div className="mb-2 flex items-center gap-2">
                     <div className={`rounded-full ${accentColor} border-2 p-1.5`}>
-                      <Scissors className="h-4 w-4" />
+                      {index >= 11 ? (
+                        <Monitor className="h-4 w-4" />
+                      ) : (
+                        <Scissors className="h-4 w-4" />
+                      )}
                     </div>
                     <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                       {barber.role}

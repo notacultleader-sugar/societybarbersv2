@@ -10,13 +10,16 @@ export const DUNCAN_HOURS: WeeklyHours = {
 
 export const MAPLE_BAY_HOURS: WeeklyHours = {
   weekday: { open: "10:00", close: "17:00" },
-  sunday: undefined,
 };
 
 function timeToMinutes(time: string): number {
-  const [h, m] = time.split(":").map(Number);
+  const [h, m] = time.split(":").map((part) => Number(part));
+  if (h === undefined || m === undefined || Number.isNaN(h) || Number.isNaN(m)) {
+    throw new Error(`Invalid time format: ${time}`);
+  }
   return h * 60 + m;
 }
+
 
 export function isLocationOpen(hours: WeeklyHours): boolean {
   const now = new Date();

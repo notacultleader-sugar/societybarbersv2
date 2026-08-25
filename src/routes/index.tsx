@@ -164,13 +164,15 @@ function HomeDashboard() {
         {/* Contact */}
         <Link
           to="/contact"
-          className="group relative col-span-2 overflow-hidden rounded-2xl bg-surface p-4"
+          className="group relative col-span-2 flex items-center gap-4 overflow-hidden rounded-2xl bg-surface p-4"
         >
-          <div className="mb-3 inline-flex rounded-xl bg-gold/15 p-2.5 text-gold">
-            <Phone className="h-5 w-5" />
+          <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold/15 text-gold">
+            <Phone className="h-6 w-6" />
           </div>
-          <h3 className="font-display text-lg font-semibold text-white uppercase">CONTACT</h3>
-          <p className="mt-1 text-xs text-muted-foreground">Call, DM, or stop by.</p>
+          <div className="min-w-0">
+            <h3 className="font-display text-lg font-semibold text-white uppercase">CONTACT</h3>
+            <p className="text-xs text-muted-foreground">Call, DM, or stop by.</p>
+          </div>
         </Link>
       </section>
 

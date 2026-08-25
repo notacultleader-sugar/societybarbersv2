@@ -38,7 +38,7 @@ function ContactPage() {
           <div>
             <p className="font-display text-lg font-semibold text-white">Downtown Duncan</p>
             <p className="text-sm text-muted-foreground">191 Kenneth St</p>
-            <p className="mt-1 text-xs text-neon">Open now · 9am–7pm</p>
+            <p className="mt-1 text-xs text-neon">Mon – Sat · 10am – 6:30pm · Sun · 10am – 4pm</p>
           </div>
         </a>
 
@@ -54,30 +54,44 @@ function ContactPage() {
           <div>
             <p className="font-display text-lg font-semibold text-white">Maple Bay Hall</p>
             <p className="text-sm text-muted-foreground">Maple Bay, BC</p>
-            <p className="mt-1 text-xs text-neon-cyan">Hours vary · call ahead</p>
+            <p className="mt-1 text-xs text-neon-cyan">Mon – Sat · 10am – 5pm</p>
           </div>
         </a>
       </section>
 
-      <section className="mb-5 rounded-2xl bg-surface-elevated p-5">
-        <div className="mb-4 flex items-center gap-3">
+      <section className="mb-5 grid gap-3 rounded-2xl bg-surface-elevated p-5">
+        <div className="mb-2 flex items-center gap-3">
           <div className="rounded-xl bg-gold/15 p-2.5 text-gold">
             <Clock className="h-5 w-5" />
           </div>
           <h2 className="font-display text-lg font-semibold text-white">Hours</h2>
         </div>
-        <div className="space-y-2 text-sm text-muted-foreground">
-          <div className="flex justify-between">
-            <span>Tuesday – Saturday</span>
-            <span className="text-white">9am – 7pm</span>
+
+        <div className="rounded-2xl bg-surface p-4">
+          <p className="mb-3 font-display text-sm font-semibold text-white">Downtown Duncan</p>
+          <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="flex justify-between">
+              <span>Monday – Saturday</span>
+              <span className="text-white">10am – 6:30pm</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Sunday</span>
+              <span className="text-white">10am – 4pm</span>
+            </div>
           </div>
-          <div className="flex justify-between">
-            <span>Sunday</span>
-            <span className="text-white">10am – 4pm</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Monday</span>
-            <span className="text-white">Closed</span>
+        </div>
+
+        <div className="rounded-2xl bg-surface p-4">
+          <p className="mb-3 font-display text-sm font-semibold text-white">Maple Bay Hall</p>
+          <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="flex justify-between">
+              <span>Monday – Saturday</span>
+              <span className="text-white">10am – 5pm</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Sunday</span>
+              <span className="text-white">Closed</span>
+            </div>
           </div>
         </div>
       </section>

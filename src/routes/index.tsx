@@ -131,7 +131,7 @@ function HomeDashboard() {
           <img
             src={duncanShopLogo.url}
             alt=""
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#f472b6]/70 via-[#c084fc]/50 to-[#22d3ee]/50" />
           <div className="relative mb-3 inline-flex rounded-xl bg-black/30 p-2.5 backdrop-blur-sm">
@@ -146,14 +146,14 @@ function HomeDashboard() {
           href="https://instagram.com/societyatthehall"
           target="_blank"
           rel="noreferrer"
-          className="group relative overflow-hidden rounded-2xl bg-[#a855f7] p-4 text-white"
+          className="group relative overflow-hidden rounded-2xl bg-[#ef4444] p-4 text-white"
         >
           <img
             src={mapleBayLogo.url}
             alt=""
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#c084fc]/70 via-[#7c3aed]/50 to-[#facc15]/50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#ef4444]/70 via-[#dc2626]/50 to-[#facc15]/50" />
           <div className="relative mb-3 inline-flex rounded-xl bg-black/30 p-2.5 backdrop-blur-sm">
             <Instagram className="h-5 w-5" />
           </div>

@@ -143,8 +143,19 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col bg-background">
-        <div className="flex-1 overflow-y-auto">
+      <div className="relative flex min-h-screen flex-col bg-background">
+        {/* Angled, translucent logo watermark */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-0 z-0 flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src={societyLogo.url}
+            alt=""
+            className="w-[115%] max-w-none -rotate-12 opacity-25"
+          />
+        </div>
+        <div className="relative z-10 flex-1 overflow-y-auto">
           <Outlet />
         </div>
         <BottomNav />

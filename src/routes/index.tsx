@@ -132,7 +132,7 @@ function HomeDashboard() {
             <Instagram className="h-5 w-5" />
           </div>
           <h3 className="font-display text-lg font-semibold">Follow us</h3>
-          <p className="mt-1 text-xs text-white/80">@thesocietybarbers</p>
+          <p className="mt-1 text-xs text-white/80">@societybarbers</p>
         </a>
       </section>
 

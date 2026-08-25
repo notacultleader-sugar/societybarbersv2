@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Calendar, Clock, ExternalLink, Phone, Instagram } from "lucide-react";
+import { Clock, ExternalLink, Phone, Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/book")({
   head: () => ({
@@ -25,23 +25,24 @@ function BookPage() {
         </h1>
       </header>
 
-      <section className="mb-6 rounded-2xl bg-surface p-5 glow-border">
-        <div className="mb-4 flex items-center gap-3">
+      <section className="mb-6 rounded-2xl bg-surface p-5 glow-border space-y-4">
+        <div className="flex items-center gap-3">
           <div className="rounded-xl bg-neon/15 p-2.5 text-neon">
             <Clock className="h-5 w-5" />
           </div>
           <div>
             <p className="text-sm font-semibold text-white">Hours</p>
-            <p className="text-xs text-muted-foreground">Tue–Sat · 9am–7pm</p>
+            <p className="text-xs text-muted-foreground">Both locations, Pacific time</p>
           </div>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="rounded-xl bg-neon-cyan/15 p-2.5 text-neon-cyan">
-            <Calendar className="h-5 w-5" />
+        <div className="grid gap-3 border-t border-border pt-4">
+          <div>
+            <p className="text-sm font-semibold text-white">Downtown Duncan</p>
+            <p className="text-xs text-muted-foreground">Mon–Sat · 10am–6:30pm · Sun · 10am–4pm</p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-white">Best to book ahead</p>
-            <p className="text-xs text-muted-foreground">Walk-ins welcome when chairs are open.</p>
+            <p className="text-sm font-semibold text-white">Maple Bay</p>
+            <p className="text-xs text-muted-foreground">Mon–Sat · 10am–5pm · Sun closed</p>
           </div>
         </div>
       </section>
@@ -61,25 +62,25 @@ function BookPage() {
         </a>
 
         <a
-          href="tel:+12507483244"
+          href="tel:+12505970155"
           className="flex items-center justify-between rounded-2xl bg-surface p-5 text-white"
         >
           <div>
             <p className="font-display text-lg font-semibold">Call the shop</p>
-            <p className="text-sm text-muted-foreground">(250) 748-3244</p>
+            <p className="text-sm text-muted-foreground">(250) 597-0155</p>
           </div>
           <Phone className="h-5 w-5 text-gold" />
         </a>
 
         <a
-          href="https://instagram.com/thesocietybarbers"
+          href="https://instagram.com/societybarbers"
           target="_blank"
           rel="noreferrer"
           className="flex items-center justify-between rounded-2xl bg-surface p-5 text-white"
         >
           <div>
             <p className="font-display text-lg font-semibold">DM to book</p>
-            <p className="text-sm text-muted-foreground">@thesocietybarbers</p>
+            <p className="text-sm text-muted-foreground">@societybarbers</p>
           </div>
           <Instagram className="h-5 w-5 text-neon-cyan" />
         </a>

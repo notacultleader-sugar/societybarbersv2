@@ -140,13 +140,25 @@ const barbers = [
 function BarbersPage() {
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
-      <header className="mb-8">
-        <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon-cyan">
-          The Chairs
-        </p>
-        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
-          MEET THE CREW
-        </h1>
+      {/* Option D — vertical strip on the right with a divider */}
+      <header className="mb-8 flex items-stretch gap-4">
+        <div className="flex-1 border-l-2 border-neon-cyan/70 pl-4">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon-cyan">
+            The Chairs
+          </p>
+          <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+            MEET THE CREW
+          </h1>
+        </div>
+        <div className="relative w-24 shrink-0 overflow-hidden rounded-xl bg-surface-elevated">
+          <img
+            src={astronaut.url}
+            alt=""
+            aria-hidden
+            className="h-full w-full object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+        </div>
       </header>
 
       <section className="grid gap-4">

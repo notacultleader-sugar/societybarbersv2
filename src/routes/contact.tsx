@@ -138,17 +138,6 @@ function ContactPage() {
 
       <section className="grid gap-3">
         <a
-          href="mailto:hello@thesocietybarbers.com"
-          className="flex items-center justify-between rounded-2xl bg-surface p-4 text-white"
-        >
-          <div className="flex items-center gap-3">
-            <Mail className="h-5 w-5 text-neon" />
-            <span className="font-display font-semibold">hello@thesocietybarbers.com</span>
-          </div>
-          <ExternalLink className="h-4 w-4 text-muted-foreground" />
-        </a>
-
-        <a
           href="https://instagram.com/thesocietybarbers"
           target="_blank"
           rel="noreferrer"

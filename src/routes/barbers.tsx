@@ -149,7 +149,7 @@ function BarbersPage() {
       </header>
 
       <section className="grid gap-4">
-        {barbers.map((barber) => {
+        {barbers.map((barber, index) => {
           const accentColor =
             barber.color === "neon"
               ? "border-neon text-neon"

@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Required for Capacitor / Electron native wrappers that load files via file://.
+    base: "./",
+  },
 });

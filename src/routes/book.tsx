@@ -83,18 +83,6 @@ function BookPage() {
           <Phone className="h-5 w-5 text-neon-cyan" />
         </a>
 
-        <a
-          href="https://instagram.com/societybarbers"
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center justify-between rounded-2xl bg-surface p-5 text-white"
-        >
-          <div>
-            <p className="font-display text-lg font-semibold">DM to book</p>
-            <p className="text-sm text-muted-foreground">@societybarbers</p>
-          </div>
-          <Instagram className="h-5 w-5 text-neon-cyan" />
-        </a>
       </section>
 
       <section className="mt-6 rounded-2xl bg-surface-elevated p-5">

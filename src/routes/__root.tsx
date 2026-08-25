@@ -6,11 +6,19 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import {
+  Home,
+  Calendar,
+  Users,
+  Megaphone,
+  Phone,
+} from "lucide-react";
 
 function NotFoundComponent() {
   return (
@@ -76,22 +84,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" },
+      { title: "Society Barbers" },
+      { name: "description", content: "The Society Barbers community app. Classic barbering upgraded." },
+      { name: "author", content: "The Society Barbers" },
+      { name: "theme-color", content: "#0a0815" },
+      { property: "og:title", content: "Society Barbers" },
+      { property: "og:description", content: "The Society Barbers community app. Classic barbering upgraded." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@thesocietybarbers" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/manifest.webmanifest" },
     ],
   }),
   shellComponent: RootShell,
@@ -119,8 +143,59 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col bg-background">
+        <div className="flex-1 overflow-y-auto">
+          <Outlet />
+        </div>
+        <BottomNav />
+      </div>
     </QueryClientProvider>
+  );
+}
+
+function BottomNav() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  const tabs = [
+    { to: "/", label: "Home", icon: Home },
+    { to: "/book", label: "Book", icon: Calendar },
+    { to: "/community", label: "Community", icon: Megaphone },
+    { to: "/barbers", label: "Barbers", icon: Users },
+    { to: "/contact", label: "Contact", icon: Phone },
+  ];
+
+  return (
+    <nav className="glass safe-bottom fixed bottom-0 left-0 right-0 z-50 border-t border-border">
+      <div className="mx-auto flex max-w-md items-center justify-around px-2 pb-2 pt-3">
+        {tabs.map((tab) => {
+          const isActive = pathname === tab.to;
+          const Icon = tab.icon;
+          return (
+            <Link
+              key={tab.to}
+              to={tab.to}
+              className="flex flex-col items-center gap-1 px-2 py-1"
+            >
+              <div
+                className={`rounded-xl p-1.5 transition-all ${
+                  isActive
+                    ? "bg-primary/20 text-primary shadow-[0_0_12px_rgba(255,0,160,0.35)]"
+                    : "text-muted-foreground"
+                }`}
+              >
+                <Icon className="h-5 w-5" />
+              </div>
+              <span
+                className={`text-[10px] font-medium ${
+                  isActive ? "text-primary" : "text-muted-foreground"
+                }`}
+              >
+                {tab.label}
+              </span>
+            </Link>
+          );
+        })}
+      </div>
+    </nav>
   );
 }

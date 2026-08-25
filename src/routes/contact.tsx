@@ -22,10 +22,10 @@ function ContactPage() {
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
       <header className="mb-8">
         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-gold">
-          Find the porch
+          The Signal
         </p>
         <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white">
-          Come sit a while
+          Make contact
         </h1>
       </header>
 

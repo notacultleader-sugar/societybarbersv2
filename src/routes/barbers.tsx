@@ -115,7 +115,7 @@ const barbers = [
     name: "Kiki",
     handle: "@societybarbers",
     role: "Manager",
-    nickname: "Society Barbers",
+    nickname: "Shop Mom",
     image: "https://static.wixstatic.com/media/47ba99_24be9afdc3044f7d9a6324373e0585ab~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8010_PNG.png",
     color: "neon",
   },

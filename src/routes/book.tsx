@@ -88,6 +88,7 @@ function BookPage() {
       <section className="mt-6 rounded-2xl bg-surface-elevated p-5">
         <p className="mb-2 font-display text-lg font-semibold text-white">Shop policies</p>
         <ul className="space-y-2 text-sm text-muted-foreground">
+          <li>• Walk-ins are welcome when possible, but appointments are recommended.</li>
           <li>• Please arrive within 10 minutes of your appointment.</li>
           <li>• Kids cuts welcome — ask about availability.</li>
         </ul>

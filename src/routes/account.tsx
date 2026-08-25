@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
+import { openInAppBrowser } from "@/lib/browser";
 import { CalendarCheck, CreditCard, ExternalLink, LogIn, ShieldCheck, Star } from "lucide-react";
 
 export const Route = createFileRoute("/account")({
@@ -86,8 +87,10 @@ function AccountPage() {
             <a
               key={link.href}
               href={link.href}
-              target="_blank"
-              rel="noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                openInAppBrowser(link.href);
+              }}
               className={`flex items-center justify-between rounded-2xl p-5 ${link.className}`}
             >
               <div className="flex items-center gap-3">
@@ -115,7 +118,7 @@ function AccountPage() {
           <p className="font-display text-lg font-semibold text-white">Your login stays private</p>
         </div>
         <ul className="space-y-2 text-sm text-muted-foreground">
-          <li>• These buttons open Fresha's own secure sign-in page.</li>
+          <li>• These buttons open Fresha's own sign-in page inside the app.</li>
           <li>• We never see or store your password.</li>
           <li>• No Fresha account yet? One is created the first time you book.</li>
         </ul>

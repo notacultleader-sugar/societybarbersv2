@@ -138,7 +138,7 @@ function HomeDashboard() {
             <Instagram className="h-5 w-5" />
           </div>
           <h3 className="relative font-display text-lg font-semibold uppercase" style={{ textShadow: '0 3px 10px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)' }}>DUNCAN</h3>
-          <p className="relative mt-1 text-xs text-white/90" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)' }}>@societybarbers</p>
+          <p className="relative mt-1 text-base text-white/90" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)' }}>@societybarbers</p>
         </a>
 
         {/* Instagram — Maple Bay */}
@@ -158,7 +158,7 @@ function HomeDashboard() {
             <Instagram className="h-5 w-5" />
           </div>
           <h3 className="relative font-display text-lg font-semibold uppercase" style={{ textShadow: '0 3px 10px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)' }}>MAPLE BAY</h3>
-          <p className="relative mt-1 text-xs text-white/90" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)' }}>@societyatthehall</p>
+          <p className="relative mt-1 text-base text-white/90" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)' }}>@societyatthehall</p>
         </a>
 
         {/* Contact */}

@@ -27,7 +27,7 @@ function HomeDashboard() {
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
       <header className="mb-8">
         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
-          Proudly serving the Cowichan Valley since 2017
+          PROUDLY SERVING COWICHAN SINCE 2017
         </p>
         <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
           CLASSIC BARBERING

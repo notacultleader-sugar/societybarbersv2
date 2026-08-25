@@ -21,13 +21,23 @@ function ContactPage() {
 
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
-      <header className="mb-8">
-        <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-gold">
-          The Signal
-        </p>
-        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
-          MAKE CONTACT
-        </h1>
+      {/* Option E — banner card with the title over a scrim */}
+      <header className="relative mb-8 h-52 overflow-hidden rounded-2xl bg-surface glow-border">
+        <img
+          src={astronaut.url}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover object-[70%_15%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-tr from-background via-background/70 to-transparent" />
+        <div className="absolute bottom-0 left-0 p-5">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-gold">
+            The Signal
+          </p>
+          <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+            MAKE CONTACT
+          </h1>
+        </div>
       </header>
 
       <section className="mb-5 grid gap-3">

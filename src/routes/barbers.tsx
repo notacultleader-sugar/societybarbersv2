@@ -204,8 +204,7 @@ function BarbersPage() {
                     rel="noreferrer"
                     className={`inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold ${accentColor}`}
                   >
-                    <Scissors className="h-4 w-4" />
-                    Book online
+                    BOOK NOW
                   </a>
                 ) : null}
               </div>

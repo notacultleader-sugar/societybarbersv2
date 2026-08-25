@@ -126,14 +126,14 @@ function HomeDashboard() {
           href="https://instagram.com/societybarbers"
           target="_blank"
           rel="noreferrer"
-          className="group relative overflow-hidden rounded-2xl bg-[#c084fc] p-4 text-white"
+          className="group relative overflow-hidden rounded-2xl bg-[#e879f9] p-4 text-white"
         >
           <img
             src={duncanShopLogo.url}
             alt=""
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#d946ef]/60 via-[#8b5cf6]/40 to-[#06b6d4]/40" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f472b6]/70 via-[#c084fc]/50 to-[#22d3ee]/50" />
           <div className="relative mb-3 inline-flex rounded-xl bg-black/30 p-2.5 backdrop-blur-sm">
             <Instagram className="h-5 w-5" />
           </div>
@@ -146,14 +146,14 @@ function HomeDashboard() {
           href="https://instagram.com/societyatthehall"
           target="_blank"
           rel="noreferrer"
-          className="group relative overflow-hidden rounded-2xl bg-[#c084fc] p-4 text-white"
+          className="group relative overflow-hidden rounded-2xl bg-[#a855f7] p-4 text-white"
         >
           <img
             src={mapleBayLogo.url}
             alt=""
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-45"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#d946ef]/60 via-[#8b5cf6]/40 to-[#06b6d4]/40" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#c084fc]/70 via-[#7c3aed]/50 to-[#facc15]/50" />
           <div className="relative mb-3 inline-flex rounded-xl bg-black/30 p-2.5 backdrop-blur-sm">
             <Instagram className="h-5 w-5" />
           </div>

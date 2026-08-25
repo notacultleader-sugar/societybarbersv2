@@ -108,7 +108,7 @@ function ContactPage() {
         </div>
 
         <div className="rounded-2xl bg-surface p-4">
-          <p className="mb-3 font-display text-sm font-semibold text-white">Maple Bay Hall</p>
+          <p className="mb-3 font-display text-sm font-semibold text-white">Maple Bay</p>
           <div className="space-y-2 text-sm text-muted-foreground">
             <div className="flex justify-between">
               <span>Monday – Saturday</span>

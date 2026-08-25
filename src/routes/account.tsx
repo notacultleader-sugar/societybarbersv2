@@ -118,7 +118,7 @@ function AccountPage() {
           <p className="font-display text-lg font-semibold text-white">Your login stays private</p>
         </div>
         <ul className="space-y-2 text-sm text-muted-foreground">
-          <li>• These buttons open Fresha's own secure sign-in page.</li>
+          <li>• These buttons open Fresha's own sign-in page inside the app.</li>
           <li>• We never see or store your password.</li>
           <li>• No Fresha account yet? One is created the first time you book.</li>
         </ul>

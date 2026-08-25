@@ -29,9 +29,9 @@ function HomeDashboard() {
         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
           Proudly serving the Cowichan Valley since 2017
         </p>
-        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white">
-          Classic Barbering
-          <span className="block text-neon-cyan text-glow-cyan">// Upgraded</span>
+        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+          CLASSIC BARBERING
+          <span className="block text-neon-cyan text-glow-cyan">// UPGRADED</span>
         </h1>
       </header>
 
@@ -47,7 +47,7 @@ function HomeDashboard() {
               <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/80">
                 Book Online
               </p>
-              <h2 className="font-display text-2xl font-bold">Book a chair</h2>
+              <h2 className="font-display text-2xl font-bold uppercase">BOOK A CHAIR</h2>
               <p className="mt-1 text-sm text-white/80">Skip the wait. Reserve your time.</p>
             </div>
             <div className="rounded-full bg-white/20 p-3 backdrop-blur-sm">
@@ -65,7 +65,7 @@ function HomeDashboard() {
           <div className="mb-3 inline-flex rounded-xl bg-neon/15 p-2.5 text-neon">
             <Megaphone className="h-5 w-5" />
           </div>
-          <h3 className="font-display text-lg font-semibold text-white">The Board</h3>
+          <h3 className="font-display text-lg font-semibold text-white uppercase">THE BOARD</h3>
           <p className="mt-1 text-xs text-muted-foreground">Events, drops, and shop news.</p>
         </Link>
 
@@ -77,7 +77,7 @@ function HomeDashboard() {
           <div className="mb-3 inline-flex rounded-xl bg-neon-cyan/15 p-2.5 text-neon-cyan">
             <Users className="h-5 w-5" />
           </div>
-          <h3 className="font-display text-lg font-semibold text-white">The Crew</h3>
+          <h3 className="font-display text-lg font-semibold text-white uppercase">THE CREW</h3>
           <p className="mt-1 text-xs text-muted-foreground">Meet the barbers and follow their work.</p>
         </Link>
 
@@ -85,7 +85,7 @@ function HomeDashboard() {
         <div className="col-span-2 rounded-2xl bg-surface-elevated p-4">
           <div className="mb-3 flex items-center gap-2">
             <MapPin className="h-4 w-4 text-gold" />
-            <h3 className="font-display text-lg font-semibold text-white">Two locations</h3>
+            <h3 className="font-display text-lg font-semibold text-white uppercase">TWO LOCATIONS</h3>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <a
@@ -117,7 +117,7 @@ function HomeDashboard() {
           <div className="mb-3 inline-flex rounded-xl bg-gold/15 p-2.5 text-gold">
             <Phone className="h-5 w-5" />
           </div>
-          <h3 className="font-display text-lg font-semibold text-white">Contact</h3>
+          <h3 className="font-display text-lg font-semibold text-white uppercase">CONTACT</h3>
           <p className="mt-1 text-xs text-muted-foreground">Call, DM, or stop by.</p>
         </Link>
 
@@ -131,7 +131,7 @@ function HomeDashboard() {
           <div className="mb-3 inline-flex rounded-xl bg-white/20 p-2.5">
             <Instagram className="h-5 w-5" />
           </div>
-          <h3 className="font-display text-lg font-semibold">Follow us</h3>
+          <h3 className="font-display text-lg font-semibold uppercase">FOLLOW US</h3>
           <p className="mt-1 text-xs text-white/80">@societybarbers</p>
         </a>
       </section>

@@ -89,6 +89,13 @@ function ContactPage() {
             <Phone className="h-4 w-4 text-gold" />
             <span className="font-display font-semibold">(778) 455-CULT</span>
           </a>
+          <a
+            href="mailto:hall@notacult.ca"
+            className="mt-3 flex items-center gap-2 text-sm text-white"
+          >
+            <Mail className="h-4 w-4 text-neon-cyan" />
+            <span className="font-display font-semibold">hall@notacult.ca</span>
+          </a>
         </div>
       </section>
 

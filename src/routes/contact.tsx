@@ -30,13 +30,13 @@ function ContactPage() {
       </header>
 
       <section className="mb-5 grid gap-3">
-        <a
-          href="https://maps.google.com/?q=191+Kenneth+St+Duncan+BC"
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-2xl bg-surface p-4"
-        >
-          <div className="flex items-start gap-4">
+        <div className="rounded-2xl bg-surface p-4">
+          <a
+            href="https://maps.google.com/?q=191+Kenneth+St+Duncan+BC"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-start gap-4"
+          >
             <div className="rounded-xl bg-neon/15 p-2.5 text-neon">
               <MapPin className="h-5 w-5" />
             </div>
@@ -47,7 +47,7 @@ function ContactPage() {
                 {duncanOpen ? "Open now" : "Closed now"}
               </p>
             </div>
-          </div>
+          </a>
           <a
             href="tel:+12505970155"
             className="mt-4 flex items-center gap-2 text-sm text-white"
@@ -55,15 +55,15 @@ function ContactPage() {
             <Phone className="h-4 w-4 text-gold" />
             <span className="font-display font-semibold">(250) 597-0155</span>
           </a>
-        </a>
+        </div>
 
-        <a
-          href="https://maps.google.com/?q=Maple+Bay+Hall+Duncan+BC"
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-2xl bg-surface p-4"
-        >
-          <div className="flex items-start gap-4">
+        <div className="rounded-2xl bg-surface p-4">
+          <a
+            href="https://maps.google.com/?q=Maple+Bay+Hall+Duncan+BC"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-start gap-4"
+          >
             <div className="rounded-xl bg-neon-cyan/15 p-2.5 text-neon-cyan">
               <MapPin className="h-5 w-5" />
             </div>
@@ -74,7 +74,7 @@ function ContactPage() {
                 {mapleBayOpen ? "Open now" : "Closed now"}
               </p>
             </div>
-          </div>
+          </a>
           <a
             href="tel:+17784552858"
             className="mt-4 flex items-center gap-2 text-sm text-white"
@@ -82,7 +82,7 @@ function ContactPage() {
             <Phone className="h-4 w-4 text-gold" />
             <span className="font-display font-semibold">(778) 455-CULT</span>
           </a>
-        </a>
+        </div>
       </section>
 
       <section className="mb-5 grid gap-3 rounded-2xl bg-surface-elevated p-5">

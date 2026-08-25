@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
+import duncanShopLogo from "@/assets/duncan_shop_2.png.asset.json";
 import {
   Calendar,
   Users,
@@ -124,13 +125,19 @@ function HomeDashboard() {
           href="https://instagram.com/societybarbers"
           target="_blank"
           rel="noreferrer"
-          className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 to-pink-500 p-4 text-white"
+          className="group relative overflow-hidden rounded-2xl bg-[#c084fc] p-4 text-white"
         >
-          <div className="mb-3 inline-flex rounded-xl bg-white/20 p-2.5">
+          <img
+            src={duncanShopLogo.url}
+            alt=""
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#d946ef]/60 via-[#8b5cf6]/40 to-[#06b6d4]/40" />
+          <div className="relative mb-3 inline-flex rounded-xl bg-black/30 p-2.5 backdrop-blur-sm">
             <Instagram className="h-5 w-5" />
           </div>
-          <h3 className="font-display text-lg font-semibold uppercase">DUNCAN</h3>
-          <p className="mt-1 text-xs text-white/80">@societybarbers</p>
+          <h3 className="relative font-display text-lg font-semibold uppercase">DUNCAN</h3>
+          <p className="relative mt-1 text-xs text-white/90">@societybarbers</p>
         </a>
 
         {/* Instagram — Maple Bay */}

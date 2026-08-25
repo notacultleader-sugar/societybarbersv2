@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, ExternalLink, Phone, Instagram } from "lucide-react";
+import { Clock, ExternalLink, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/book")({
   head: () => ({

@@ -62,12 +62,12 @@ function BookPage() {
         </a>
 
         <a
-          href="tel:+12507483244"
+          href="tel:+12505970155"
           className="flex items-center justify-between rounded-2xl bg-surface p-5 text-white"
         >
           <div>
             <p className="font-display text-lg font-semibold">Call the shop</p>
-            <p className="text-sm text-muted-foreground">(250) 748-3244</p>
+            <p className="text-sm text-muted-foreground">(250) 597-0155</p>
           </div>
           <Phone className="h-5 w-5 text-gold" />
         </a>

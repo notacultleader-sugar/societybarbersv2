@@ -138,16 +138,35 @@ function ContactPage() {
 
       <section className="grid gap-3">
         <a
-          href="https://instagram.com/thesocietybarbers"
+          href="https://instagram.com/societybarbers"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center justify-between rounded-2xl bg-gradient-to-br from-purple-600 to-pink-500 p-4 text-white"
+          className="flex items-center justify-between rounded-2xl bg-surface p-4 text-white"
         >
           <div className="flex items-center gap-3">
-            <Instagram className="h-5 w-5" />
-            <span className="font-display font-semibold">@thesocietybarbers</span>
+            <Instagram className="h-5 w-5 text-neon" />
+            <div>
+              <p className="font-display font-semibold">@societybarbers</p>
+              <p className="text-xs text-muted-foreground">Duncan</p>
+            </div>
           </div>
-          <ExternalLink className="h-4 w-4" />
+          <ExternalLink className="h-4 w-4 text-muted-foreground" />
+        </a>
+
+        <a
+          href="https://instagram.com/societyatthehall"
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center justify-between rounded-2xl bg-surface p-4 text-white"
+        >
+          <div className="flex items-center gap-3">
+            <Instagram className="h-5 w-5 text-neon-cyan" />
+            <div>
+              <p className="font-display font-semibold">@societyatthehall</p>
+              <p className="text-xs text-muted-foreground">Maple Bay</p>
+            </div>
+          </div>
+          <ExternalLink className="h-4 w-4 text-muted-foreground" />
         </a>
       </section>
     </main>

@@ -181,10 +181,17 @@ function BarbersPage() {
                   <h2 className="font-display text-2xl font-semibold text-white">{barber.name}</h2>
                   <p className="mt-1 text-sm text-muted-foreground">{barber.nickname}</p>
                 </div>
-                <div className="flex flex-col items-center gap-1">
-                  <Star className="h-4 w-4 text-gold" />
-                  <span className="text-xs font-semibold text-gold">5.0</span>
-                </div>
+                {index < 11 ? (
+                  <a
+                    href="https://squareup.com/appointments/book/thesocietybarbers"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold ${accentColor}`}
+                  >
+                    <Scissors className="h-4 w-4" />
+                    Book online
+                  </a>
+                ) : null}
               </div>
 
               <a

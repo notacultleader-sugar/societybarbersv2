@@ -19,6 +19,7 @@ import {
   Users,
   Megaphone,
   Phone,
+  UserRound,
 } from "lucide-react";
 
 function NotFoundComponent() {
@@ -174,6 +175,7 @@ function BottomNav() {
     { to: "/community", label: "Community", icon: Megaphone },
     { to: "/barbers", label: "Barbers", icon: Users },
     { to: "/contact", label: "Contact", icon: Phone },
+    { to: "/account", label: "Account", icon: UserRound },
   ];
 
   return (

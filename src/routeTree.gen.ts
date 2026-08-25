@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccountRouteImport } from './routes/account'
 import { Route as BarbersRouteImport } from './routes/barbers'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as CommunityRouteImport } from './routes/community'
@@ -18,6 +19,11 @@ import { Route as ContactRouteImport } from './routes/contact'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BarbersRoute = BarbersRouteImport.update({
@@ -43,6 +49,7 @@ const ContactRoute = ContactRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
   '/barbers': typeof BarbersRoute
   '/book': typeof BookRoute
   '/community': typeof CommunityRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
   '/barbers': typeof BarbersRoute
   '/book': typeof BookRoute
   '/community': typeof CommunityRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
   '/barbers': typeof BarbersRoute
   '/book': typeof BookRoute
   '/community': typeof CommunityRoute
@@ -65,14 +74,22 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/barbers' | '/book' | '/community' | '/contact'
+  fullPaths: '/' | '/account' | '/barbers' | '/book' | '/community' | '/contact'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/barbers' | '/book' | '/community' | '/contact'
-  id: '__root__' | '/' | '/barbers' | '/book' | '/community' | '/contact'
+  to: '/' | '/account' | '/barbers' | '/book' | '/community' | '/contact'
+  id:
+    | '__root__'
+    | '/'
+    | '/account'
+    | '/barbers'
+    | '/book'
+    | '/community'
+    | '/contact'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountRoute: typeof AccountRoute
   BarbersRoute: typeof BarbersRoute
   BookRoute: typeof BookRoute
   CommunityRoute: typeof CommunityRoute
@@ -86,6 +103,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/barbers': {
@@ -121,6 +145,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountRoute: AccountRoute,
   BarbersRoute: BarbersRoute,
   BookRoute: BookRoute,
   CommunityRoute: CommunityRoute,

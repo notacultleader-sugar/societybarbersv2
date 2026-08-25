@@ -143,8 +143,8 @@ function BarbersPage() {
         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon-cyan">
           The Chairs
         </p>
-        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white">
-          Meet the crew
+        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+          MEET THE CREW
         </h1>
       </header>
 

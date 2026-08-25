@@ -24,8 +24,8 @@ function ContactPage() {
         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-gold">
           The Signal
         </p>
-        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white">
-          Make contact
+        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+          MAKE CONTACT
         </h1>
       </header>
 

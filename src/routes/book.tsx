@@ -20,8 +20,8 @@ function BookPage() {
         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
           Submit · Comply
         </p>
-        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white">
-          Obey the schedule
+        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+          OBEY THE SCHEDULE
         </h1>
       </header>
 

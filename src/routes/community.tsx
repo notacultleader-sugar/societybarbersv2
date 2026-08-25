@@ -23,8 +23,8 @@ function CommunityPage() {
         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
           The Transmission
         </p>
-        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white">
-          Stay tuned. Stay awake.
+        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+          STAY TUNED. STAY AWAKE.
         </h1>
       </header>
 

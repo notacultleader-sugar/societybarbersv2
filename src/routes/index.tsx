@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import astronaut from "@/assets/astronaut.png.asset.json";
 import {
   Calendar,
   Users,
@@ -25,14 +26,23 @@ export const Route = createFileRoute("/")({
 function HomeDashboard() {
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
-      <header className="mb-8">
-        <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
-          PROUDLY SERVING COWICHAN SINCE 2017
-        </p>
-        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
-          CLASSIC BARBERING
-          <span className="block text-neon-cyan text-glow-cyan">// UPGRADED</span>
-        </h1>
+      {/* Option A — full-bleed hero, she stands beside the title */}
+      <header className="relative mb-8 -mx-4 px-4">
+        <img
+          src={astronaut.url}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute -top-10 right-0 h-56 w-auto object-contain object-right-top opacity-80 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
+        />
+        <div className="relative max-w-[62%] pt-6">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
+            PROUDLY SERVING COWICHAN SINCE 2017
+          </p>
+          <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+            CLASSIC BARBERING
+            <span className="block text-neon-cyan text-glow-cyan">// UPGRADED</span>
+          </h1>
+        </div>
       </header>
 
       {/* Bento grid */}

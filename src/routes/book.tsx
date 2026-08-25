@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import astronaut from "@/assets/astronaut.png.asset.json";
 import { Clock, ExternalLink, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/book")({
@@ -16,13 +17,24 @@ export const Route = createFileRoute("/book")({
 function BookPage() {
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
-      <header className="mb-8">
-        <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
-          Submit · Comply
-        </p>
-        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
-          OBEY THE SCHEDULE
-        </h1>
+      {/* Option B — neon medallion next to the title */}
+      <header className="mb-8 flex items-center gap-4">
+        <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-2 border-neon/70 shadow-[0_0_25px_rgba(255,0,160,0.45)]">
+          <img
+            src={astronaut.url}
+            alt=""
+            aria-hidden
+            className="h-full w-full scale-[1.9] object-cover object-top"
+          />
+        </div>
+        <div>
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
+            Submit · Comply
+          </p>
+          <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+            OBEY THE SCHEDULE
+          </h1>
+        </div>
       </header>
 
       <section className="mb-6 rounded-2xl bg-surface p-5 glow-border space-y-4">

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import astronaut from "@/assets/astronaut.png.asset.json";
 import { CalendarOff, Sparkles } from "lucide-react";
 import { getNextStatHoliday } from "@/lib/holidays";
 
@@ -19,13 +20,22 @@ function CommunityPage() {
 
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
-      <header className="mb-8">
-        <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
-          The Transmission
-        </p>
-        <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
-          STAY TUNED. STAY AWAKE.
-        </h1>
+      {/* Option C — ghost watermark behind the title */}
+      <header className="relative mb-8 overflow-hidden pt-4">
+        <img
+          src={astronaut.url}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute -right-12 -top-8 h-64 w-auto -rotate-6 object-contain opacity-30 blur-[0.5px]"
+        />
+        <div className="relative">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
+            The Transmission
+          </p>
+          <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+            STAY TUNED. STAY AWAKE.
+          </h1>
+        </div>
       </header>
 
       <section className="mb-4 rounded-2xl bg-surface p-8 text-center glow-border">

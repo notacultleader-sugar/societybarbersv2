@@ -17,17 +17,14 @@ export const Route = createFileRoute("/book")({
 function BookPage() {
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
-      {/* Option B — neon medallion next to the title */}
-      <header className="mb-8 flex items-center gap-4">
-        <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-2 border-neon/70 shadow-[0_0_25px_rgba(255,0,160,0.45)]">
-          <img
-            src={astronaut.url}
-            alt=""
-            aria-hidden
-            className="h-full w-full scale-[1.9] object-cover object-top"
-          />
-        </div>
-        <div>
+      <header className="relative mb-8 -mx-4 px-4">
+        <img
+          src={astronaut.url}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute -top-10 right-0 h-56 w-auto object-contain object-right-top opacity-80 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
+        />
+        <div className="relative max-w-[62%] pt-6">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
             Submit · Comply
           </p>

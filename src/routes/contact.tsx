@@ -68,7 +68,7 @@ function ContactPage() {
               <MapPin className="h-5 w-5" />
             </div>
             <div>
-              <p className="font-display text-lg font-semibold text-white">Maple Bay Hall</p>
+              <p className="font-display text-lg font-semibold text-white">Maple Bay</p>
               <p className="text-sm text-muted-foreground">963 Herd Rd</p>
               <p className={`mt-1 text-xs ${mapleBayOpen ? "text-neon-cyan" : "text-muted-foreground"}`}>
                 {mapleBayOpen ? "Open now" : "Closed now"}

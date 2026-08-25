@@ -1,5 +1,6 @@
 {
-  "name": "tanstack_start_ts",
+  "name": "society-barbers",
+  "version": "1.0.0",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -9,7 +10,9 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build:mobile": "bun run build && node scripts/build-capacitor.cjs && npx cap sync",
+    "sync:mobile": "node scripts/build-capacitor.cjs && npx cap sync"
   },
   "overrides": {
     "rolldown": "1.2.1"

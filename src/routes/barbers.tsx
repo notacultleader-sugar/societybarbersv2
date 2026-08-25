@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Scissors } from "lucide-react";
+import { Instagram, Monitor, Scissors } from "lucide-react";
 
 export const Route = createFileRoute("/barbers")({
   head: () => ({

@@ -83,7 +83,7 @@ const barbers = [
     handle: "@d.iv.inity",
     role: "Barber",
     nickname: "Ivy",
-    image: "https://static.wixstatic.com/media/47ba99_a4fc778f9aaf442a8a62a20862bfc2f3~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8785_PNG.png",
+    image: "https://static.wixstatic.com/media/47ba99_3df284d98fbc4d9a9b114464bd4695a0~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8765_PNG.png",
     color: "gold",
   },
   {

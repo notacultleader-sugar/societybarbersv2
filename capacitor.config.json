@@ -1,0 +1,14 @@
+{
+  "appId": "com.thesocietybarbers.app",
+  "appName": "Society Barbers",
+  "webDir": "dist/client",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0a0815"
+    }
+  }
+}

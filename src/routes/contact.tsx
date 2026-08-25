@@ -55,6 +55,13 @@ function ContactPage() {
             <Phone className="h-4 w-4 text-gold" />
             <span className="font-display font-semibold">(250) 597-0155</span>
           </a>
+          <a
+            href="mailto:society@notacult.ca"
+            className="mt-3 flex items-center gap-2 text-sm text-white"
+          >
+            <Mail className="h-4 w-4 text-neon" />
+            <span className="font-display font-semibold">society@notacult.ca</span>
+          </a>
         </div>
 
         <div className="rounded-2xl bg-surface p-4">

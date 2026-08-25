@@ -185,6 +185,18 @@ function BarbersPage() {
                   <h2 className="font-display text-2xl font-semibold text-white">{barber.name}</h2>
                   <p className="mt-1 text-sm text-muted-foreground">{barber.nickname}</p>
                 </div>
+              </div>
+
+              <div className="mt-5 flex items-center justify-between gap-3">
+                <a
+                  href={`https://instagram.com/${barber.handle.replace("@", "")}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold ${accentColor}`}
+                >
+                  <Instagram className="h-4 w-4" />
+                  {barber.handle}
+                </a>
                 {index < 11 ? (
                   <a
                     href="https://squareup.com/appointments/book/thesocietybarbers"
@@ -197,16 +209,6 @@ function BarbersPage() {
                   </a>
                 ) : null}
               </div>
-
-              <a
-                href={`https://instagram.com/${barber.handle.replace("@", "")}`}
-                target="_blank"
-                rel="noreferrer"
-                className={`mt-5 inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold ${accentColor}`}
-              >
-                <Instagram className="h-4 w-4" />
-                {barber.handle}
-              </a>
             </div>
           );
         })}

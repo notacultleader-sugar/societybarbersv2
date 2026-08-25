@@ -21,16 +21,14 @@ function ContactPage() {
 
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
-      {/* Option E — banner card with the title over a scrim */}
-      <header className="relative mb-8 h-52 overflow-hidden rounded-2xl bg-surface glow-border">
+      <header className="relative mb-8 -mx-4 px-4">
         <img
           src={astronaut.url}
           alt=""
           aria-hidden
-          className="absolute inset-0 h-full w-full object-cover object-[70%_15%]"
+          className="pointer-events-none absolute -top-10 right-0 h-56 w-auto object-contain object-right-top opacity-80 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
         />
-        <div className="absolute inset-0 bg-gradient-to-tr from-background via-background/70 to-transparent" />
-        <div className="absolute bottom-0 left-0 p-5">
+        <div className="relative max-w-[62%] pt-6">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-gold">
             The Signal
           </p>

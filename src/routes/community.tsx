@@ -20,15 +20,14 @@ function CommunityPage() {
 
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
-      {/* Option C — ghost watermark behind the title */}
-      <header className="relative mb-8 overflow-hidden pt-4">
+      <header className="relative mb-8 -mx-4 px-4">
         <img
           src={astronaut.url}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -right-12 -top-8 h-64 w-auto -rotate-6 object-contain opacity-30 blur-[0.5px]"
+          className="pointer-events-none absolute -top-10 right-0 h-56 w-auto object-contain object-right-top opacity-80 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
         />
-        <div className="relative">
+        <div className="relative max-w-[62%] pt-6">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
             The Transmission
           </p>

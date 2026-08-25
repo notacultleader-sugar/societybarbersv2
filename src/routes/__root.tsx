@@ -172,7 +172,7 @@ function BottomNav() {
   const tabs = [
     { to: "/", label: "Home", icon: Home },
     { to: "/book", label: "Book", icon: Calendar },
-    { to: "/community", label: "Community", icon: Megaphone },
+    { to: "/community", label: "Transmissions", icon: Megaphone },
     { to: "/barbers", label: "Barbers", icon: Users },
     { to: "/contact", label: "Contact", icon: Phone },
     { to: "/account", label: "Account", icon: UserRound },

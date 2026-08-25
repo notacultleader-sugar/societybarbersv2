@@ -59,7 +59,7 @@ function ContactPage() {
 
         <div className="rounded-2xl bg-surface p-4">
           <a
-            href="https://maps.google.com/?q=Maple+Bay+Hall+Duncan+BC"
+            href="https://maps.google.com/?q=963+Herd+Rd+Maple+Bay+BC"
             target="_blank"
             rel="noreferrer"
             className="flex items-start gap-4"
@@ -69,7 +69,7 @@ function ContactPage() {
             </div>
             <div>
               <p className="font-display text-lg font-semibold text-white">Maple Bay Hall</p>
-              <p className="text-sm text-muted-foreground">Maple Bay, BC</p>
+              <p className="text-sm text-muted-foreground">963 Herd Rd</p>
               <p className={`mt-1 text-xs ${mapleBayOpen ? "text-neon-cyan" : "text-muted-foreground"}`}>
                 {mapleBayOpen ? "Open now" : "Closed now"}
               </p>

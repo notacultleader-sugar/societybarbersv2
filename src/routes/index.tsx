@@ -137,8 +137,10 @@ function HomeDashboard() {
           <div className="relative mb-3 inline-flex rounded-xl bg-black/30 p-2.5 backdrop-blur-sm">
             <Instagram className="h-5 w-5" />
           </div>
-          <h3 className="relative font-display text-lg font-semibold uppercase" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.7)' }}>DUNCAN</h3>
-          <p className="relative mt-1 text-xs text-white/90" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}>@societybarbers</p>
+          <div className="relative inline-block rounded-lg bg-black/40 px-2 py-1 backdrop-blur-sm">
+            <h3 className="font-display text-lg font-semibold uppercase" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}>DUNCAN</h3>
+            <p className="mt-0.5 text-xs text-white/90" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>@societybarbers</p>
+          </div>
         </a>
 
         {/* Instagram — Maple Bay */}
@@ -157,8 +159,10 @@ function HomeDashboard() {
           <div className="relative mb-3 inline-flex rounded-xl bg-black/30 p-2.5 backdrop-blur-sm">
             <Instagram className="h-5 w-5" />
           </div>
-          <h3 className="relative font-display text-lg font-semibold uppercase" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.7)' }}>MAPLE BAY</h3>
-          <p className="relative mt-1 text-xs text-white/90" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}>@societyatthehall</p>
+          <div className="relative inline-block rounded-lg bg-black/40 px-2 py-1 backdrop-blur-sm">
+            <h3 className="font-display text-lg font-semibold uppercase" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}>MAPLE BAY</h3>
+            <p className="mt-0.5 text-xs text-white/90" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>@societyatthehall</p>
+          </div>
         </a>
 
         {/* Contact */}

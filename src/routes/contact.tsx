@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import astronaut from "@/assets/astronaut.png.asset.json";
 import { MapPin, Phone, Mail, Clock, Instagram, ExternalLink } from "lucide-react";
 import { DUNCAN_HOURS, MAPLE_BAY_HOURS, isLocationOpen } from "@/lib/hours";
 

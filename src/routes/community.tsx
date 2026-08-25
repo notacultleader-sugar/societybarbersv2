@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import astronaut from "@/assets/astronaut.png.asset.json";
 import { CalendarOff, Sparkles } from "lucide-react";
 import { getNextStatHoliday } from "@/lib/holidays";
 

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import astronaut from "@/assets/astronaut.png.asset.json";
 import { Clock, ExternalLink, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/book")({

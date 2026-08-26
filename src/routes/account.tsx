@@ -35,7 +35,7 @@ const links = [
     className: "bg-primary text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]",
   },
   {
-    href: "https://www.fresha.com/account/appointments",
+    href: "https://www.fresha.com/activity?pId=3065198",
     title: "My appointments",
     subtitle: "Upcoming and past visits",
     icon: CalendarCheck,

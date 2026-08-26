@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
 import duncanShopLogo from "@/assets/duncan_shop_2.png.asset.json";
 import mapleBayLogo from "@/assets/maple_bay.png.asset.json";
+import { openInAppBrowser } from "@/lib/browser";
 import {
   Calendar,
   Users,
@@ -50,8 +51,12 @@ function HomeDashboard() {
       {/* Bento grid */}
       <section className="grid grid-cols-2 gap-3">
         {/* Book now — large tile */}
-        <Link
-          to="/book"
+        <a
+          href="https://www.fresha.com/providers/society-barbers-mfk1wznr?share=true&pId=3065198&allOffer=true&menu=true"
+          onClick={(event) => {
+            event.preventDefault();
+            openInAppBrowser(event.currentTarget.href);
+          }}
           className="group relative col-span-2 overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-primary/70 p-5 text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]"
         >
           <div className="relative z-10 flex items-center justify-between">
@@ -67,7 +72,7 @@ function HomeDashboard() {
             </div>
           </div>
           <ArrowRight className="relative z-10 mt-4 h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </Link>
+        </a>
 
         {/* Community */}
         <Link

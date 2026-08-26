@@ -43,7 +43,7 @@ const links = [
     className: "bg-surface text-white",
   },
   {
-    href: "https://www.fresha.com/account/memberships",
+    href: "https://www.fresha.com/activity?pId=3065198&tab=memberships",
     title: "My memberships",
     subtitle: "Plan details and remaining visits",
     icon: Star,

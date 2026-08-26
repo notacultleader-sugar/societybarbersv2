@@ -23,7 +23,7 @@ export const Route = createFileRoute("/account")({
   component: AccountPage,
 });
 
-const FRESHA_LOGIN = "https://www.fresha.com/account/login";
+const FRESHA_LOGIN = "https://www.fresha.com/auth?pId=3065198";
 
 const links = [
   {

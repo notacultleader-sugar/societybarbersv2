@@ -8,11 +8,16 @@ workflows:
       xcode: latest
       groups:
         - app_store_connect
+      ios_signing:
+        distribution_type: app_store
+        bundle_id: com.thesocietybarbers.app
     scripts:
       - name: Install dependencies
         script: npm ci
       - name: Build web app and sync Capacitor
         script: npm run build:mobile
+      - name: Set up signing profiles
+        script: xcode-project use-profiles
       - name: Build IPA
         script: xcode-project build-ipa --project "ios/App/App.xcodeproj" --scheme "App"
     artifacts:

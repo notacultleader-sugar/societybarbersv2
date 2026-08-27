@@ -106,7 +106,7 @@ function HomeDashboard() {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <a
-              href="https://maps.google.com/?q=191+Kenneth+St+Duncan+BC"
+              href="https://maps.google.com/?q=Society+Barbers+191+Kenneth+St+Duncan+BC"
               target="_blank"
               rel="noreferrer"
               className="rounded-xl bg-background p-3 text-sm text-white"
@@ -115,7 +115,7 @@ function HomeDashboard() {
               <p className="mt-1 text-muted-foreground">191 Kenneth St</p>
             </a>
             <a
-              href="https://maps.google.com/?q=Maple+Bay+Hall+Duncan+BC"
+              href="https://maps.google.com/?q=Society+Barbers+963+Herd+Rd+North+Cowichan+BC"
               target="_blank"
               rel="noreferrer"
               className="rounded-xl bg-background p-3 text-sm text-white"

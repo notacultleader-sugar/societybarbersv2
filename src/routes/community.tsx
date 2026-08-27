@@ -1,33 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import astronaut from "@/assets/astronaut.png.asset.json";
-import { CalendarOff, Instagram as InstagramIcon, Sparkles } from "lucide-react";
+import promoTile1 from "@/assets/promo-tile-1.jpg";
+import promoTile2 from "@/assets/promo-tile-2.jpg";
+import promoTile3 from "@/assets/promo-tile-3.jpg";
+import { CalendarOff, Sparkles } from "lucide-react";
 import { getNextStatHoliday } from "@/lib/holidays";
-import { getInstagramFeed } from "@/lib/instagram.functions";
-import { openInAppBrowser } from "@/lib/browser";
 
-const instagramQueryOptions = queryOptions({
-  queryKey: ["instagram-feed"],
-  queryFn: () => getInstagramFeed(),
-  staleTime: 5 * 60 * 1000,
-});
+const PROPAGANDA_TILES = [
+  { id: "obey", src: promoTile1, alt: "OBEY — Society Barbers" },
+  { id: "consume", src: promoTile2, alt: "CONSUME — Society Barbers" },
+  { id: "stay-fresh", src: promoTile3, alt: "STAY FRESH — Society Barbers" },
+];
 
 export const Route = createFileRoute("/community")({
   head: () => ({
     meta: [
-      { title: "Community — Society Barbers" },
-      { name: "description", content: "Events, announcements, and community board from The Society Barbers." },
-      { property: "og:title", content: "Community — Society Barbers" },
-      { property: "og:description", content: "Events, announcements, and community board from The Society Barbers." },
+      { title: "Transmissions — Society Barbers" },
+      { name: "description", content: "Society Barbers transmissions, announcements, and community updates." },
+      { property: "og:title", content: "Transmissions — Society Barbers" },
+      { property: "og:description", content: "Society Barbers transmissions, announcements, and community updates." },
     ],
   }),
-  loader: ({ context }) => context.queryClient.ensureQueryData(instagramQueryOptions),
   component: CommunityPage,
 });
 
 function CommunityPage() {
   const holiday = getNextStatHoliday();
-  const { data: posts = [] } = useSuspenseQuery(instagramQueryOptions);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setOffset((o) => (o + 1) % PROPAGANDA_TILES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
@@ -73,50 +80,41 @@ function CommunityPage() {
       <section className="rounded-2xl bg-surface p-5 glow-border">
         <div className="mb-4 flex items-center gap-3">
           <div className="rounded-xl bg-neon/15 p-2.5 text-neon">
-            <InstagramIcon className="h-5 w-5" />
+            <Sparkles className="h-5 w-5" />
           </div>
           <div>
             <span className="block text-xs font-semibold uppercase tracking-widest text-neon">
-              Latest feed
+              Latest transmissions
             </span>
-            <span className="block text-base font-semibold text-white">@societybarbers</span>
+            <span className="block text-base font-semibold text-white">Society propaganda</span>
           </div>
         </div>
 
         <div className="grid grid-cols-3 gap-2">
-          {posts.length > 0
-            ? posts.slice(0, 3).map((post) => (
-                <button
-                  key={post.id}
-                  type="button"
-                  onClick={() => openInAppBrowser(post.permalink)}
-                  className="relative aspect-square overflow-hidden rounded-xl bg-surface-elevated"
-                >
+          {PROPAGANDA_TILES.map((_, slotIndex) => (
+            <div
+              key={slotIndex}
+              className="relative aspect-square overflow-hidden rounded-xl bg-surface-elevated"
+            >
+              {PROPAGANDA_TILES.map((tile, imageIndex) => {
+                const isActive = (slotIndex + offset) % PROPAGANDA_TILES.length === imageIndex;
+                return (
                   <img
-                    src={post.thumbnailUrl}
-                    alt={post.caption ?? "Instagram post"}
-                    className="h-full w-full object-cover"
+                    key={tile.id}
+                    src={tile.src}
+                    alt={tile.alt}
                     loading="lazy"
+                    width={1024}
+                    height={1024}
+                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out ${
+                      isActive ? "opacity-100" : "opacity-0"
+                    }`}
                   />
-                </button>
-              ))
-            : [0, 1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="flex aspect-square items-center justify-center rounded-xl bg-surface-elevated text-muted-foreground/40"
-                >
-                  <Sparkles className="h-5 w-5" />
-                </div>
-              ))}
+                );
+              })}
+            </div>
+          ))}
         </div>
-
-        <button
-          type="button"
-          onClick={() => openInAppBrowser("https://www.instagram.com/societybarbers/")}
-          className="mt-4 w-full rounded-xl border border-neon/40 py-3 text-sm font-semibold uppercase tracking-widest text-neon"
-        >
-          View on Instagram
-        </button>
       </section>
     </main>
   );

@@ -18,12 +18,19 @@ export default defineConfig({
     {
       name: "native-local-assets",
       enforce: "pre" as const,
+      resolveId(source: string, importer: string | undefined) {
+        if (!source.endsWith(".asset.json")) return null;
+        const resolved = importer
+          ? fileURLToPath(new URL(source, `file://${importer}`))
+          : source;
+        return `\0native-asset:${resolved}`;
+      },
       load(id: string) {
-        const file = id.split("?")[0];
-        if (!file.endsWith(".asset.json")) return null;
-        const meta = JSON.parse(fs.readFileSync(file, "utf8"));
+        if (!id.startsWith("\0native-asset:")) return null;
+        const meta = JSON.parse(fs.readFileSync(id.slice("\0native-asset:".length), "utf8"));
         return `export default ${JSON.stringify({ ...meta, url: `/native/${meta.original_filename}` })}`;
       },
+    },
     },
 tsConfigPaths({ projects: ["./tsconfig.json"] }), react(), tailwindcss()],
   resolve: {

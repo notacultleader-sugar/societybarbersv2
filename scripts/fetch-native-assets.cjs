@@ -6,9 +6,7 @@ const path = require("path");
 const root = path.join(__dirname, "..");
 const assetsDir = path.join(root, "src", "assets");
 const outDir = path.join(root, "public", "native");
-const projectJson = JSON.parse(fs.readFileSync(path.join(root, ".lovable", "project.json"), "utf8"));
-const projectId = projectJson.id ?? projectJson.project_id;
-const origin = process.env.LOVABLE_ASSET_ORIGIN ?? `https://id-preview--${projectId}.lovable.app`;
+const origin = process.env.LOVABLE_ASSET_ORIGIN ?? "http://localhost:8080";
 
 async function main() {
   fs.mkdirSync(outDir, { recursive: true });

@@ -58,7 +58,7 @@ function BookPage() {
 
       <section className="grid gap-3">
         <a
-          href="https://squareup.com/appointments/book/thesocietybarbers"
+          href="https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198"
           target="_blank"
           rel="noreferrer"
           className="flex items-center justify-between rounded-2xl bg-primary p-5 text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]"

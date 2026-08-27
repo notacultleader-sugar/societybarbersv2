@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
 import { MapPin, Phone, Mail, Clock, Instagram, ExternalLink } from "lucide-react";
-import { DUNCAN_HOURS, MAPLE_BAY_HOURS, isLocationOpen } from "@/lib/hours";
+
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -16,8 +16,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  const duncanOpen = isLocationOpen(DUNCAN_HOURS);
-  const mapleBayOpen = isLocationOpen(MAPLE_BAY_HOURS);
+
 
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
@@ -40,15 +39,6 @@ function ContactPage() {
 
       <section className="mb-5 grid gap-3">
         <div className="relative rounded-2xl bg-surface p-4">
-          <span
-            className={`absolute right-4 top-4 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest ${
-              duncanOpen
-                ? "bg-neon/15 text-neon"
-                : "bg-muted text-muted-foreground"
-            }`}
-          >
-            {duncanOpen ? "Open now" : "Closed now"}
-          </span>
           <a
             href="https://maps.google.com/?q=191+Kenneth+St+Duncan+BC"
             target="_blank"
@@ -80,15 +70,6 @@ function ContactPage() {
         </div>
 
         <div className="relative rounded-2xl bg-surface p-4">
-          <span
-            className={`absolute right-4 top-4 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest ${
-              mapleBayOpen
-                ? "bg-neon-cyan/15 text-neon-cyan"
-                : "bg-muted text-muted-foreground"
-            }`}
-          >
-            {mapleBayOpen ? "Open now" : "Closed now"}
-          </span>
           <a
             href="https://maps.google.com/?q=963+Herd+Rd+Maple+Bay+BC"
             target="_blank"

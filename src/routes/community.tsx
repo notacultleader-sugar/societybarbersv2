@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
-import { CalendarOff, Sparkles } from "lucide-react";
+import { CalendarOff, Instagram, Sparkles } from "lucide-react";
 import { getNextStatHoliday } from "@/lib/holidays";
+import { useInstagramFeed } from "@/lib/instagram";
+import { openInAppBrowser } from "@/lib/browser";
 
 export const Route = createFileRoute("/community")({
   head: () => ({
@@ -17,6 +19,7 @@ export const Route = createFileRoute("/community")({
 
 function CommunityPage() {
   const holiday = getNextStatHoliday();
+  const posts = useInstagramFeed(3);
 
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
@@ -37,18 +40,8 @@ function CommunityPage() {
         </div>
       </header>
 
-      <section className="mb-4 rounded-2xl bg-surface p-8 text-center glow-border">
-        <div className="mx-auto mb-4 w-fit rounded-xl bg-neon/15 p-3 text-neon">
-          <Sparkles className="h-6 w-6" />
-        </div>
-        <h2 className="font-display text-2xl font-semibold text-white">Coming soon</h2>
-        <p className="mx-auto mt-2 max-w-xs text-sm text-muted-foreground">
-          Events, nights out, and community happenings are on the way. Check back soon.
-        </p>
-      </section>
-
       {holiday && (
-        <section className="rounded-2xl bg-surface-elevated p-5">
+        <section className="mb-4 rounded-2xl bg-surface-elevated p-5">
           <div className="mb-3 flex items-center gap-3">
             <div className="rounded-xl bg-gold/15 p-2.5 text-gold">
               <CalendarOff className="h-5 w-5" />
@@ -68,6 +61,55 @@ function CommunityPage() {
           </p>
         </section>
       )}
+
+      <section className="rounded-2xl bg-surface p-5 glow-border">
+        <div className="mb-4 flex items-center gap-3">
+          <div className="rounded-xl bg-neon/15 p-2.5 text-neon">
+            <Instagram className="h-5 w-5" />
+          </div>
+          <div>
+            <span className="block text-xs font-semibold uppercase tracking-widest text-neon">
+              Latest feed
+            </span>
+            <span className="block text-base font-semibold text-white">@societybarbers</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-2">
+          {posts.length > 0
+            ? posts.slice(0, 3).map((post) => (
+                <button
+                  key={post.id}
+                  type="button"
+                  onClick={() => openInAppBrowser(post.permalink)}
+                  className="relative aspect-square overflow-hidden rounded-xl bg-surface-elevated"
+                >
+                  <img
+                    src={post.thumbnailUrl}
+                    alt={post.caption ?? "Instagram post"}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </button>
+              ))
+            : [0, 1, 2].map((i) => (
+                <div
+                  key={i}
+                  className="flex aspect-square items-center justify-center rounded-xl bg-surface-elevated text-muted-foreground/40"
+                >
+                  <Sparkles className="h-5 w-5" />
+                </div>
+              ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => openInAppBrowser("https://www.instagram.com/societybarbers/")}
+          className="mt-4 w-full rounded-xl border border-neon/40 py-3 text-sm font-semibold uppercase tracking-widest text-neon"
+        >
+          View on Instagram
+        </button>
+      </section>
     </main>
   );
 }

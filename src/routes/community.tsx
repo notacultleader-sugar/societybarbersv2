@@ -86,7 +86,7 @@ function CommunityPage() {
             <span className="block text-xs font-semibold uppercase tracking-widest text-neon">
               Latest transmissions
             </span>
-            <span className="block text-base font-semibold text-white">Society propaganda</span>
+            <span className="block text-base font-semibold text-white uppercase">SOCIETY PROPAGANDA</span>
           </div>
         </div>
 

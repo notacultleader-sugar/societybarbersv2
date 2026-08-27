@@ -21,12 +21,23 @@ workflows:
           test -n "$APP_STORE_CONNECT_KEY_IDENTIFIER" || { echo "Missing APP_STORE_CONNECT_KEY_IDENTIFIER"; exit 1; }
           test -n "$APP_STORE_CONNECT_PRIVATE_KEY" || { echo "Missing APP_STORE_CONNECT_PRIVATE_KEY"; exit 1; }
           test -n "$CERTIFICATE_PRIVATE_KEY" || { echo "Missing CERTIFICATE_PRIVATE_KEY"; exit 1; }
+          printf '%s\n' "$CERTIFICATE_PRIVATE_KEY" > "$CM_BUILD_DIR/certificate_private_key.pem"
+          openssl rsa -in "$CM_BUILD_DIR/certificate_private_key.pem" -check -noout >/dev/null 2>&1 || {
+            echo "CERTIFICATE_PRIVATE_KEY must contain the separate RSA-2048 PEM key, not the App Store Connect .p8 key"
+            exit 1
+          }
+          KEY_BITS="$(openssl rsa -in "$CM_BUILD_DIR/certificate_private_key.pem" -text -noout 2>/dev/null | sed -n 's/.*Private-Key: (\([0-9][0-9]*\) bit.*/\1/p' | head -1)"
+          test "$KEY_BITS" = "2048" || {
+            echo "CERTIFICATE_PRIVATE_KEY is RSA-${KEY_BITS:-unknown}; Apple requires RSA-2048"
+            exit 1
+          }
+          echo "Signing certificate key is valid RSA-2048"
       - name: Set up signing profiles (create if missing)
         script: |
           keychain initialize
           app-store-connect fetch-signing-files "$BUNDLE_ID" \
             --type IOS_APP_STORE \
-            --certificate-key @env:CERTIFICATE_PRIVATE_KEY \
+            --certificate-key @file:"$CM_BUILD_DIR/certificate_private_key.pem" \
             --strict-match-identifier \
             --create
           keychain add-certificates

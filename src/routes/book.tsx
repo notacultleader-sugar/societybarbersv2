@@ -76,7 +76,7 @@ function BookPage() {
         >
           <div>
             <p className="font-display text-lg font-semibold">Call Downtown Duncan</p>
-            <p className="text-sm text-muted-foreground">(250) 597-0155</p>
+            <p className="text-sm text-muted-foreground">250-597-0155</p>
           </div>
           <Phone className="h-5 w-5 text-gold" />
         </a>

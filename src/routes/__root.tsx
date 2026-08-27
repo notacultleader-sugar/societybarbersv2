@@ -146,8 +146,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <BootSplash />
       <div className="relative flex min-h-screen flex-col bg-background">
         {/* Angled, translucent logo watermark */}
+        <div
         <div
           aria-hidden="true"
           className="pointer-events-none fixed inset-0 z-0 flex items-center justify-center overflow-hidden"

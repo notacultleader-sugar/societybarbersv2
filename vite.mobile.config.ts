@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 
 import tailwindcss from "@tailwindcss/vite";
@@ -11,7 +12,20 @@ export default defineConfig({
   base: "./",
   root: fileURLToPath(new URL("./mobile", import.meta.url)),
   publicDir: fileURLToPath(new URL("./public", import.meta.url)),
-  plugins: [tsConfigPaths({ projects: ["./tsconfig.json"] }), react(), tailwindcss()],
+  plugins: [
+    // Rewrite Lovable-hosted asset manifests to files bundled inside the app,
+    // so images work offline in the native WebView.
+    {
+      name: "native-local-assets",
+      enforce: "pre" as const,
+      load(id: string) {
+        const file = id.split("?")[0];
+        if (!file.endsWith(".asset.json")) return null;
+        const meta = JSON.parse(fs.readFileSync(file, "utf8"));
+        return `export default ${JSON.stringify({ ...meta, url: `/native/${meta.original_filename}` })}`;
+      },
+    },
+tsConfigPaths({ projects: ["./tsconfig.json"] }), react(), tailwindcss()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

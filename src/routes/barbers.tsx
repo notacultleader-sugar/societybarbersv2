@@ -60,6 +60,7 @@ const barbers: Barber[] = [
     nickname: "Maternity Leave",
     image: "https://static.wixstatic.com/media/47ba99_26e6ef6b82504e0bad0e53a83f84f634~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8013_PNG.png",
     color: "neon",
+    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198",
   },
   {
     name: "Harry",

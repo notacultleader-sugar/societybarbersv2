@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
-import { CalendarOff, Instagram, Sparkles } from "lucide-react";
+import { CalendarOff, Instagram as InstagramIcon, Sparkles } from "lucide-react";
 import { getNextStatHoliday } from "@/lib/holidays";
 import { useInstagramFeed } from "@/lib/instagram";
 import { openInAppBrowser } from "@/lib/browser";
@@ -65,7 +65,7 @@ function CommunityPage() {
       <section className="rounded-2xl bg-surface p-5 glow-border">
         <div className="mb-4 flex items-center gap-3">
           <div className="rounded-xl bg-neon/15 p-2.5 text-neon">
-            <Instagram className="h-5 w-5" />
+            <InstagramIcon className="h-5 w-5" />
           </div>
           <div>
             <span className="block text-xs font-semibold uppercase tracking-widest text-neon">

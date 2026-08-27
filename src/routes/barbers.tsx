@@ -14,7 +14,17 @@ export const Route = createFileRoute("/barbers")({
   component: BarbersPage,
 });
 
-const barbers = [
+type Barber = {
+  name: string;
+  handle: string;
+  role: string;
+  nickname: string;
+  image: string;
+  color: string;
+  hideBooking?: boolean;
+};
+
+const barbers: Barber[] = [
   {
     name: "Ian",
     handle: "@notacult.leader",

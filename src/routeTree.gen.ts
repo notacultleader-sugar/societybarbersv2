@@ -15,6 +15,7 @@ import { Route as BarbersRouteImport } from './routes/barbers'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/book': typeof BookRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/book': typeof BookRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,12 +79,27 @@ export interface FileRoutesById {
   '/book': typeof BookRoute
   '/community': typeof CommunityRoute
   '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/account' | '/barbers' | '/book' | '/community' | '/contact'
+  fullPaths:
+    | '/'
+    | '/account'
+    | '/barbers'
+    | '/book'
+    | '/community'
+    | '/contact'
+    | '/privacy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/account' | '/barbers' | '/book' | '/community' | '/contact'
+  to:
+    | '/'
+    | '/account'
+    | '/barbers'
+    | '/book'
+    | '/community'
+    | '/contact'
+    | '/privacy'
   id:
     | '__root__'
     | '/'
@@ -85,6 +108,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/community'
     | '/contact'
+    | '/privacy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,6 +118,7 @@ export interface RootRouteChildren {
   BookRoute: typeof BookRoute
   CommunityRoute: typeof CommunityRoute
   ContactRoute: typeof ContactRoute
+  PrivacyRoute: typeof PrivacyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -140,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -150,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   BookRoute: BookRoute,
   CommunityRoute: CommunityRoute,
   ContactRoute: ContactRoute,
+  PrivacyRoute: PrivacyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

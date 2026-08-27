@@ -8,22 +8,27 @@ workflows:
       xcode: latest
       groups:
         - app_store_connect
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.thesocietybarbers.app
+      vars:
+        BUNDLE_ID: com.thesocietybarbers.app
     scripts:
       - name: Install dependencies
         script: npm ci
       - name: Build web app and sync Capacitor
         script: npm run build:mobile
+      - name: Verify signing credentials
+        script: |
+          test -n "$APP_STORE_CONNECT_ISSUER_ID" || { echo "Missing APP_STORE_CONNECT_ISSUER_ID"; exit 1; }
+          test -n "$APP_STORE_CONNECT_KEY_IDENTIFIER" || { echo "Missing APP_STORE_CONNECT_KEY_IDENTIFIER"; exit 1; }
+          test -n "$APP_STORE_CONNECT_PRIVATE_KEY" || { echo "Missing APP_STORE_CONNECT_PRIVATE_KEY"; exit 1; }
+          test -n "$CERTIFICATE_PRIVATE_KEY" || { echo "Missing CERTIFICATE_PRIVATE_KEY"; exit 1; }
       - name: Set up signing profiles (create if missing)
         script: |
-          openssl genrsa -out /tmp/cert_private_key.pem 2048
-          export ISSUER_ID="$APP_STORE_CONNECT_ISSUER_ID"
-          export KEY_ID="$APP_STORE_CONNECT_KEY_IDENTIFIER"
-          export PRIVATE_KEY="$APP_STORE_CONNECT_PRIVATE_KEY"
-          export CERTIFICATE_PRIVATE_KEY="/tmp/cert_private_key.pem"
-          app-store-connect fetch-signing-files "com.thesocietybarbers.app" --type IOS_APP_STORE --create
+          keychain initialize
+          app-store-connect fetch-signing-files "$BUNDLE_ID" \
+            --type IOS_APP_STORE \
+            --create
+          keychain add-certificates
+          xcode-project use-profiles
       - name: Build IPA
         script: xcode-project build-ipa --project "ios/App/App.xcodeproj" --scheme "App"
     artifacts:

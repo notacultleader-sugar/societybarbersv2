@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
-import { CalendarOff, Sparkles } from "lucide-react";
+import { CalendarOff, Instagram, Sparkles } from "lucide-react";
 import { getNextStatHoliday } from "@/lib/holidays";
+import { useInstagramFeed } from "@/lib/instagram";
+import { openInAppBrowser } from "@/lib/browser";
 
 export const Route = createFileRoute("/community")({
   head: () => ({

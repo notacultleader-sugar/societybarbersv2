@@ -68,6 +68,7 @@ const barbers: Barber[] = [
     nickname: "Harry",
     image: "https://static.wixstatic.com/media/47ba99_8574e258d77547d4a053cf8339a85972~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8770_PNG.png",
     color: "neon-cyan",
+    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168488&eid=5527230&share=true&pId=3065198",
   },
   {
     name: "Alex",

@@ -27,11 +27,13 @@ export default defineConfig({
         } else if (source.startsWith(".") && importer) {
           resolved = fileURLToPath(new URL(source, `file://${importer}`));
         }
-        return `\0native-asset:${resolved}`;
+        // Virtual id must not end in .json or Vite's JSON plugin re-parses it.
+        return `\0native-asset:${resolved}.mjs`;
       },
       load(id: string) {
         if (!id.startsWith("\0native-asset:")) return null;
-        const meta = JSON.parse(fs.readFileSync(id.slice("\0native-asset:".length), "utf8"));
+        const file = id.slice("\0native-asset:".length).replace(/\.mjs$/, "");
+        const meta = JSON.parse(fs.readFileSync(file, "utf8"));
         return `export default ${JSON.stringify({ ...meta, url: `/native/${meta.original_filename}` })}`;
       },
     },

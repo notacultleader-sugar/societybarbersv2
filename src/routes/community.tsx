@@ -19,6 +19,7 @@ export const Route = createFileRoute("/community")({
 
 function CommunityPage() {
   const holiday = getNextStatHoliday();
+  const posts = useInstagramFeed(3);
 
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">

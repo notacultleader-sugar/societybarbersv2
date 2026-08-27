@@ -1,9 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import astronaut from "@/assets/astronaut.png.asset.json";
 import { CalendarOff, Instagram as InstagramIcon, Sparkles } from "lucide-react";
 import { getNextStatHoliday } from "@/lib/holidays";
-import { useInstagramFeed } from "@/lib/instagram";
+import { getInstagramFeed } from "@/lib/instagram.functions";
 import { openInAppBrowser } from "@/lib/browser";
+
+const instagramQueryOptions = queryOptions({
+  queryKey: ["instagram-feed"],
+  queryFn: () => getInstagramFeed(),
+  staleTime: 5 * 60 * 1000,
+});
 
 export const Route = createFileRoute("/community")({
   head: () => ({
@@ -14,12 +21,13 @@ export const Route = createFileRoute("/community")({
       { property: "og:description", content: "Events, announcements, and community board from The Society Barbers." },
     ],
   }),
+  loader: ({ context }) => context.queryClient.ensureQueryData(instagramQueryOptions),
   component: CommunityPage,
 });
 
 function CommunityPage() {
   const holiday = getNextStatHoliday();
-  const posts = useInstagramFeed(3);
+  const { data: posts = [] } = useSuspenseQuery(instagramQueryOptions);
 
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">

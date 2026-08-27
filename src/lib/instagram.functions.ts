@@ -13,25 +13,8 @@ export const getInstagramFeed = createServerFn({ method: "GET" }).handler(
     if (!token) return [];
 
     try {
-      // Find the Instagram Business Account linked through the user's Facebook Pages.
-      const meRes = await fetch(
-        `https://graph.facebook.com/v21.0/me?fields=accounts{instagram_business_account}&access_token=${encodeURIComponent(token)}`,
-      );
-      if (!meRes.ok) throw new Error("Could not load Facebook pages");
-
-      const meJson = (await meRes.json()) as {
-        accounts?: {
-          data?: Array<{ instagram_business_account?: { id: string } }>;
-        };
-      };
-
-      const igAccount = meJson.accounts?.data?.find(
-        (page) => page.instagram_business_account,
-      )?.instagram_business_account;
-      if (!igAccount?.id) throw new Error("No Instagram business account linked");
-
       const mediaRes = await fetch(
-        `https://graph.facebook.com/v21.0/${igAccount.id}/media?fields=id,permalink,caption,thumbnail_url,media_url&limit=3&access_token=${encodeURIComponent(token)}`,
+        `https://graph.instagram.com/me/media?fields=id,permalink,caption,thumbnail_url,media_url&limit=3&access_token=${encodeURIComponent(token)}`,
       );
       if (!mediaRes.ok) throw new Error("Could not load Instagram media");
 
@@ -62,5 +45,6 @@ export const getInstagramFeed = createServerFn({ method: "GET" }).handler(
     }
   },
 );
+
 
 

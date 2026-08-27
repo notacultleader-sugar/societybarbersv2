@@ -3,7 +3,7 @@
   "short_name": "Society",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0815",
+  "background_color": "#000000",
   "theme_color": "#0a0815",
   "orientation": "portrait",
   "icons": [

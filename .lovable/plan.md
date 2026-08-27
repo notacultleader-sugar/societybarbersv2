@@ -2,13 +2,16 @@
 
 ## What we will build
 
-Replace the native app icon with a new design that combines the Society Barbers logo and the "look good" astronaut image, and replace the static splash screen with an in-app animated DOS/CRT terminal loader in the *They Live* dystopian theme.
+Replace the native app icon with a new design that combines the Society Barbers logo with the uploaded "LOOK GOOD / OBEY" propaganda poster artwork as the background, and replace the static splash screen with an in-app animated DOS/CRT terminal loader in the *They Live* dystopian theme.
 
 ## Plan
 
 ### 1. Generate new app icon source
-- Create a 1024x1024 source image (`assets/icon.png`) combining the Society Barbers logo with the astronaut/look-good artwork in the background, on a black cyberpunk canvas.
-- Keep it readable at small sizes and avoid fine text that will blur on a phone home screen.
+- Use the uploaded propaganda poster (LOOK GOOD / OBEY barbershop art) as the icon background, cropped square and darkened slightly so it reads as a backdrop.
+- Composite the Society Barbers logo on top, centered, at full strength.
+- Save as a 1024x1024 source image at `assets/icon.png`.
+- Keep it readable at small sizes — no fine print, strong contrast between logo and background.
+
 
 ### 2. Build the animated DOS splash component
 - Create a full-screen web splash component that runs for 3–5 seconds before revealing the app.

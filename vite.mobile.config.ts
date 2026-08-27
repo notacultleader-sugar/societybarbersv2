@@ -20,9 +20,13 @@ export default defineConfig({
       enforce: "pre" as const,
       resolveId(source: string, importer: string | undefined) {
         if (!source.endsWith(".asset.json")) return null;
-        const resolved = importer
-          ? fileURLToPath(new URL(source, `file://${importer}`))
-          : source;
+        const srcDir = fileURLToPath(new URL("./src/", import.meta.url));
+        let resolved = source;
+        if (source.startsWith("@/")) {
+          resolved = srcDir + source.slice(2);
+        } else if (source.startsWith(".") && importer) {
+          resolved = fileURLToPath(new URL(source, `file://${importer}`));
+        }
         return `\0native-asset:${resolved}`;
       },
       load(id: string) {
@@ -31,8 +35,10 @@ export default defineConfig({
         return `export default ${JSON.stringify({ ...meta, url: `/native/${meta.original_filename}` })}`;
       },
     },
-    },
-tsConfigPaths({ projects: ["./tsconfig.json"] }), react(), tailwindcss()],
+    tsConfigPaths({ projects: ["../tsconfig.json"], ignoreConfigErrors: true }),
+    react(),
+    tailwindcss(),
+  ],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

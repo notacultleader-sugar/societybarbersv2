@@ -207,28 +207,34 @@ function BarbersPage() {
                 </div>
               </div>
 
-              <div className="mt-5 flex items-center justify-between gap-3">
-                <a
-                  href={`https://instagram.com/${barber.handle.replace("@", "")}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold ${accentColor}`}
-                >
-                  <Instagram className="h-4 w-4" />
-                  {barber.handle}
-                </a>
-                {index < 11 ? (
-                  <a
-                    href="https://squareup.com/appointments/book/thesocietybarbers"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 bg-background text-xs font-bold uppercase leading-none tracking-wide ${accentColor}`}
-                  >
-                    <span>BOOK</span>
-                    <span className="mt-0.5">NOW</span>
-                  </a>
-                ) : null}
-              </div>
+              {barber.handle || (index < 11 && !barber.hideBooking) ? (
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  {barber.handle ? (
+                    <a
+                      href={`https://instagram.com/${barber.handle.replace("@", "")}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold ${accentColor}`}
+                    >
+                      <Instagram className="h-4 w-4" />
+                      {barber.handle}
+                    </a>
+                  ) : (
+                    <span />
+                  )}
+                  {index < 11 && !barber.hideBooking ? (
+                    <a
+                      href="https://squareup.com/appointments/book/thesocietybarbers"
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 bg-background text-xs font-bold uppercase leading-none tracking-wide ${accentColor}`}
+                    >
+                      <span>BOOK</span>
+                      <span className="mt-0.5">NOW</span>
+                    </a>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           );
         })}

@@ -22,6 +22,7 @@ type Barber = {
   image: string;
   color: string;
   hideBooking?: boolean;
+  bookingUrl?: string;
 };
 
 const barbers: Barber[] = [

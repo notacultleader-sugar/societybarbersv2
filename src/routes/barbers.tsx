@@ -225,7 +225,7 @@ function BarbersPage() {
                   )}
                   {index < 11 && !barber.hideBooking ? (
                     <a
-                      href="https://squareup.com/appointments/book/thesocietybarbers"
+                      href={barber.bookingUrl || "https://squareup.com/appointments/book/thesocietybarbers"}
                       target="_blank"
                       rel="noreferrer"
                       className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 bg-background text-xs font-bold uppercase leading-none tracking-wide ${accentColor}`}

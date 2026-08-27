@@ -26,16 +26,31 @@ workflows:
           keychain initialize
           app-store-connect fetch-signing-files "$BUNDLE_ID" \
             --type IOS_APP_STORE \
+            --certificate-key @env:CERTIFICATE_PRIVATE_KEY \
+            --strict-match-identifier \
             --create
           keychain add-certificates
           xcode-project use-profiles \
             --project "ios/App/App.xcodeproj" \
+            --archive-method app-store \
+            --code-signing-setup-verbose-logging \
             --export-options-plist "$CM_BUILD_DIR/export_options.plist"
+          PROFILE_PATH="$(find "$HOME/Library/Developer/Xcode/UserData/Provisioning Profiles" -name '*.mobileprovision' -print -quit)"
+          test -n "$PROFILE_PATH" || { echo "No App Store provisioning profile was downloaded"; exit 1; }
+          security cms -D -i "$PROFILE_PATH" > "$CM_BUILD_DIR/profile.plist"
+          PROFILE_NAME="$(/usr/libexec/PlistBuddy -c 'Print :Name' "$CM_BUILD_DIR/profile.plist")"
+          TEAM_ID="$(/usr/libexec/PlistBuddy -c 'Print :TeamIdentifier:0' "$CM_BUILD_DIR/profile.plist")"
+          test -n "$PROFILE_NAME" || { echo "Downloaded profile has no name"; exit 1; }
+          test -n "$TEAM_ID" || { echo "Downloaded profile has no team identifier"; exit 1; }
+          printf 'Provisioning profile ready: %s\n' "$PROFILE_NAME"
+          printf 'Development team ready: %s\n' "$TEAM_ID"
+          printf 'PROFILE_NAME=%s\nTEAM_ID=%s\n' "$PROFILE_NAME" "$TEAM_ID" >> "$CM_ENV"
       - name: Build IPA
         script: |
           xcode-project build-ipa \
             --project "ios/App/App.xcodeproj" \
             --scheme "App" \
+            --archive-xcargs "CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM=$TEAM_ID PROVISIONING_PROFILE_SPECIFIER='$PROFILE_NAME' CODE_SIGN_IDENTITY='Apple Distribution'" \
             --export-options-plist "$CM_BUILD_DIR/export_options.plist"
 
     artifacts:

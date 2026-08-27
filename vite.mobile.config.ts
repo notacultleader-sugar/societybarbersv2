@@ -9,7 +9,8 @@ import tsConfigPaths from "vite-tsconfig-paths";
 // The native app has no server, so it cannot use the SSR/hydration entry.
 export default defineConfig({
   base: "./",
-  root: fileURLToPath(new URL("./", import.meta.url)),
+  root: fileURLToPath(new URL("./mobile", import.meta.url)),
+  publicDir: fileURLToPath(new URL("./public", import.meta.url)),
   plugins: [tsConfigPaths({ projects: ["./tsconfig.json"] }), react(), tailwindcss()],
   resolve: {
     alias: {
@@ -18,10 +19,7 @@ export default defineConfig({
     dedupe: ["react", "react-dom", "@tanstack/react-router", "@tanstack/react-query"],
   },
   build: {
-    outDir: "dist/mobile",
+    outDir: fileURLToPath(new URL("./dist/mobile", import.meta.url)),
     emptyOutDir: true,
-    rollupOptions: {
-      input: fileURLToPath(new URL("./mobile/index.html", import.meta.url)),
-    },
   },
 });

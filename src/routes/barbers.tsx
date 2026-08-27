@@ -96,6 +96,7 @@ const barbers: Barber[] = [
     nickname: "Coming Soon",
     image: "https://static.wixstatic.com/media/47ba99_bd611021625844149d4e0f519bfb3264~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8041_PNG.png",
     color: "gold",
+    hideBooking: true,
   },
   {
     name: "David",
@@ -104,7 +105,6 @@ const barbers: Barber[] = [
     nickname: "The Guy with the Beard",
     image: "https://static.wixstatic.com/media/47ba99_748c5df7fe1b452e9a29ea8d053485bd~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8016_PNG.png",
     color: "neon",
-    hideBooking: true,
   },
   {
     name: "Bre",

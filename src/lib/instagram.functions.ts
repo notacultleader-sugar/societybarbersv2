@@ -41,12 +41,18 @@ export const getInstagramFeed = createServerFn({ method: "GET" }).handler(
 
       return (mediaJson.data ?? [])
         .map((raw) => {
-          const item = raw as Partial<Record<keyof InstagramPost, string>>;
+          const item = raw as Partial<{
+            id: string;
+            permalink: string;
+            thumbnail_url: string;
+            media_url: string;
+            caption: string;
+          }>;
           return {
-            id: item["id"] ?? "",
-            permalink: item["permalink"] ?? "",
-            thumbnailUrl: item["thumbnail_url"] ?? item["media_url"] ?? "",
-            ...(item["caption"] ? { caption: item["caption"] } : {}),
+            id: item.id ?? "",
+            permalink: item.permalink ?? "",
+            thumbnailUrl: item.thumbnail_url ?? item.media_url ?? "",
+            ...(item.caption ? { caption: item.caption } : {}),
           } as InstagramPost;
         })
         .filter((p) => Boolean(p.thumbnailUrl));
@@ -56,4 +62,5 @@ export const getInstagramFeed = createServerFn({ method: "GET" }).handler(
     }
   },
 );
+
 

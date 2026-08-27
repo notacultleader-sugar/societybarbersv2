@@ -1,7 +1,7 @@
 {
   "appId": "com.thesocietybarbers.app",
   "appName": "Society Barbers",
-  "webDir": "dist/client",
+  "webDir": "dist/mobile",
   "server": {
     "androidScheme": "https"
   },

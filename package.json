@@ -11,8 +11,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "build:mobile": "bun run build && node scripts/build-capacitor.cjs && npx cap sync",
-    "sync:mobile": "node scripts/build-capacitor.cjs && npx cap sync"
+    "build:mobile": "vite build --config vite.mobile.config.ts && npx cap sync",
+    "sync:mobile": "npx cap sync"
   },
   "overrides": {
     "rolldown": "1.2.1"

@@ -51,7 +51,7 @@ const links = [
     className: "bg-surface text-white",
   },
   {
-    href: "https://www.fresha.com/wallet?pId=3065198",
+    href: "https://www.fresha.com/activity?tab=gift-cards",
     title: "My gift cards",
     subtitle: "Balances and vouchers",
     icon: CreditCard,

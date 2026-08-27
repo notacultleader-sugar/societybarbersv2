@@ -87,7 +87,7 @@ function BookPage() {
         >
           <div>
             <p className="font-display text-lg font-semibold">Call Maple Bay</p>
-            <p className="text-sm text-muted-foreground">(778) 455-CULT</p>
+            <p className="text-sm text-muted-foreground">778-455-2858</p>
           </div>
           <Phone className="h-5 w-5 text-neon-cyan" />
         </a>

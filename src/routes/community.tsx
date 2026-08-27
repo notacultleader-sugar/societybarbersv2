@@ -4,13 +4,33 @@ import astronaut from "@/assets/astronaut.png.asset.json";
 import promoTile1 from "@/assets/promo-tile-1.jpg";
 import promoTile2 from "@/assets/promo-tile-2.jpg";
 import promoTile3 from "@/assets/promo-tile-3.jpg";
-import { CalendarOff, Sparkles } from "lucide-react";
+import promoTile4 from "@/assets/promo-tile-4.jpg";
+import promoTile5 from "@/assets/promo-tile-5.jpg";
+import promoTile6 from "@/assets/promo-tile-6.jpg";
+import promoTile7 from "@/assets/promo-tile-7.jpg";
+import promoTile8 from "@/assets/promo-tile-8.jpg";
+import promoTile9 from "@/assets/promo-tile-9.jpg";
+import promoTile10 from "@/assets/promo-tile-10.jpg";
+import promoTile11 from "@/assets/promo-tile-11.jpg";
+import promoTile12 from "@/assets/promo-tile-12.jpg";
+import promoTile13 from "@/assets/promo-tile-13.jpg";
+import { CalendarOff, Instagram, Sparkles } from "lucide-react";
 import { getNextStatHoliday } from "@/lib/holidays";
 
 const PROPAGANDA_TILES = [
   { id: "obey", src: promoTile1, alt: "OBEY — Society Barbers" },
   { id: "consume", src: promoTile2, alt: "CONSUME — Society Barbers" },
   { id: "stay-fresh", src: promoTile3, alt: "STAY FRESH — Society Barbers" },
+  { id: "no-thoughts", src: promoTile4, alt: "NO THOUGHTS — Society Barbers" },
+  { id: "submit", src: promoTile5, alt: "SUBMIT — Society Barbers" },
+  { id: "look-good", src: promoTile6, alt: "LOOK GOOD — Society Barbers" },
+  { id: "obey-the-chair", src: promoTile7, alt: "OBEY THE CHAIR — Society Barbers" },
+  { id: "consume-freshness", src: promoTile8, alt: "CONSUME FRESHNESS — Society Barbers" },
+  { id: "stay-sharp", src: promoTile9, alt: "STAY SHARP — Society Barbers" },
+  { id: "trust-the-blade", src: promoTile10, alt: "TRUST THE BLADE — Society Barbers" },
+  { id: "follow", src: promoTile11, alt: "FOLLOW — Society Barbers" },
+  { id: "no-independent-cuts", src: promoTile12, alt: "NO INDEPENDENT CUTS — Society Barbers" },
+  { id: "the-society-watches", src: promoTile13, alt: "THE SOCIETY WATCHES — Society Barbers" },
 ];
 
 export const Route = createFileRoute("/community")({
@@ -32,7 +52,7 @@ function CommunityPage() {
   useEffect(() => {
     const timer = setInterval(() => {
       setOffset((o) => (o + 1) % PROPAGANDA_TILES.length);
-    }, 4000);
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 
@@ -115,6 +135,16 @@ function CommunityPage() {
             </div>
           ))}
         </div>
+
+        <a
+          href="https://instagram.com/societybarbers"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-neon/30 bg-background py-3 text-sm font-bold uppercase tracking-wide text-neon transition-colors hover:bg-neon/10"
+        >
+          <Instagram className="h-5 w-5" />
+          THIS WAY TO MORE PROPAGANDA
+        </a>
       </section>
     </main>
   );

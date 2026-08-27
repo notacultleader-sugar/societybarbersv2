@@ -120,8 +120,8 @@ function HomeDashboard() {
               rel="noreferrer"
               className="rounded-xl bg-background p-3 text-sm text-white"
             >
-              <span className="font-display font-semibold text-neon-cyan">Maple Bay Hall</span>
-              <p className="mt-1 text-muted-foreground">Maple Bay, BC</p>
+              <span className="font-display font-semibold text-neon-cyan">Maple Bay</span>
+              <p className="mt-1 text-muted-foreground">963 Herd Rd</p>
             </a>
           </div>
         </div>

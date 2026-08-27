@@ -14,7 +14,17 @@ export const Route = createFileRoute("/barbers")({
   component: BarbersPage,
 });
 
-const barbers = [
+type Barber = {
+  name: string;
+  handle: string;
+  role: string;
+  nickname: string;
+  image: string;
+  color: string;
+  hideBooking?: boolean;
+};
+
+const barbers: Barber[] = [
   {
     name: "Ian",
     handle: "@notacult.leader",
@@ -89,11 +99,12 @@ const barbers = [
   },
   {
     name: "David",
-    handle: "@foxznhoundclassicbarber",
+    handle: "",
     role: "Independent Contractor",
     nickname: "The Guy with the Beard",
     image: "https://static.wixstatic.com/media/47ba99_748c5df7fe1b452e9a29ea8d053485bd~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8016_PNG.png",
     color: "neon",
+    hideBooking: true,
   },
   {
     name: "Bre",
@@ -196,28 +207,34 @@ function BarbersPage() {
                 </div>
               </div>
 
-              <div className="mt-5 flex items-center justify-between gap-3">
-                <a
-                  href={`https://instagram.com/${barber.handle.replace("@", "")}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold ${accentColor}`}
-                >
-                  <Instagram className="h-4 w-4" />
-                  {barber.handle}
-                </a>
-                {index < 11 ? (
-                  <a
-                    href="https://squareup.com/appointments/book/thesocietybarbers"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 bg-background text-xs font-bold uppercase leading-none tracking-wide ${accentColor}`}
-                  >
-                    <span>BOOK</span>
-                    <span className="mt-0.5">NOW</span>
-                  </a>
-                ) : null}
-              </div>
+              {barber.handle || (index < 11 && !barber.hideBooking) ? (
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  {barber.handle ? (
+                    <a
+                      href={`https://instagram.com/${barber.handle.replace("@", "")}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`inline-flex items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold ${accentColor}`}
+                    >
+                      <Instagram className="h-4 w-4" />
+                      {barber.handle}
+                    </a>
+                  ) : (
+                    <span />
+                  )}
+                  {index < 11 && !barber.hideBooking ? (
+                    <a
+                      href="https://squareup.com/appointments/book/thesocietybarbers"
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 bg-background text-xs font-bold uppercase leading-none tracking-wide ${accentColor}`}
+                    >
+                      <span>BOOK</span>
+                      <span className="mt-0.5">NOW</span>
+                    </a>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           );
         })}

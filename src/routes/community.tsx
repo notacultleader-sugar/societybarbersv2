@@ -111,7 +111,7 @@ function CommunityPage() {
         </div>
 
         <div className="grid grid-cols-3 gap-2">
-          {PROPAGANDA_TILES.map((_, slotIndex) => (
+          {[0, 1, 2].map((slotIndex) => (
             <div
               key={slotIndex}
               className="relative aspect-square overflow-hidden rounded-xl bg-surface-elevated"

@@ -39,7 +39,16 @@ function ContactPage() {
       </header>
 
       <section className="mb-5 grid gap-3">
-        <div className="rounded-2xl bg-surface p-4">
+        <div className="relative rounded-2xl bg-surface p-4">
+          <span
+            className={`absolute right-4 top-4 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest ${
+              duncanOpen
+                ? "bg-neon/15 text-neon"
+                : "bg-muted text-muted-foreground"
+            }`}
+          >
+            {duncanOpen ? "Open now" : "Closed now"}
+          </span>
           <a
             href="https://maps.google.com/?q=191+Kenneth+St+Duncan+BC"
             target="_blank"
@@ -52,9 +61,6 @@ function ContactPage() {
             <div>
               <p className="font-display text-lg font-semibold text-white">Downtown Duncan</p>
               <p className="text-sm text-muted-foreground">191 Kenneth St</p>
-              <p className={`mt-1 text-xs ${duncanOpen ? "text-neon" : "text-muted-foreground"}`}>
-                {duncanOpen ? "Open now" : "Closed now"}
-              </p>
             </div>
           </a>
           <a
@@ -73,7 +79,16 @@ function ContactPage() {
           </a>
         </div>
 
-        <div className="rounded-2xl bg-surface p-4">
+        <div className="relative rounded-2xl bg-surface p-4">
+          <span
+            className={`absolute right-4 top-4 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest ${
+              mapleBayOpen
+                ? "bg-neon-cyan/15 text-neon-cyan"
+                : "bg-muted text-muted-foreground"
+            }`}
+          >
+            {mapleBayOpen ? "Open now" : "Closed now"}
+          </span>
           <a
             href="https://maps.google.com/?q=963+Herd+Rd+Maple+Bay+BC"
             target="_blank"
@@ -86,9 +101,6 @@ function ContactPage() {
             <div>
               <p className="font-display text-lg font-semibold text-white">Maple Bay</p>
               <p className="text-sm text-muted-foreground">963 Herd Rd</p>
-              <p className={`mt-1 text-xs ${mapleBayOpen ? "text-neon-cyan" : "text-muted-foreground"}`}>
-                {mapleBayOpen ? "Open now" : "Closed now"}
-              </p>
             </div>
           </a>
           <a

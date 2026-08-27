@@ -10,7 +10,7 @@ workflows:
         - app_store_connect
       ios_signing:
         distribution_type: app_store
-        bundle_id: com.thesocietybarbers.app
+        bundle_identifier: com.thesocietybarbers.app
     scripts:
       - name: Install dependencies
         script: npm ci

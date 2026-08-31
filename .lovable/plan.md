@@ -65,6 +65,6 @@ change needed.
 - `NSUserTrackingUsageDescription` added to `ios/App/App/Info.plist`.
 - `PrivacyInfo.xcprivacy`: set `NSPrivacyTracking` to true and list the tracking domain
   `fresha.com`.
-- Demo mode: local state on `src/routes/account.tsx`, no backend.
+
 - New `src/routes/support.tsx` with its own head metadata, linked from Contact and privacy.
 - `ios/App/App.xcodeproj/project.pbxproj`: `CURRENT_PROJECT_VERSION` 4 -> 5.

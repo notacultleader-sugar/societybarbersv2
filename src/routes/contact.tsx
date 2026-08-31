@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
 import { MapPin, Phone, Mail, Clock, Instagram, ExternalLink } from "lucide-react";
 
@@ -171,6 +171,19 @@ function ContactPage() {
           <ExternalLink className="h-4 w-4 text-muted-foreground" />
         </a>
       </section>
+
+      <section className="mt-6 rounded-2xl bg-surface-elevated p-5 text-sm text-muted-foreground">
+        Need help with the app, a booking or a gift card? See{" "}
+        <Link to="/support" className="text-neon">
+          Support &amp; Help
+        </Link>{" "}
+        or read our{" "}
+        <Link to="/privacy" className="text-neon">
+          privacy policy
+        </Link>
+        .
+      </section>
     </main>
   );
 }
+

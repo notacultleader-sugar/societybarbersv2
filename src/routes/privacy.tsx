@@ -28,12 +28,17 @@ const sections = [
   },
   {
     title: "Data we collect",
-    body: "None. The app itself does not collect, store, or share any personal information. There are no accounts inside the app, no analytics, no tracking, and no advertising.",
+    body: "The app itself does not collect, store, or share any personal information. There are no accounts inside the app, no analytics, and no advertising SDKs.",
+  },
+  {
+    title: "Cookies and tracking",
+    body: "When you open Fresha inside the app, Fresha's own website may set cookies, including cookies that could be used to recognise you across other websites. On iOS we ask for your permission first using Apple's App Tracking Transparency prompt. If you decline, you can still use every booking link — we simply don't allow that data to be used for tracking. You can change your choice any time in iOS Settings under Privacy & Security, then Tracking.",
   },
   {
     title: "Bookings and your Fresha account",
     body: "When you tap a booking, sign-in, membership, or gift card link, the app opens Fresha's own website in an in-app browser. Anything you enter there — your name, contact details, payment info, or password — goes directly to Fresha and is covered by Fresha's privacy policy (fresha.com/privacy-policy). We never see or store your Fresha login.",
   },
+
   {
     title: "Phone, email, and map links",
     body: "Tapping a phone number, email address, or address opens your device's own phone, mail, or maps app. No information is sent to us by doing this.",

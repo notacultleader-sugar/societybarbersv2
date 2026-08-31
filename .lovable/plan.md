@@ -22,18 +22,19 @@ reviewer-access issue.
 
 ## 2. Reviewer access (fixes both 2.1(a) items)
 
-Apple couldn't get a Fresha OTP code, so they couldn't get past the sign-in and asked
-for a demo account. Apple explicitly says a demo video is not enough. Two options:
+Apple couldn't get a Fresha OTP code, so they couldn't get past sign-in and asked for a
+demo account. You'll create a real Fresha client account for reviewers to use — no code
+change needed.
 
-- **Option A (recommended):** create a real Fresha client account with a shared email you
-  control, put that email + password in App Review Information, and note in the review
-  notes that the code arrives by email at that address. This is the cleanest path.
-- **Option B:** add a hidden **Demo mode** to the app — a toggle Apple activates from the
-  My Account screen that shows a sample account view (fake appointment, membership and
-  gift card) with no login. Then the reviewer can see all functionality without Fresha.
+- Put that email + password in App Store Connect -> App Review Information ->
+  Sign-In Required.
+- If Fresha sends the code by email, use an inbox you can check, and note in the review
+  notes that the one-time code arrives at that address (and that you'll relay it if asked).
+- If Fresha only sends codes by SMS, use a phone number you control and say so in the
+  notes, because Apple can't receive your texts.
+- I'll add wording to the review notes explaining that the account belongs to Fresha, a
+  third-party booking provider, and that only the My Account tab uses it.
 
-I'll implement Option B in code either way, since it removes the dependency on Fresha's
-OTP delivery entirely, and you can also supply an account if you have one.
 
 ## 3. Real support page (fixes 1.5 - Safety)
 
@@ -46,9 +47,10 @@ OTP delivery entirely, and you can also supply an account if you have one.
 
 - App Privacy: declare **Yes, this app uses data to track you**, with data type
   "Identifiers - Device ID / Other identifiers", used for tracking, via Fresha web content.
-- Review Notes: say where the tracking prompt appears (first tap of any Fresha booking
-  link), and how to enter demo mode.
+- App Review Information: the Fresha demo login, plus your name, phone and email.
+- Review Notes: say where the tracking prompt appears (first tap of any Fresha booking link).
 - I'll write all of this into `appstore-review-notes.md` ready to paste.
+
 
 ## 5. Resubmit
 
@@ -63,6 +65,6 @@ OTP delivery entirely, and you can also supply an account if you have one.
 - `NSUserTrackingUsageDescription` added to `ios/App/App/Info.plist`.
 - `PrivacyInfo.xcprivacy`: set `NSPrivacyTracking` to true and list the tracking domain
   `fresha.com`.
-- Demo mode: local state on `src/routes/account.tsx`, no backend.
+
 - New `src/routes/support.tsx` with its own head metadata, linked from Contact and privacy.
 - `ios/App/App.xcodeproj/project.pbxproj`: `CURRENT_PROJECT_VERSION` 4 -> 5.

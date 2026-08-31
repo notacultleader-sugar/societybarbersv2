@@ -119,10 +119,12 @@ function AccountPage() {
         </div>
         <ul className="space-y-2 text-sm text-muted-foreground">
           <li>• These buttons open Fresha's own sign-in page inside the app.</li>
+          <li>• Fresha sets cookies on its pages to keep you signed in.</li>
           <li>• We never see or store your password.</li>
           <li>• No Fresha account yet? One is created the first time you book.</li>
         </ul>
       </section>
+
     </main>
   );
 }

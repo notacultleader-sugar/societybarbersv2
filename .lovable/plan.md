@@ -47,9 +47,10 @@ change needed.
 
 - App Privacy: declare **Yes, this app uses data to track you**, with data type
   "Identifiers - Device ID / Other identifiers", used for tracking, via Fresha web content.
-- Review Notes: say where the tracking prompt appears (first tap of any Fresha booking
-  link), and how to enter demo mode.
+- App Review Information: the Fresha demo login, plus your name, phone and email.
+- Review Notes: say where the tracking prompt appears (first tap of any Fresha booking link).
 - I'll write all of this into `appstore-review-notes.md` ready to paste.
+
 
 ## 5. Resubmit
 

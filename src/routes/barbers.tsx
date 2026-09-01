@@ -239,6 +239,10 @@ function BarbersPage() {
                       href={barber.bookingUrl || "https://squareup.com/appointments/book/thesocietybarbers"}
                       target="_blank"
                       rel="noreferrer"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        openInAppBrowser(barber.bookingUrl || "https://squareup.com/appointments/book/thesocietybarbers");
+                      }}
                       className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 bg-background text-xs font-bold uppercase leading-none tracking-wide ${accentColor}`}
                     >
                       <span>BOOK</span>

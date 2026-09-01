@@ -1,0 +1,21 @@
+# Finish the App Tracking Transparency integration
+
+Two small items from the App Review rejection fix were not completed. This plan finishes them.
+
+## 1. Install the Capacitor ATT plugin
+
+- Add `@capacitor-community/app-tracking-transparency` to the project.
+- Run Capacitor sync so the plugin is registered in iOS and Android native projects.
+
+## 2. Update the in-app browser helper
+
+- Modify `src/lib/browser.ts` so that, before opening a Fresha URL, it checks the tracking authorization status using the plugin.
+- If status is `authorized`, open normally.
+- If status is `denied`, `restricted`, or `notDetermined`, open the in-app browser but call `clearAllCookies` first so Fresha cannot use previously stored cookies for tracking. When the status is not yet determined, also request permission first and then proceed based on the user's answer.
+- Keep the existing web fallback (`window.open`) for non-native environments.
+
+## 3. Verify
+
+- Confirm the plugin appears in `package.json` and `capacitor.config.json` / iOS pods are updated.
+- Confirm `src/lib/browser.ts` compiles and is imported by `src/routes/account.tsx`, `src/routes/book.tsx`, and `src/routes/barbers.tsx`.
+- No UI changes; the existing "Fresha sets cookies" notice in My Account stays.

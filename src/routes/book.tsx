@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
+import { openInAppBrowser } from "@/lib/browser";
 import { Clock, ExternalLink, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/book")({
@@ -61,6 +62,10 @@ function BookPage() {
           href="https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198"
           target="_blank"
           rel="noreferrer"
+          onClick={(e) => {
+            e.preventDefault();
+            openInAppBrowser("https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198");
+          }}
           className="flex items-center justify-between rounded-2xl bg-primary p-5 text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]"
         >
           <div>

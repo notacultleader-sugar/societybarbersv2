@@ -191,19 +191,19 @@ function BottomNav() {
             <Link
               key={tab.to}
               to={tab.to}
-              className="flex flex-col items-center gap-1 px-2 py-1"
+              className="flex flex-col items-center gap-1 px-2 py-1 md:px-4"
             >
               <div
-                className={`rounded-xl p-1.5 transition-all ${
+                className={`rounded-xl p-1.5 transition-all md:p-2.5 ${
                   isActive
                     ? "bg-primary/20 text-primary shadow-[0_0_12px_rgba(255,0,160,0.35)]"
                     : "text-muted-foreground"
                 }`}
               >
-                <Icon className="h-5 w-5" />
+                <Icon className="h-5 w-5 md:h-6 md:w-6" />
               </div>
               <span
-                className={`text-[10px] font-medium ${
+                className={`text-[10px] font-medium md:text-xs ${
                   isActive ? "text-primary" : "text-muted-foreground"
                 }`}
               >

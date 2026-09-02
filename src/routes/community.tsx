@@ -63,13 +63,13 @@ function CommunityPage() {
           src={astronaut.url}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -top-10 right-0 h-56 w-auto object-contain object-right-top opacity-80 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
+          className="pointer-events-none absolute -top-10 right-0 h-56 w-auto md:h-72 object-contain object-right-top opacity-80 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
         />
-        <div className="relative max-w-[62%] pt-6">
+        <div className="relative max-w-[62%] pt-6 md:max-w-[70%]">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
             The Transmission
           </p>
-          <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+          <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase md:text-6xl">
             STAY TUNED. STAY AWAKE.
           </h1>
         </div>
@@ -110,7 +110,7 @@ function CommunityPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-2 md:gap-4">
           {[0, 1, 2].map((slotIndex) => (
             <div
               key={slotIndex}

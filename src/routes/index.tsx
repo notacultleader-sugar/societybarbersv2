@@ -35,13 +35,13 @@ function HomeDashboard() {
           src={astronaut.url}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -top-10 right-0 h-56 w-auto object-contain object-right-top opacity-80 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
+          className="pointer-events-none absolute -top-10 right-0 h-56 w-auto md:h-72 object-contain object-right-top opacity-80 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
         />
-        <div className="relative max-w-[62%] pt-6">
+        <div className="relative max-w-[62%] pt-6 md:max-w-[70%]">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
             PROUDLY SERVING COWICHAN SINCE 2017
           </p>
-          <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase">
+          <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase md:text-6xl">
             CLASSIC BARBERING
             <span className="block text-neon-cyan text-glow-cyan">// UPGRADED</span>
           </h1>
@@ -49,7 +49,7 @@ function HomeDashboard() {
       </header>
 
       {/* Bento grid */}
-      <section className="grid grid-cols-2 gap-3">
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
         {/* Book now — large tile */}
         <a
           href="https://www.fresha.com/providers/society-barbers-mfk1wznr?share=true&pId=3065198&allOffer=true&menu=true"

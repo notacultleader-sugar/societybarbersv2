@@ -156,10 +156,10 @@ function RootComponent() {
           <img
             src={societyLogo.url}
             alt=""
-            className="w-[115%] max-w-[560px] -rotate-12 opacity-25"
+            className="w-[115%] max-w-[560px] -rotate-12 opacity-25 md:max-w-[820px]"
           />
         </div>
-        <div className="relative z-10 mx-auto w-full max-w-md flex-1 overflow-y-auto">
+        <div className="relative z-10 mx-auto w-full max-w-md flex-1 overflow-y-auto md:max-w-3xl lg:max-w-4xl">
           <Outlet />
         </div>
 
@@ -183,7 +183,7 @@ function BottomNav() {
 
   return (
     <nav className="glass safe-bottom fixed bottom-0 left-0 right-0 z-50 border-t border-border">
-      <div className="mx-auto flex max-w-md items-center justify-around px-2 pb-2 pt-3">
+      <div className="mx-auto flex max-w-md items-center justify-around px-2 pb-2 pt-3 md:max-w-3xl md:gap-6 md:px-8 lg:max-w-4xl">
         {tabs.map((tab) => {
           const isActive = pathname === tab.to;
           const Icon = tab.icon;
@@ -191,19 +191,19 @@ function BottomNav() {
             <Link
               key={tab.to}
               to={tab.to}
-              className="flex flex-col items-center gap-1 px-2 py-1"
+              className="flex flex-col items-center gap-1 px-2 py-1 md:px-4"
             >
               <div
-                className={`rounded-xl p-1.5 transition-all ${
+                className={`rounded-xl p-1.5 transition-all md:p-2.5 ${
                   isActive
                     ? "bg-primary/20 text-primary shadow-[0_0_12px_rgba(255,0,160,0.35)]"
                     : "text-muted-foreground"
                 }`}
               >
-                <Icon className="h-5 w-5" />
+                <Icon className="h-5 w-5 md:h-6 md:w-6" />
               </div>
               <span
-                className={`text-[10px] font-medium ${
+                className={`text-[10px] font-medium md:text-xs ${
                   isActive ? "text-primary" : "text-muted-foreground"
                 }`}
               >

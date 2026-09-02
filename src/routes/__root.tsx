@@ -156,10 +156,10 @@ function RootComponent() {
           <img
             src={societyLogo.url}
             alt=""
-            className="w-[115%] max-w-[560px] -rotate-12 opacity-25"
+            className="w-[115%] max-w-[560px] -rotate-12 opacity-25 md:max-w-[820px]"
           />
         </div>
-        <div className="relative z-10 mx-auto w-full max-w-md flex-1 overflow-y-auto">
+        <div className="relative z-10 mx-auto w-full max-w-md flex-1 overflow-y-auto md:max-w-3xl lg:max-w-4xl">
           <Outlet />
         </div>
 

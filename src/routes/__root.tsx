@@ -183,7 +183,7 @@ function BottomNav() {
 
   return (
     <nav className="glass safe-bottom fixed bottom-0 left-0 right-0 z-50 border-t border-border">
-      <div className="mx-auto flex max-w-md items-center justify-around px-2 pb-2 pt-3">
+      <div className="mx-auto flex max-w-md items-center justify-around px-2 pb-2 pt-3 md:max-w-3xl md:gap-6 md:px-8 lg:max-w-4xl">
         {tabs.map((tab) => {
           const isActive = pathname === tab.to;
           const Icon = tab.icon;

@@ -95,11 +95,16 @@ function CommunityPage() {
           <p className="mt-1 text-sm text-muted-foreground">{holiday.label}</p>
           <p className="mt-3 text-sm text-muted-foreground">
             {holiday.daysAway === 0
-              ? "Both locations are closed today for the stat holiday."
+              ? "Both locations are closed today."
               : holiday.daysAway === 1
-                ? "Both locations are closed tomorrow for the stat holiday."
-                : `Both locations are closed in ${holiday.daysAway} days for this BC stat holiday.`}
+                ? "Both locations are closed tomorrow."
+                : `Both locations are closed in ${holiday.daysAway} days.`}
           </p>
+          {holiday.note && (
+            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+              {holiday.note}
+            </p>
+          )}
         </section>
       )}
 

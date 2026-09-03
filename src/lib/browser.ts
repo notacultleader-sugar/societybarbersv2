@@ -1,10 +1,10 @@
 /**
  * Opens a URL in the in-app browser (Capacitor) or a new tab (web).
  *
- * Tracking permission is handled exactly once by the native layer
- * (SceneDelegate.sceneDidBecomeActive on iOS), so this helper does not ask
- * again. Whatever the user answered there is enforced by iOS itself; the app
- * does not add or remove any tracking of its own.
+ * On iOS this presents SFSafariViewController, which runs out of process: the
+ * app cannot read the page, its cookies, or anything the user types there. The
+ * app itself has no analytics, advertising or tracking code, and requests no
+ * tracking permission — see ios/App/App/PrivacyInfo.xcprivacy.
  */
 export async function openInAppBrowser(url: string) {
   if (typeof window === "undefined") return;

@@ -4,7 +4,7 @@ import { openInAppBrowser } from "@/lib/browser";
 import { Instagram, Monitor, Scissors } from "lucide-react";
 import portraitFallbackAsset from "@/assets/society-logo.png.asset.json";
 
-const portraitFallback = (portraitFallbackAsset as { src: string }).src;
+const portraitFallback = portraitFallbackAsset.url;
 
 export const Route = createFileRoute("/barbers")({
   head: () => ({

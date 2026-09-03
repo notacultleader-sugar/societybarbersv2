@@ -17,6 +17,7 @@ import promoTile13 from "@/assets/promo-tile-13.jpg";
 import { CalendarOff, Instagram, Sparkles } from "lucide-react";
 import { useFreshaStatus } from "@/lib/fresha-status";
 import { detectFreshaClosures } from "@/lib/closure-detect";
+import { getNextStatHoliday } from "@/lib/holidays";
 
 
 
@@ -55,6 +56,7 @@ export const Route = createFileRoute("/community")({
 });
 
 function CommunityPage() {
+  const holiday = getNextStatHoliday();
   const freshaStatus = useFreshaStatus();
   const closedToday = [freshaStatus["duncan"], freshaStatus["maple-bay"]].filter(
     (s) => s && s.state !== "OPEN",
@@ -136,6 +138,33 @@ function CommunityPage() {
           <p className="mt-3 text-xs uppercase tracking-widest text-muted-foreground">
             Read live from our booking calendar
           </p>
+        </section>
+      )}
+
+      {holiday && (
+        <section className="mb-4 rounded-2xl bg-surface-elevated p-5">
+          <div className="mb-3 flex items-center gap-3">
+            <div className="rounded-xl bg-gold/15 p-2.5 text-gold">
+              <CalendarOff className="h-5 w-5" />
+            </div>
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              Holiday closure
+            </span>
+          </div>
+          <h2 className="font-display text-xl font-semibold text-white">{holiday.name}</h2>
+          <p className="mt-1 text-sm text-muted-foreground">{holiday.label}</p>
+          <p className="mt-3 text-sm text-muted-foreground">
+            {holiday.daysAway === 0
+              ? "Both locations are closed today."
+              : holiday.daysAway === 1
+                ? "Both locations are closed tomorrow."
+                : `Both locations are closed in ${holiday.daysAway} days.`}
+          </p>
+          {holiday.note && (
+            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+              {holiday.note}
+            </p>
+          )}
         </section>
       )}
 

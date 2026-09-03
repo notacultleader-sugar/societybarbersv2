@@ -2,22 +2,25 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
 import { MapPin, Phone, Mail, Clock, Instagram, ExternalLink } from "lucide-react";
 
-
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Society Barbers" },
-      { name: "description", content: "Contact The Society Barbers. Two locations in the Cowichan Valley." },
+      {
+        name: "description",
+        content: "Contact The Society Barbers. Two locations in the Cowichan Valley.",
+      },
       { property: "og:title", content: "Contact — Society Barbers" },
-      { property: "og:description", content: "Contact The Society Barbers. Two locations in the Cowichan Valley." },
+      {
+        property: "og:description",
+        content: "Contact The Society Barbers. Two locations in the Cowichan Valley.",
+      },
     ],
   }),
   component: ContactPage,
 });
 
 function ContactPage() {
-
-
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
       <header className="relative mb-8 -mx-4 px-4">
@@ -53,10 +56,7 @@ function ContactPage() {
               <p className="text-sm text-muted-foreground">191 Kenneth St</p>
             </div>
           </a>
-          <a
-            href="tel:+12505970155"
-            className="mt-4 flex items-center gap-2 text-sm text-white"
-          >
+          <a href="tel:+12505970155" className="mt-4 flex items-center gap-2 text-sm text-white">
             <Phone className="h-4 w-4 text-gold" />
             <span className="font-display font-semibold">(250) 597-0155</span>
           </a>
@@ -84,10 +84,7 @@ function ContactPage() {
               <p className="text-sm text-muted-foreground">963 Herd Rd</p>
             </div>
           </a>
-          <a
-            href="tel:+17784552858"
-            className="mt-4 flex items-center gap-2 text-sm text-white"
-          >
+          <a href="tel:+17784552858" className="mt-4 flex items-center gap-2 text-sm text-white">
             <Phone className="h-4 w-4 text-gold" />
             <span className="font-display font-semibold">(778) 455-CULT</span>
           </a>
@@ -186,4 +183,3 @@ function ContactPage() {
     </main>
   );
 }
-

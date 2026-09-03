@@ -2,6 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
 import { openInAppBrowser } from "@/lib/browser";
 import { Instagram, Monitor, Scissors } from "lucide-react";
+import portraitFallbackAsset from "@/assets/society-logo.png.asset.json";
+
+const portraitFallback = portraitFallbackAsset.url;
 
 export const Route = createFileRoute("/barbers")({
   head: () => ({
@@ -23,6 +26,7 @@ type Barber = {
   image: string;
   color: string;
   hideBooking?: boolean;
+  onLeave?: string;
   bookingUrl?: string;
 };
 
@@ -32,106 +36,128 @@ const barbers: Barber[] = [
     handle: "@notacult.leader",
     role: "Barber & Owner",
     nickname: "Sugar",
-    image: "https://static.wixstatic.com/media/47ba99_9565f5b7ef5e44d193231b61d5e51f9f~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8812_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_9565f5b7ef5e44d193231b61d5e51f9f~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8812_PNG.png",
     color: "neon",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?eid=5525200&share=true&pId=3065198",
+    bookingUrl:
+      "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?eid=5525200&share=true&pId=3065198",
   },
   {
     name: "Rhiannon",
     handle: "@barberrhirhi",
     role: "Barber & Owner",
     nickname: "Rhi-Rhi",
-    image: "https://static.wixstatic.com/media/47ba99_a4fc778f9aaf442a8a62a20862bfc2f3~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8785_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_a4fc778f9aaf442a8a62a20862bfc2f3~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8785_PNG.png",
     color: "neon-cyan",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168497&eid=5525290&share=true&pId=3065198",
+    bookingUrl:
+      "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168497&eid=5525290&share=true&pId=3065198",
   },
   {
     name: "Chris",
     handle: "@barbernegrense",
     role: "Head Barber & Instructor",
     nickname: "Negrensé",
-    image: "https://static.wixstatic.com/media/47ba99_95693b1f37684cac8f28692f58e60288~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8742_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_95693b1f37684cac8f28692f58e60288~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8742_PNG.png",
     color: "gold",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?eid=5525261&share=true&pId=3065198",
+    bookingUrl:
+      "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?eid=5525261&share=true&pId=3065198",
   },
   {
     name: "Madz",
     handle: "@themadzbarber",
     role: "Barber",
     nickname: "Maternity Leave",
-    image: "https://static.wixstatic.com/media/47ba99_26e6ef6b82504e0bad0e53a83f84f634~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8013_PNG.png",
+    onLeave: "On maternity leave",
+    image:
+      "https://static.wixstatic.com/media/47ba99_26e6ef6b82504e0bad0e53a83f84f634~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8013_PNG.png",
     color: "neon",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198",
   },
   {
     name: "Harry",
     handle: "@hccuts",
     role: "Barber",
     nickname: "Harry",
-    image: "https://static.wixstatic.com/media/47ba99_8574e258d77547d4a053cf8339a85972~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8770_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_8574e258d77547d4a053cf8339a85972~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8770_PNG.png",
     color: "neon-cyan",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?eid=5527251&share=true&pId=3065198",
+    bookingUrl:
+      "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?eid=5527251&share=true&pId=3065198",
   },
   {
     name: "Alex",
     handle: "@byalexbarber",
     role: "Barber",
     nickname: "The Spanish Guy",
-    image: "https://static.wixstatic.com/media/47ba99_99f6864f450a4d6c9c74cf087f4dd622~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8762.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_99f6864f450a4d6c9c74cf087f4dd622~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8762.png",
     color: "gold",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168488&eid=5527236&share=true&pId=3065198",
+    bookingUrl:
+      "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168488&eid=5527236&share=true&pId=3065198",
   },
   {
     name: "Ivy",
     handle: "@d.iv.inity",
     role: "Barber",
     nickname: "Ivy",
-    image: "https://static.wixstatic.com/media/47ba99_3df284d98fbc4d9a9b114464bd4695a0~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8765_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_3df284d98fbc4d9a9b114464bd4695a0~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8765_PNG.png",
     color: "neon",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?eid=5527238&share=true&pId=3065198",
+    bookingUrl:
+      "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?eid=5527238&share=true&pId=3065198",
   },
   {
     name: "Jordan",
     handle: "@the.black.shear",
     role: "Barber",
     nickname: "The New Guy",
-    image: "https://static.wixstatic.com/media/47ba99_8697b4accfbc4ebc9be599fc5bdc5b1d~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8768_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_8697b4accfbc4ebc9be599fc5bdc5b1d~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8768_PNG.png",
     color: "neon-cyan",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168488&eid=5527230&share=true&pId=3065198",
+    bookingUrl:
+      "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168488&eid=5527230&share=true&pId=3065198",
   },
   {
     name: "B",
     handle: "@beautywblades.b",
     role: "Barber",
     nickname: "Coming Soon",
-    image: "https://static.wixstatic.com/media/47ba99_bd611021625844149d4e0f519bfb3264~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8041_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_bd611021625844149d4e0f519bfb3264~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8041_PNG.png",
     color: "gold",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168488&eid=5542016&oiid=sv%3A28993438&share=true&pId=3065198",
+    bookingUrl:
+      "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168488&eid=5542016&oiid=sv%3A28993438&share=true&pId=3065198",
   },
   {
     name: "David",
     handle: "",
     role: "Independent Contractor",
     nickname: "The Guy with the Beard",
-    image: "https://static.wixstatic.com/media/47ba99_748c5df7fe1b452e9a29ea8d053485bd~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8016_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_748c5df7fe1b452e9a29ea8d053485bd~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8016_PNG.png",
     color: "neon",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168488&eid=5527245&share=true&pId=3065198",
+    bookingUrl:
+      "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?lid=3168488&eid=5527245&share=true&pId=3065198",
   },
   {
     name: "Bre",
     handle: "@barber.keen",
     role: "Junior Barber",
     nickname: "Keen",
-    image: "https://static.wixstatic.com/media/47ba99_191d50996de8458bbfe9fba14f43031b~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8774_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_191d50996de8458bbfe9fba14f43031b~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8774_PNG.png",
     color: "neon-cyan",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?eid=5527240&share=true&pId=3065198",
+    bookingUrl:
+      "https://www.fresha.com/book-now/society-barbers-mfk1wznr/services?eid=5527240&share=true&pId=3065198",
   },
   {
     name: "Ryan",
     handle: "@societybarbers",
     role: "Manager / Ships Captain",
     nickname: "Coffee Daddy",
-    image: "https://static.wixstatic.com/media/47ba99_3062a0481dca44a18a14c5dd85d85020~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8005_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_3062a0481dca44a18a14c5dd85d85020~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8005_PNG.png",
     color: "gold",
   },
   {
@@ -139,7 +165,8 @@ const barbers: Barber[] = [
     handle: "@societybarbers",
     role: "Manager",
     nickname: "Shop Mom",
-    image: "https://static.wixstatic.com/media/47ba99_24be9afdc3044f7d9a6324373e0585ab~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8010_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_24be9afdc3044f7d9a6324373e0585ab~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8010_PNG.png",
     color: "neon",
   },
   {
@@ -147,7 +174,8 @@ const barbers: Barber[] = [
     handle: "@societybarbers",
     role: "Apprentice",
     nickname: "Society Barbers",
-    image: "https://static.wixstatic.com/media/47ba99_dc92f58dcf8d4aaf953e3994c99a023f~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8017_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_dc92f58dcf8d4aaf953e3994c99a023f~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8017_PNG.png",
     color: "neon-cyan",
   },
   {
@@ -155,7 +183,8 @@ const barbers: Barber[] = [
     handle: "@ianlocke",
     role: "Artificial Intelligence",
     nickname: "ADV3N7UR35",
-    image: "https://static.wixstatic.com/media/47ba99_75a19009d2a64e3ba93fb72f0f138c6a~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8012_PNG.png",
+    image:
+      "https://static.wixstatic.com/media/47ba99_75a19009d2a64e3ba93fb72f0f138c6a~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8012_PNG.png",
     color: "gold",
   },
 ];
@@ -199,6 +228,12 @@ function BarbersPage() {
                   src={barber.image}
                   alt={`${barber.name} portrait`}
                   loading="lazy"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (img.dataset["fallback"]) return;
+                    img.dataset["fallback"] = "1";
+                    img.src = portraitFallback;
+                  }}
                   className="h-20 w-20 shrink-0 rounded-xl object-cover ring-2 ring-white/10"
                 />
                 <div className="flex-1">
@@ -219,7 +254,7 @@ function BarbersPage() {
                 </div>
               </div>
 
-              {barber.handle || (index < 11 && !barber.hideBooking) ? (
+              {barber.handle || barber.onLeave || (index < 11 && !barber.hideBooking) ? (
                 <div className="mt-5 flex items-center justify-between gap-3">
                   {barber.handle ? (
                     <a
@@ -234,14 +269,18 @@ function BarbersPage() {
                   ) : (
                     <span />
                   )}
-                  {index < 11 && !barber.hideBooking ? (
+                  {barber.onLeave ? (
+                    <span className="inline-flex items-center rounded-full border border-white/20 bg-background px-4 py-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                      {barber.onLeave}
+                    </span>
+                  ) : index < 11 && !barber.hideBooking && barber.bookingUrl ? (
                     <a
-                      href={barber.bookingUrl || "https://squareup.com/appointments/book/thesocietybarbers"}
+                      href={barber.bookingUrl}
                       target="_blank"
                       rel="noreferrer"
                       onClick={(e) => {
                         e.preventDefault();
-                        openInAppBrowser(barber.bookingUrl || "https://squareup.com/appointments/book/thesocietybarbers");
+                        openInAppBrowser(barber.bookingUrl!);
                       }}
                       className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 bg-background text-xs font-bold uppercase leading-none tracking-wide ${accentColor}`}
                     >

@@ -37,9 +37,15 @@ export const Route = createFileRoute("/community")({
   head: () => ({
     meta: [
       { title: "Transmissions — Society Barbers" },
-      { name: "description", content: "Society Barbers transmissions, announcements, and community updates." },
+      {
+        name: "description",
+        content: "Society Barbers transmissions, announcements, and community updates.",
+      },
       { property: "og:title", content: "Transmissions — Society Barbers" },
-      { property: "og:description", content: "Society Barbers transmissions, announcements, and community updates." },
+      {
+        property: "og:description",
+        content: "Society Barbers transmissions, announcements, and community updates.",
+      },
     ],
   }),
   component: CommunityPage,
@@ -89,11 +95,16 @@ function CommunityPage() {
           <p className="mt-1 text-sm text-muted-foreground">{holiday.label}</p>
           <p className="mt-3 text-sm text-muted-foreground">
             {holiday.daysAway === 0
-              ? "Both locations are closed today for the stat holiday."
+              ? "Both locations are closed today."
               : holiday.daysAway === 1
-                ? "Both locations are closed tomorrow for the stat holiday."
-                : `Both locations are closed in ${holiday.daysAway} days for this BC stat holiday.`}
+                ? "Both locations are closed tomorrow."
+                : `Both locations are closed in ${holiday.daysAway} days.`}
           </p>
+          {holiday.note && (
+            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+              {holiday.note}
+            </p>
+          )}
         </section>
       )}
 
@@ -106,7 +117,9 @@ function CommunityPage() {
             <span className="block text-xs font-semibold uppercase tracking-widest text-neon">
               Latest transmissions
             </span>
-            <span className="block text-base font-semibold text-white uppercase">SOCIETY PROPAGANDA</span>
+            <span className="block text-base font-semibold text-white uppercase">
+              SOCIETY PROPAGANDA
+            </span>
           </div>
         </div>
 

@@ -8,7 +8,7 @@
 	<array>
 		<dict>
 			<key>NSPrivacyCollectedDataType</key>
-			<string>NSPrivacyCollectedDataTypeOtherDiagnosticData</string>
+			<string>NSPrivacyCollectedDataTypeDeviceID</string>
 			<key>NSPrivacyCollectedDataTypeLinked</key>
 			<false/>
 			<key>NSPrivacyCollectedDataTypeTracking</key>
@@ -21,10 +21,14 @@
 	</array>
 	<key>NSPrivacyAccessedAPITypes</key>
 	<array/>
+	<!--
+		NSPrivacyTrackingDomains is intentionally empty. Declaring fresha.com here
+		would make iOS block connections to our booking provider whenever the user
+		chooses "Ask App Not to Track", which would break booking, sign-in, gift
+		cards and memberships. Fresha is a first-party booking provider we use for
+		our own bookings, not an advertising network we send data to.
+	-->
 	<key>NSPrivacyTrackingDomains</key>
-	<array>
-		<string>fresha.com</string>
-		<string>www.fresha.com</string>
-	</array>
+	<array/>
 </dict>
 </plist>

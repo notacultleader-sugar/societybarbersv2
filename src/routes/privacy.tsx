@@ -8,13 +8,13 @@ export const Route = createFileRoute("/privacy")({
       {
         name: "description",
         content:
-          "Privacy policy for the Society Barbers app. The app collects no personal data; bookings are handled by Fresha.",
+          "Privacy policy for the Society Barbers app. We collect no data ourselves; bookings and accounts are handled by Fresha, which may track you.",
       },
       { property: "og:title", content: "Privacy Policy — Society Barbers" },
       {
         property: "og:description",
         content:
-          "Privacy policy for the Society Barbers app. The app collects no personal data; bookings are handled by Fresha.",
+          "Privacy policy for the Society Barbers app. We collect no data ourselves; bookings and accounts are handled by Fresha, which may track you.",
       },
     ],
   }),
@@ -28,11 +28,11 @@ const sections = [
   },
   {
     title: "Data we collect",
-    body: "The app itself does not collect, store, or share any personal information. There are no accounts inside the app, no analytics, and no advertising SDKs.",
+    body: "The app itself does not collect, store, or share any personal information. There are no accounts inside the app, no analytics SDKs, and no advertising SDKs. We do not build a profile of you and we receive no data from your device. Everything you enter for a booking goes to Fresha, not to us.",
   },
   {
     title: "Cookies and tracking",
-    body: "When you open Fresha inside the app, Fresha's own website may set cookies, including cookies that could be used to recognise you across other websites. On iOS we ask for your permission first using Apple's App Tracking Transparency prompt. If you decline, you can still use every booking link — we simply don't allow that data to be used for tracking. You can change your choice any time in iOS Settings under Privacy & Security, then Tracking.",
+    body: "When you open Fresha inside the app, Fresha's own website sets its own cookies, and those cookies may be used to recognise you on other websites. Because that data could be used for tracking, iOS asks for your permission on first launch using Apple's App Tracking Transparency prompt, and we declare tracking in the App Store. To be clear about what your answer does: your answer is recorded by iOS and is what Fresha and any advertising partner is permitted to rely on. We do not, and cannot, delete or block Fresha's own cookies inside their website, and booking keeps working either way. You can change your choice any time in iOS Settings under Privacy & Security, then Tracking. To remove Fresha's cookies entirely, sign out inside Fresha or delete the app.",
   },
   {
     title: "Bookings and your Fresha account",
@@ -55,7 +55,7 @@ const sections = [
 
 function PrivacyPage() {
   return (
-    <main className="min-h-screen px-4 pb-16 pt-6 safe-top">
+    <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
       <header className="relative mb-8">
         <div className="relative pt-6">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
@@ -64,9 +64,7 @@ function PrivacyPage() {
           <h1 className="font-display text-4xl font-bold uppercase leading-none tracking-tight text-white">
             PRIVACY POLICY
           </h1>
-          <p className="mt-3 text-sm text-muted-foreground">
-            Last updated: August 27, 2026
-          </p>
+          <p className="mt-3 text-sm text-muted-foreground">Last updated: August 27, 2026</p>
         </div>
       </header>
 
@@ -75,13 +73,9 @@ function PrivacyPage() {
           <div key={section.title} className="rounded-2xl bg-surface p-5">
             <div className="mb-2 flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-neon-cyan" />
-              <h2 className="font-display text-lg font-semibold text-white">
-                {section.title}
-              </h2>
+              <h2 className="font-display text-lg font-semibold text-white">{section.title}</h2>
             </div>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {section.body}
-            </p>
+            <p className="text-sm leading-relaxed text-muted-foreground">{section.body}</p>
           </div>
         ))}
       </section>

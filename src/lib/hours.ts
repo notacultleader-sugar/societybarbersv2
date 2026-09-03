@@ -20,7 +20,6 @@ function timeToMinutes(time: string): number {
   return h * 60 + m;
 }
 
-
 export function isLocationOpen(hours: WeeklyHours): boolean {
   const now = new Date();
   const formatter = new Intl.DateTimeFormat("en-CA", {

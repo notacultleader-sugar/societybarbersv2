@@ -15,9 +15,9 @@ Society Barbers is the companion app for our shops in Duncan and Maple Bay, BC. 
 WHAT YOU CAN DO
 - Book appointments fast through our Fresha booking links
 - Meet every barber and find the right chair for your style
-- View shop hours and see if we're open right now
+- View full opening hours for both shops, plus our next closure date
 - Call, email, or find either location in one tap
-- Catch the latest updates in Transmissions
+- Transmissions: rotating Society artwork and our next holiday closure
 - Sign into your Fresha account to check memberships and gift cards
 
 The app is free, built for our local community, and made to keep you looking sharp. Walk-ins are welcome when possible, but appointments are recommended.

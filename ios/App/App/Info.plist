@@ -27,7 +27,7 @@
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>We use Fresha to handle bookings. Allowing this lets Fresha remember you and keep you signed in when you book or check your account.</string>
+	<string>Bookings open Fresha's website inside this app. Allowing this lets Fresha's cookies be used to recognise you across other companies' apps and websites, which may include advertising. Declining does not affect booking.</string>
 
 	<key>UIApplicationSceneManifest</key>
 	<dict>

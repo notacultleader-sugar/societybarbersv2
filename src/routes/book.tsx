@@ -64,7 +64,9 @@ function BookPage() {
           rel="noreferrer"
           onClick={(e) => {
             e.preventDefault();
-            openInAppBrowser("https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198");
+            openInAppBrowser(
+              "https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198",
+            );
           }}
           className="flex items-center justify-between rounded-2xl bg-primary p-5 text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]"
         >
@@ -96,7 +98,6 @@ function BookPage() {
           </div>
           <Phone className="h-5 w-5 text-neon-cyan" />
         </a>
-
       </section>
 
       <section className="mt-6 rounded-2xl bg-surface-elevated p-5">

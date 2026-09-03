@@ -53,7 +53,6 @@ const sections: Section[] = [
     ],
   },
 
-
   {
     title: "Phone, email, and map links",
     body: "Tapping a phone number, email address, or address opens your device's own phone, mail, or maps app. No information is sent to us by doing this.",

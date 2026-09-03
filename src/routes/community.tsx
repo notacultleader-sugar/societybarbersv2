@@ -15,8 +15,8 @@ import promoTile11 from "@/assets/promo-tile-11.jpg";
 import promoTile12 from "@/assets/promo-tile-12.jpg";
 import promoTile13 from "@/assets/promo-tile-13.jpg";
 import { CalendarOff, Instagram, Sparkles } from "lucide-react";
-import { getNextStatHoliday } from "@/lib/holidays";
 import { useFreshaStatus } from "@/lib/fresha-status";
+import { detectFreshaClosures } from "@/lib/closure-detect";
 
 
 
@@ -55,12 +55,11 @@ export const Route = createFileRoute("/community")({
 });
 
 function CommunityPage() {
-  const holiday = getNextStatHoliday();
   const freshaStatus = useFreshaStatus();
   const closedToday = [freshaStatus["duncan"], freshaStatus["maple-bay"]].filter(
     (s) => s && s.state !== "OPEN",
   );
-  
+  const detected = detectFreshaClosures(freshaStatus).filter((c) => c.dates.length > 0);
   const [offset, setOffset] = useState(0);
 
 
@@ -111,32 +110,32 @@ function CommunityPage() {
       )}
 
 
-
-
-      {holiday && (
+      {detected.length > 0 && (
         <section className="mb-4 rounded-2xl bg-surface-elevated p-5">
           <div className="mb-3 flex items-center gap-3">
             <div className="rounded-xl bg-gold/15 p-2.5 text-gold">
               <CalendarOff className="h-5 w-5" />
             </div>
             <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-              Next closure
+              Upcoming closed days
             </span>
           </div>
-          <h2 className="font-display text-xl font-semibold text-white">{holiday.name}</h2>
-          <p className="mt-1 text-sm text-muted-foreground">{holiday.label}</p>
-          <p className="mt-3 text-sm text-muted-foreground">
-            {holiday.daysAway === 0
-              ? "Both locations are closed today."
-              : holiday.daysAway === 1
-                ? "Both locations are closed tomorrow."
-                : `Both locations are closed in ${holiday.daysAway} days.`}
+          <ul className="space-y-3">
+            {detected.map((closure) => (
+              <li key={closure.locationId} className="text-sm text-white">
+                <span className="font-display font-semibold uppercase">
+                  {closure.locationId === "duncan" ? "Downtown Duncan" : "Maple Bay"}
+                </span>
+                <span className="block text-xs text-muted-foreground">
+                  Closed {closure.labels.join(", ")}
+                  {closure.holidayNames.length > 0 && ` — ${closure.holidayNames.join(", ")}`}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-xs uppercase tracking-widest text-muted-foreground">
+            Read live from our booking calendar
           </p>
-          {holiday.note && (
-            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-              {holiday.note}
-            </p>
-          )}
         </section>
       )}
 

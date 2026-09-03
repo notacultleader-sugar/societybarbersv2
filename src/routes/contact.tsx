@@ -92,8 +92,14 @@ function ContactPage() {
             <div>
               <p className="font-display text-lg font-semibold text-white">Maple Bay</p>
               <p className="text-sm text-muted-foreground">963 Herd Rd</p>
+              {freshaStatus["maple-bay"]?.detail && (
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {freshaStatus["maple-bay"]?.detail}
+                </p>
+              )}
             </div>
           </a>
+          <StatusBadge status={freshaStatus["maple-bay"]} className="absolute right-3 top-3" />
           <a href="tel:+17784552858" className="mt-4 flex items-center gap-2 text-sm text-white">
             <Phone className="h-4 w-4 text-gold" />
             <span className="font-display font-semibold">(778) 455-CULT</span>

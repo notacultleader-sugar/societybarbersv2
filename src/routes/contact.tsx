@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
 import { MapPin, Phone, Mail, Clock, Instagram, ExternalLink } from "lucide-react";
+import { useFreshaStatus } from "@/lib/fresha-status";
+import { StatusBadge } from "@/components/StatusBadge";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

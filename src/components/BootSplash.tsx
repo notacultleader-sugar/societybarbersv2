@@ -32,18 +32,19 @@ const TOTAL_MS = 4200;
 const FADE_MS = 550;
 
 export function BootSplash() {
-  const reducedMotion =
-    typeof window !== "undefined" &&
-    typeof window.matchMedia === "function" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  const [visible, setVisible] = useState(!reducedMotion);
+  const [visible, setVisible] = useState(true);
   const [fading, setFading] = useState(false);
   const [count, setCount] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (reducedMotion) return;
+    const reducedMotion =
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) {
+      setVisible(false);
+      return;
+    }
     const line = window.setInterval(() => {
       setCount((c) => (c >= BOOT_LINES.length ? c : c + 1));
     }, LINE_MS);
@@ -54,7 +55,7 @@ export function BootSplash() {
       window.clearTimeout(fade);
       window.clearTimeout(hide);
     };
-  }, [reducedMotion]);
+  }, []);
 
   useEffect(() => {
     const el = scrollRef.current;

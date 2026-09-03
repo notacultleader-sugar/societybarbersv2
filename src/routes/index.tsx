@@ -137,6 +137,7 @@ function HomeDashboard() {
             >
               <span className="font-display font-semibold text-neon-cyan">Maple Bay</span>
               <p className="mt-1 text-muted-foreground">963 Herd Rd</p>
+              <StatusBadge status={freshaStatus["maple-bay"]} className="mt-2" />
             </a>
           </div>
         </div>

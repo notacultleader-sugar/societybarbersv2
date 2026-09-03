@@ -2,6 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
 import { openInAppBrowser } from "@/lib/browser";
 import { Instagram, Monitor, Scissors } from "lucide-react";
+import portraitFallbackAsset from "@/assets/society-logo.png.asset.json";
+
+const portraitFallback = (portraitFallbackAsset as { src: string }).src;
 
 export const Route = createFileRoute("/barbers")({
   head: () => ({
@@ -23,6 +26,7 @@ type Barber = {
   image: string;
   color: string;
   hideBooking?: boolean;
+  onLeave?: string;
   bookingUrl?: string;
 };
 
@@ -59,9 +63,9 @@ const barbers: Barber[] = [
     handle: "@themadzbarber",
     role: "Barber",
     nickname: "Maternity Leave",
+    onLeave: "On maternity leave",
     image: "https://static.wixstatic.com/media/47ba99_26e6ef6b82504e0bad0e53a83f84f634~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8013_PNG.png",
     color: "neon",
-    bookingUrl: "https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198",
   },
   {
     name: "Harry",
@@ -199,6 +203,12 @@ function BarbersPage() {
                   src={barber.image}
                   alt={`${barber.name} portrait`}
                   loading="lazy"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (img.dataset["fallback"]) return;
+                    img.dataset["fallback"] = "1";
+                    img.src = portraitFallback;
+                  }}
                   className="h-20 w-20 shrink-0 rounded-xl object-cover ring-2 ring-white/10"
                 />
                 <div className="flex-1">
@@ -219,7 +229,7 @@ function BarbersPage() {
                 </div>
               </div>
 
-              {barber.handle || (index < 11 && !barber.hideBooking) ? (
+              {barber.handle || barber.onLeave || (index < 11 && !barber.hideBooking) ? (
                 <div className="mt-5 flex items-center justify-between gap-3">
                   {barber.handle ? (
                     <a
@@ -234,14 +244,18 @@ function BarbersPage() {
                   ) : (
                     <span />
                   )}
-                  {index < 11 && !barber.hideBooking ? (
+                  {barber.onLeave ? (
+                    <span className="inline-flex items-center rounded-full border border-white/20 bg-background px-4 py-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                      {barber.onLeave}
+                    </span>
+                  ) : index < 11 && !barber.hideBooking && barber.bookingUrl ? (
                     <a
-                      href={barber.bookingUrl || "https://squareup.com/appointments/book/thesocietybarbers"}
+                      href={barber.bookingUrl}
                       target="_blank"
                       rel="noreferrer"
                       onClick={(e) => {
                         e.preventDefault();
-                        openInAppBrowser(barber.bookingUrl || "https://squareup.com/appointments/book/thesocietybarbers");
+                        openInAppBrowser(barber.bookingUrl!);
                       }}
                       className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 bg-background text-xs font-bold uppercase leading-none tracking-wide ${accentColor}`}
                     >

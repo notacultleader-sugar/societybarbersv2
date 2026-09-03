@@ -17,6 +17,7 @@ import { Route as CommunityRouteImport } from './routes/community'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SupportRouteImport } from './routes/support'
+import { Route as ApiPublicFreshaStatusRouteImport } from './routes/api/public/fresha-status'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +59,11 @@ const SupportRoute = SupportRouteImport.update({
   path: '/support',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicFreshaStatusRoute = ApiPublicFreshaStatusRouteImport.update({
+  id: '/api/public/fresha-status',
+  path: '/api/public/fresha-status',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/support': typeof SupportRoute
+  '/api/public/fresha-status': typeof ApiPublicFreshaStatusRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/support': typeof SupportRoute
+  '/api/public/fresha-status': typeof ApiPublicFreshaStatusRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/privacy': typeof PrivacyRoute
   '/support': typeof SupportRoute
+  '/api/public/fresha-status': typeof ApiPublicFreshaStatusRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/privacy'
     | '/support'
+    | '/api/public/fresha-status'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/privacy'
     | '/support'
+    | '/api/public/fresha-status'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/privacy'
     | '/support'
+    | '/api/public/fresha-status'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,6 +144,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   PrivacyRoute: typeof PrivacyRoute
   SupportRoute: typeof SupportRoute
+  ApiPublicFreshaStatusRoute: typeof ApiPublicFreshaStatusRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -192,6 +205,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SupportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/fresha-status': {
+      id: '/api/public/fresha-status'
+      path: '/api/public/fresha-status'
+      fullPath: '/api/public/fresha-status'
+      preLoaderRoute: typeof ApiPublicFreshaStatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   PrivacyRoute: PrivacyRoute,
   SupportRoute: SupportRoute,
+  ApiPublicFreshaStatusRoute: ApiPublicFreshaStatusRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
 import { MapPin, Phone, Mail, Clock, Instagram, ExternalLink } from "lucide-react";
+import { useFreshaStatus } from "@/lib/fresha-status";
+import { StatusBadge } from "@/components/StatusBadge";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -21,6 +23,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const freshaStatus = useFreshaStatus();
+
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
       <header className="relative mb-8 -mx-4 px-4">
@@ -54,8 +58,14 @@ function ContactPage() {
             <div>
               <p className="font-display text-lg font-semibold text-white">Downtown Duncan</p>
               <p className="text-sm text-muted-foreground">191 Kenneth St</p>
+              {freshaStatus["duncan"]?.detail && (
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {freshaStatus["duncan"]?.detail}
+                </p>
+              )}
             </div>
           </a>
+          <StatusBadge status={freshaStatus["duncan"]} className="absolute right-3 top-3" />
           <a href="tel:+12505970155" className="mt-4 flex items-center gap-2 text-sm text-white">
             <Phone className="h-4 w-4 text-gold" />
             <span className="font-display font-semibold">(250) 597-0155</span>
@@ -82,8 +92,14 @@ function ContactPage() {
             <div>
               <p className="font-display text-lg font-semibold text-white">Maple Bay</p>
               <p className="text-sm text-muted-foreground">963 Herd Rd</p>
+              {freshaStatus["maple-bay"]?.detail && (
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {freshaStatus["maple-bay"]?.detail}
+                </p>
+              )}
             </div>
           </a>
+          <StatusBadge status={freshaStatus["maple-bay"]} className="absolute right-3 top-3" />
           <a href="tel:+17784552858" className="mt-4 flex items-center gap-2 text-sm text-white">
             <Phone className="h-4 w-4 text-gold" />
             <span className="font-display font-semibold">(778) 455-CULT</span>

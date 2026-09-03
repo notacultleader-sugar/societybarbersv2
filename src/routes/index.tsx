@@ -3,6 +3,8 @@ import astronaut from "@/assets/astronaut.png.asset.json";
 import duncanShopLogo from "@/assets/duncan_shop_2.png.asset.json";
 import mapleBayLogo from "@/assets/maple_bay.png.asset.json";
 import { openInAppBrowser } from "@/lib/browser";
+import { useFreshaStatus } from "@/lib/fresha-status";
+import { StatusBadge } from "@/components/StatusBadge";
 import {
   Calendar,
   Users,
@@ -33,6 +35,8 @@ export const Route = createFileRoute("/")({
 });
 
 function HomeDashboard() {
+  const freshaStatus = useFreshaStatus();
+
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
       {/* Option A — full-bleed hero, she stands beside the title */}
@@ -123,6 +127,7 @@ function HomeDashboard() {
             >
               <span className="font-display font-semibold text-neon">Downtown Duncan</span>
               <p className="mt-1 text-muted-foreground">191 Kenneth St</p>
+              <StatusBadge status={freshaStatus["duncan"]} className="mt-2" />
             </a>
             <a
               href="https://maps.google.com/?q=Society+Barbers+963+Herd+Rd+North+Cowichan+BC"
@@ -132,6 +137,7 @@ function HomeDashboard() {
             >
               <span className="font-display font-semibold text-neon-cyan">Maple Bay</span>
               <p className="mt-1 text-muted-foreground">963 Herd Rd</p>
+              <StatusBadge status={freshaStatus["maple-bay"]} className="mt-2" />
             </a>
           </div>
         </div>

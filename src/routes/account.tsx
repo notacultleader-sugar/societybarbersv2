@@ -99,7 +99,9 @@ function AccountPage() {
                   <p className="font-display text-lg font-semibold">{link.title}</p>
                   <p
                     className={`text-sm ${
-                      link.className.includes("bg-primary") ? "text-white/80" : "text-muted-foreground"
+                      link.className.includes("bg-primary")
+                        ? "text-white/80"
+                        : "text-muted-foreground"
                     }`}
                   >
                     {link.subtitle}
@@ -124,7 +126,6 @@ function AccountPage() {
           <li>• No Fresha account yet? One is created the first time you book.</li>
         </ul>
       </section>
-
     </main>
   );
 }

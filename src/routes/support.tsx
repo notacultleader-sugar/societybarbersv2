@@ -80,8 +80,8 @@ function SupportPage() {
           SUPPORT
         </h1>
         <p className="mt-3 text-sm text-muted-foreground">
-          Questions about the Society Barbers app, a booking, a membership or a gift card?
-          Reach a real person at either shop — usually the same day.
+          Questions about the Society Barbers app, a booking, a membership or a gift card? Reach a
+          real person at either shop — usually the same day.
         </p>
       </header>
 
@@ -101,17 +101,15 @@ function SupportPage() {
           <a className="text-neon" href="tel:+12505970155">
             250-597-0155
           </a>
-          . We answer app questions, booking questions and everything else. We aim to reply
-          to email within one business day.
+          . We answer app questions, booking questions and everything else. We aim to reply to email
+          within one business day.
         </p>
       </section>
 
       <section className="grid gap-3">
         {locations.map((loc) => (
           <div key={loc.name} className="rounded-2xl bg-surface p-5">
-            <h2 className="font-display text-lg font-semibold uppercase text-white">
-              {loc.name}
-            </h2>
+            <h2 className="font-display text-lg font-semibold uppercase text-white">{loc.name}</h2>
             <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />

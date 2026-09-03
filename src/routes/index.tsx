@@ -18,9 +18,15 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Society Barbers — Home" },
-      { name: "description", content: "Your Society dashboard. Book, connect, and stay in the loop." },
+      {
+        name: "description",
+        content: "Your Society dashboard. Book, connect, and stay in the loop.",
+      },
       { property: "og:title", content: "Society Barbers — Home" },
-      { property: "og:description", content: "Your Society dashboard. Book, connect, and stay in the loop." },
+      {
+        property: "og:description",
+        content: "Your Society dashboard. Book, connect, and stay in the loop.",
+      },
     ],
   }),
   component: HomeDashboard,
@@ -95,14 +101,18 @@ function HomeDashboard() {
             <Users className="h-5 w-5" />
           </div>
           <h3 className="font-display text-lg font-semibold text-white uppercase">THE CREW</h3>
-          <p className="mt-1 text-xs text-muted-foreground">Meet the barbers and follow their work.</p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Meet the barbers and follow their work.
+          </p>
         </Link>
 
         {/* Locations */}
         <div className="col-span-2 rounded-2xl bg-surface-elevated p-4">
           <div className="mb-3 flex items-center gap-2">
             <MapPin className="h-4 w-4 text-gold" />
-            <h3 className="font-display text-lg font-semibold text-white uppercase">TWO LOCATIONS</h3>
+            <h3 className="font-display text-lg font-semibold text-white uppercase">
+              TWO LOCATIONS
+            </h3>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             <a
@@ -142,8 +152,18 @@ function HomeDashboard() {
           <div className="relative mb-3 inline-flex rounded-xl bg-black/30 p-2.5 backdrop-blur-sm">
             <Instagram className="h-5 w-5" />
           </div>
-          <h3 className="relative font-display text-lg font-semibold uppercase" style={{ textShadow: '0 3px 10px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)' }}>DUNCAN</h3>
-          <p className="relative mt-1 text-base text-white/90" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)' }}>@societybarbers</p>
+          <h3
+            className="relative font-display text-lg font-semibold uppercase"
+            style={{ textShadow: "0 3px 10px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)" }}
+          >
+            DUNCAN
+          </h3>
+          <p
+            className="relative mt-1 text-base text-white/90"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)" }}
+          >
+            @societybarbers
+          </p>
         </a>
 
         {/* Instagram — Maple Bay */}
@@ -162,8 +182,18 @@ function HomeDashboard() {
           <div className="relative mb-3 inline-flex rounded-xl bg-black/30 p-2.5 backdrop-blur-sm">
             <Instagram className="h-5 w-5" />
           </div>
-          <h3 className="relative font-display text-lg font-semibold uppercase" style={{ textShadow: '0 3px 10px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)' }}>MAPLE BAY</h3>
-          <p className="relative mt-1 text-base text-white/90" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)' }}>@societyatthehall</p>
+          <h3
+            className="relative font-display text-lg font-semibold uppercase"
+            style={{ textShadow: "0 3px 10px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)" }}
+          >
+            MAPLE BAY
+          </h3>
+          <p
+            className="relative mt-1 text-base text-white/90"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9)" }}
+          >
+            @societyatthehall
+          </p>
         </a>
 
         {/* Contact */}

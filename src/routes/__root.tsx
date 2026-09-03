@@ -14,14 +14,7 @@ import appCss from "../styles.css?url";
 import societyLogo from "@/assets/society-logo.png.asset.json";
 import { BootSplash } from "@/components/BootSplash";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import {
-  Home,
-  Calendar,
-  Users,
-  Megaphone,
-  Phone,
-  UserRound,
-} from "lucide-react";
+import { Home, Calendar, Users, Megaphone, Phone, UserRound } from "lucide-react";
 
 function NotFoundComponent() {
   return (
@@ -87,13 +80,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover",
+      },
       { title: "Society Barbers" },
-      { name: "description", content: "The Society Barbers community app. Classic barbering upgraded." },
+      {
+        name: "description",
+        content: "The Society Barbers community app. Classic barbering upgraded.",
+      },
       { name: "author", content: "The Society Barbers" },
       { name: "theme-color", content: "#0a0815" },
       { property: "og:title", content: "Society Barbers" },
-      { property: "og:description", content: "The Society Barbers community app. Classic barbering upgraded." },
+      {
+        property: "og:description",
+        content: "The Society Barbers community app. Classic barbering upgraded.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@thesocietybarbers" },

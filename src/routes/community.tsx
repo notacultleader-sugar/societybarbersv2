@@ -37,9 +37,15 @@ export const Route = createFileRoute("/community")({
   head: () => ({
     meta: [
       { title: "Transmissions — Society Barbers" },
-      { name: "description", content: "Society Barbers transmissions, announcements, and community updates." },
+      {
+        name: "description",
+        content: "Society Barbers transmissions, announcements, and community updates.",
+      },
       { property: "og:title", content: "Transmissions — Society Barbers" },
-      { property: "og:description", content: "Society Barbers transmissions, announcements, and community updates." },
+      {
+        property: "og:description",
+        content: "Society Barbers transmissions, announcements, and community updates.",
+      },
     ],
   }),
   component: CommunityPage,
@@ -106,7 +112,9 @@ function CommunityPage() {
             <span className="block text-xs font-semibold uppercase tracking-widest text-neon">
               Latest transmissions
             </span>
-            <span className="block text-base font-semibold text-white uppercase">SOCIETY PROPAGANDA</span>
+            <span className="block text-base font-semibold text-white uppercase">
+              SOCIETY PROPAGANDA
+            </span>
           </div>
         </div>
 

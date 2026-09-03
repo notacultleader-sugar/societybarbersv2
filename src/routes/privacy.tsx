@@ -64,9 +64,7 @@ function PrivacyPage() {
           <h1 className="font-display text-4xl font-bold uppercase leading-none tracking-tight text-white">
             PRIVACY POLICY
           </h1>
-          <p className="mt-3 text-sm text-muted-foreground">
-            Last updated: August 27, 2026
-          </p>
+          <p className="mt-3 text-sm text-muted-foreground">Last updated: August 27, 2026</p>
         </div>
       </header>
 
@@ -75,13 +73,9 @@ function PrivacyPage() {
           <div key={section.title} className="rounded-2xl bg-surface p-5">
             <div className="mb-2 flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-neon-cyan" />
-              <h2 className="font-display text-lg font-semibold text-white">
-                {section.title}
-              </h2>
+              <h2 className="font-display text-lg font-semibold text-white">{section.title}</h2>
             </div>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {section.body}
-            </p>
+            <p className="text-sm leading-relaxed text-muted-foreground">{section.body}</p>
           </div>
         ))}
       </section>

@@ -41,7 +41,11 @@ export const SHOP_CLOSURES: ShopClosure[] = [
   { name: "Thanksgiving", date: "2027-10-11" },
   { name: "Remembrance Day", date: "2027-11-11" },
   { name: "Christmas Day", date: "2027-12-25" },
-  { name: "Boxing Day (substitute closure)", date: "2027-12-27", note: "Christmas Day falls on a Saturday" },
+  {
+    name: "Boxing Day (substitute closure)",
+    date: "2027-12-27",
+    note: "Christmas Day falls on a Saturday",
+  },
   // 2028
   { name: "New Year's Day", date: "2028-01-01" },
   { name: "Family Day", date: "2028-02-21" },
@@ -60,14 +64,26 @@ export const SHOP_CLOSURES: ShopClosure[] = [
   { name: "Good Friday", date: "2029-03-30" },
   { name: "Victoria Day", date: "2029-05-21" },
   { name: "Canada Day", date: "2029-07-01" },
-  { name: "Canada Day (substitute closure)", date: "2029-07-02", note: "Canada Day falls on a Sunday" },
+  {
+    name: "Canada Day (substitute closure)",
+    date: "2029-07-02",
+    note: "Canada Day falls on a Sunday",
+  },
   { name: "BC Day", date: "2029-08-06" },
   { name: "Labour Day", date: "2029-09-03" },
   { name: "National Day for Truth and Reconciliation", date: "2029-09-30" },
-  { name: "Truth and Reconciliation (substitute closure)", date: "2029-10-01", note: "September 30 falls on a Sunday" },
+  {
+    name: "Truth and Reconciliation (substitute closure)",
+    date: "2029-10-01",
+    note: "September 30 falls on a Sunday",
+  },
   { name: "Thanksgiving", date: "2029-10-08" },
   { name: "Remembrance Day", date: "2029-11-11" },
-  { name: "Remembrance Day (substitute closure)", date: "2029-11-12", note: "November 11 falls on a Sunday" },
+  {
+    name: "Remembrance Day (substitute closure)",
+    date: "2029-11-12",
+    note: "November 11 falls on a Sunday",
+  },
   { name: "Christmas Day", date: "2029-12-25" },
   // 2030
   { name: "New Year's Day", date: "2030-01-01" },

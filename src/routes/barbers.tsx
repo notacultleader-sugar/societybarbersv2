@@ -25,6 +25,8 @@ type Barber = {
   nickname: string;
   image: string;
   color: string;
+  /** Management/office staff: computer icon, no booking button. */
+  management?: boolean;
   hideBooking?: boolean;
   onLeave?: string;
   bookingUrl?: string;

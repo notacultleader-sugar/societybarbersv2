@@ -3,6 +3,8 @@ import astronaut from "@/assets/astronaut.png.asset.json";
 import duncanShopLogo from "@/assets/duncan_shop_2.png.asset.json";
 import mapleBayLogo from "@/assets/maple_bay.png.asset.json";
 import { openInAppBrowser } from "@/lib/browser";
+import { useFreshaStatus } from "@/lib/fresha-status";
+import { StatusBadge } from "@/components/StatusBadge";
 import {
   Calendar,
   Users,

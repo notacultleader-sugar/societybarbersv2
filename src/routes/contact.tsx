@@ -23,6 +23,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const freshaStatus = useFreshaStatus();
+
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
       <header className="relative mb-8 -mx-4 px-4">

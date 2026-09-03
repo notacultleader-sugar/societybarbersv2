@@ -2,32 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<!--
+		The app collects no data and does no tracking.
+
+		There are no analytics or advertising SDKs, the IDFA is never read, and no
+		device data is sent anywhere. Booking, sign-in, memberships and gift cards
+		open Fresha's own website in SFSafariViewController (Capacitor Browser),
+		which runs out of process: the app cannot read that page, its cookies, or
+		anything the user types into it. Data a user provides directly to a website
+		they browse is not data collected by this app, so NSPrivacyTracking is false
+		and no collected data types are declared.
+
+		NSPrivacyTrackingDomains is empty because the app declares no tracking and
+		fresha.com is our booking provider, not an advertising endpoint.
+	-->
 	<key>NSPrivacyTracking</key>
-	<true/>
+	<false/>
 	<key>NSPrivacyCollectedDataTypes</key>
-	<array>
-		<dict>
-			<key>NSPrivacyCollectedDataType</key>
-			<string>NSPrivacyCollectedDataTypeDeviceID</string>
-			<key>NSPrivacyCollectedDataTypeLinked</key>
-			<false/>
-			<key>NSPrivacyCollectedDataTypeTracking</key>
-			<true/>
-			<key>NSPrivacyCollectedDataTypePurposes</key>
-			<array>
-				<string>NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising</string>
-			</array>
-		</dict>
-	</array>
+	<array/>
 	<key>NSPrivacyAccessedAPITypes</key>
 	<array/>
-	<!--
-		NSPrivacyTrackingDomains is intentionally empty. Declaring fresha.com here
-		would make iOS block connections to our booking provider whenever the user
-		chooses "Ask App Not to Track", which would break booking, sign-in, gift
-		cards and memberships. Fresha is a first-party booking provider we use for
-		our own bookings, not an advertising network we send data to.
-	-->
 	<key>NSPrivacyTrackingDomains</key>
 	<array/>
 </dict>

@@ -15,6 +15,11 @@ export type ShopClosure = {
  * statutory holiday falls on a Sunday the substitute Monday closure is listed
  * with a note. Add or remove entries here (vacations, staff days, etc.) and the
  * "next closure" notice on Transmissions updates automatically.
+ *
+ * OWNER CONFIRMATION NEEDED: every entry carrying a `note` is a substitute
+ * closure that was assumed, not confirmed by the shop (e.g. 2027-12-27 for
+ * Christmas falling on a Saturday). Confirm or delete those entries — the shop
+ * may stay open on substitute days. Statutory calendar dates were verified.
  */
 export const SHOP_CLOSURES: ShopClosure[] = [
   // 2026

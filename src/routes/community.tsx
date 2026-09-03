@@ -58,7 +58,9 @@ function CommunityPage() {
   const closedToday = [freshaStatus["duncan"], freshaStatus["maple-bay"]].filter(
     (s) => s && s.state !== "OPEN",
   );
+  const detected = detectFreshaClosures(freshaStatus).filter((c) => c.dates.length > 0);
   const [offset, setOffset] = useState(0);
+
 
   useEffect(() => {
     const timer = setInterval(() => {

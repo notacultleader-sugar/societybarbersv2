@@ -127,6 +127,7 @@ function HomeDashboard() {
             >
               <span className="font-display font-semibold text-neon">Downtown Duncan</span>
               <p className="mt-1 text-muted-foreground">191 Kenneth St</p>
+              <StatusBadge status={freshaStatus["duncan"]} className="mt-2" />
             </a>
             <a
               href="https://maps.google.com/?q=Society+Barbers+963+Herd+Rd+North+Cowichan+BC"

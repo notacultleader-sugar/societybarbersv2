@@ -216,7 +216,7 @@ function BarbersPage() {
       </header>
 
       <section className="grid gap-4 md:grid-cols-2">
-        {barbers.map((barber, index) => {
+        {barbers.map((barber) => {
           const accentColor =
             barber.color === "neon"
               ? "border-neon text-neon"
@@ -245,7 +245,7 @@ function BarbersPage() {
                 <div className="flex-1">
                   <div className="mb-2 flex items-center gap-2">
                     <div className={`rounded-full ${accentColor} border-2 p-1.5`}>
-                      {index >= 11 ? (
+                      {barber.management ? (
                         <Monitor className="h-4 w-4" />
                       ) : (
                         <Scissors className="h-4 w-4" />
@@ -260,7 +260,7 @@ function BarbersPage() {
                 </div>
               </div>
 
-              {barber.handle || barber.onLeave || (index < 11 && !barber.hideBooking) ? (
+              {barber.handle || barber.onLeave || (!barber.management && !barber.hideBooking) ? (
                 <div className="mt-5 flex items-center justify-between gap-3">
                   {barber.handle ? (
                     <a
@@ -279,7 +279,7 @@ function BarbersPage() {
                     <span className="inline-flex items-center rounded-full border border-white/20 bg-background px-4 py-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">
                       {barber.onLeave}
                     </span>
-                  ) : index < 11 && !barber.hideBooking && barber.bookingUrl ? (
+                  ) : !barber.management && !barber.hideBooking && barber.bookingUrl ? (
                     <a
                       href={barber.bookingUrl}
                       target="_blank"

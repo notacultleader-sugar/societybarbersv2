@@ -54,6 +54,10 @@ export const Route = createFileRoute("/community")({
 
 function CommunityPage() {
   const holiday = getNextStatHoliday();
+  const freshaStatus = useFreshaStatus();
+  const closedToday = [freshaStatus["duncan"], freshaStatus["maple-bay"]].filter(
+    (s) => s && s.state !== "OPEN",
+  );
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {

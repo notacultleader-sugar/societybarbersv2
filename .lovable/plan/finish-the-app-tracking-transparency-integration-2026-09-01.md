@@ -1,5 +1,13 @@
 # Finish the App Tracking Transparency integration
 
+> **Status: SUPERSEDED — kept for history only.**
+> The shipped implementation differs from the approach below. ATT is
+> requested exactly once, natively, in `ios/App/App/SceneDelegate.swift`
+> (`sceneDidBecomeActive`). `src/lib/browser.ts` deliberately does NOT
+> re-check or re-request ATT status per link tap, and does not clear
+> cookies — enforcement is left to iOS/WebKit once the user answers the
+> system prompt. Do not treat the steps below as the current spec.
+
 Two small items from the App Review rejection fix were not completed. This plan finishes them.
 
 ## 1. Install the Capacitor ATT plugin

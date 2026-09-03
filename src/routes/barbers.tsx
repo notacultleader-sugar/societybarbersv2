@@ -25,6 +25,8 @@ type Barber = {
   nickname: string;
   image: string;
   color: string;
+  /** Management/office staff: computer icon, no booking button. */
+  management?: boolean;
   hideBooking?: boolean;
   onLeave?: string;
   bookingUrl?: string;
@@ -155,6 +157,7 @@ const barbers: Barber[] = [
     name: "Ryan",
     handle: "@societybarbers",
     role: "Manager / Ships Captain",
+    management: true,
     nickname: "Coffee Daddy",
     image:
       "https://static.wixstatic.com/media/47ba99_3062a0481dca44a18a14c5dd85d85020~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8005_PNG.png",
@@ -164,6 +167,7 @@ const barbers: Barber[] = [
     name: "Kiki",
     handle: "@societybarbers",
     role: "Manager",
+    management: true,
     nickname: "Shop Mom",
     image:
       "https://static.wixstatic.com/media/47ba99_24be9afdc3044f7d9a6324373e0585ab~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8010_PNG.png",
@@ -173,6 +177,7 @@ const barbers: Barber[] = [
     name: "Ashton",
     handle: "@societybarbers",
     role: "Apprentice",
+    management: true,
     nickname: "Society Barbers",
     image:
       "https://static.wixstatic.com/media/47ba99_dc92f58dcf8d4aaf953e3994c99a023f~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8017_PNG.png",
@@ -182,6 +187,7 @@ const barbers: Barber[] = [
     name: "Locke",
     handle: "@ianlocke",
     role: "Artificial Intelligence",
+    management: true,
     nickname: "ADV3N7UR35",
     image:
       "https://static.wixstatic.com/media/47ba99_75a19009d2a64e3ba93fb72f0f138c6a~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8012_PNG.png",
@@ -210,7 +216,7 @@ function BarbersPage() {
       </header>
 
       <section className="grid gap-4 md:grid-cols-2">
-        {barbers.map((barber, index) => {
+        {barbers.map((barber) => {
           const accentColor =
             barber.color === "neon"
               ? "border-neon text-neon"
@@ -239,7 +245,7 @@ function BarbersPage() {
                 <div className="flex-1">
                   <div className="mb-2 flex items-center gap-2">
                     <div className={`rounded-full ${accentColor} border-2 p-1.5`}>
-                      {index >= 11 ? (
+                      {barber.management ? (
                         <Monitor className="h-4 w-4" />
                       ) : (
                         <Scissors className="h-4 w-4" />
@@ -254,7 +260,7 @@ function BarbersPage() {
                 </div>
               </div>
 
-              {barber.handle || barber.onLeave || (index < 11 && !barber.hideBooking) ? (
+              {barber.handle || barber.onLeave || (!barber.management && !barber.hideBooking) ? (
                 <div className="mt-5 flex items-center justify-between gap-3">
                   {barber.handle ? (
                     <a
@@ -273,7 +279,7 @@ function BarbersPage() {
                     <span className="inline-flex items-center rounded-full border border-white/20 bg-background px-4 py-2 text-xs font-bold uppercase tracking-widest text-muted-foreground">
                       {barber.onLeave}
                     </span>
-                  ) : index < 11 && !barber.hideBooking && barber.bookingUrl ? (
+                  ) : !barber.management && !barber.hideBooking && barber.bookingUrl ? (
                     <a
                       href={barber.bookingUrl}
                       target="_blank"

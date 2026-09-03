@@ -32,12 +32,18 @@ const TOTAL_MS = 4200;
 const FADE_MS = 550;
 
 export function BootSplash() {
-  const [visible, setVisible] = useState(true);
+  const reducedMotion =
+    typeof window !== "undefined" &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const [visible, setVisible] = useState(!reducedMotion);
   const [fading, setFading] = useState(false);
   const [count, setCount] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (reducedMotion) return;
     const line = window.setInterval(() => {
       setCount((c) => (c >= BOOT_LINES.length ? c : c + 1));
     }, LINE_MS);
@@ -48,12 +54,17 @@ export function BootSplash() {
       window.clearTimeout(fade);
       window.clearTimeout(hide);
     };
-  }, []);
+  }, [reducedMotion]);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (el) el.scrollTop = el.scrollHeight;
   }, [count]);
+
+  const skip = () => {
+    setFading(true);
+    window.setTimeout(() => setVisible(false), 200);
+  };
 
   if (!visible) return null;
 
@@ -61,8 +72,14 @@ export function BootSplash() {
 
   return (
     <div
-      aria-hidden="true"
-      className="crt-boot fixed inset-0 z-[200] bg-black"
+      role="button"
+      tabIndex={0}
+      aria-label="Skip intro animation"
+      onClick={skip}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " " || e.key === "Escape") skip();
+      }}
+      className="crt-boot fixed inset-0 z-[200] cursor-pointer bg-black"
       style={{
         opacity: fading ? 0 : 1,
         transition: `opacity ${FADE_MS}ms ease-out`,
@@ -80,6 +97,12 @@ export function BootSplash() {
             </div>
           ))}
           <span className="crt-cursor inline-block h-[1em] w-[0.6em] translate-y-[0.15em] bg-[#39ff8a]" />
+        </div>
+
+        <div className="absolute inset-x-0 bottom-8 z-10 flex justify-center">
+          <span className="rounded-full border border-[#39ff8a]/50 px-4 py-2 font-mono text-[11px] uppercase tracking-widest text-[#39ff8a]">
+            Tap to skip
+          </span>
         </div>
 
         {/* scanlines */}

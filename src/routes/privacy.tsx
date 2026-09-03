@@ -27,17 +27,22 @@ const sections = [
     body: "The Society Barbers app is a companion app for our barbershops in Duncan and Maple Bay, BC. It shows our hours, locations, barbers, community updates, and links to our booking platform, Fresha.",
   },
   {
-    title: "Data we collect",
-    body: "The app itself does not collect, store, or share any personal information. There are no accounts inside the app, no analytics SDKs, and no advertising SDKs. We do not build a profile of you and we receive no data from your device. Everything you enter for a booking goes to Fresha, not to us.",
+    title: "Data the app collects",
+    body: "The app itself does not collect, store, or share any personal information. There are no accounts inside the app, no analytics SDKs, no advertising SDKs, and no tracking code. It does not read your device's advertising identifier and sends no data from your device to us.",
   },
   {
-    title: "Cookies and tracking",
-    body: "When you open Fresha inside the app, Fresha's own website sets its own cookies, and those cookies may be used to recognise you on other websites. Because that data could be used for tracking, iOS asks for your permission on first launch using Apple's App Tracking Transparency prompt, and we declare tracking in the App Store. To be clear about what your answer does: your answer is recorded by iOS and is what Fresha and any advertising partner is permitted to rely on. We do not, and cannot, delete or block Fresha's own cookies inside their website, and booking keeps working either way. You can change your choice any time in iOS Settings under Privacy & Security, then Tracking. To remove Fresha's cookies entirely, sign out inside Fresha or delete the app.",
+    title: "Who is who",
+    body: "There are three parties: this app (a simple companion app), Fresha (the third-party booking platform we use), and Society Barbers (us — the barbershop providing your haircut). The app only links you to Fresha; it cannot read what happens inside Fresha's website.",
   },
   {
     title: "Bookings and your Fresha account",
-    body: "When you tap a booking, sign-in, membership, or gift card link, the app opens Fresha's own website in an in-app browser. Anything you enter there — your name, contact details, payment info, or password — goes directly to Fresha and is covered by Fresha's privacy policy (fresha.com/privacy-policy). We never see or store your Fresha login.",
+    body: "When you tap a booking, sign-in, membership, or gift card link, the app opens Fresha's own website in a secure in-app browser that runs separately from the app. Anything you enter there — name, contact details, payment info, sign-in codes or passwords — is handled by Fresha under Fresha's privacy policy, and the app never sees or stores your Fresha login. As the business you are booking with, Society Barbers does receive the booking information Fresha makes available to us — such as your name, contact details, appointments and purchase history — because we need it to provide and manage your appointments. We use it for that purpose only, and we do not sell it or use it for advertising.",
   },
+  {
+    title: "Cookies",
+    body: "Fresha's website sets its own cookies in that in-app browser, as any website does, and those are governed by Fresha's cookie notice and privacy policy. We cannot read, delete, or block them, and we make no promises about what signing out or deleting the app removes from Fresha's side. To manage that data, use the privacy and account controls inside your Fresha account or contact Fresha. Booking works the same either way.",
+  },
+
 
   {
     title: "Phone, email, and map links",

@@ -35,6 +35,8 @@ export const Route = createFileRoute("/")({
 });
 
 function HomeDashboard() {
+  const freshaStatus = useFreshaStatus();
+
   return (
     <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
       {/* Option A — full-bleed hero, she stands beside the title */}

@@ -49,7 +49,7 @@ function parseNextOpenDay(detail: string | null): string | null {
   const match = detail.match(
     /opens on (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)/i,
   );
-  return match ? match[1] : null;
+  return match ? match[1]! : null;
 }
 
 /**

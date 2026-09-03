@@ -5,8 +5,8 @@ export function StatusBadge({
   status,
   className = "",
 }: {
-  status?: FreshaLocationStatus;
-  className?: string;
+  status?: FreshaLocationStatus | undefined;
+  className?: string | undefined;
 }) {
   if (!status) return null;
   const open = status.state === "OPEN";

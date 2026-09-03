@@ -86,6 +86,26 @@ function CommunityPage() {
         </div>
       </header>
 
+      {closedToday.length > 0 && (
+        <section className="mb-4 rounded-2xl bg-surface p-5 glow-border">
+          <span className="text-xs font-semibold uppercase tracking-widest text-neon">
+            Closed right now
+          </span>
+          <ul className="mt-3 space-y-2">
+            {closedToday.map((status) => (
+              <li key={status!.id} className="text-sm text-white">
+                <span className="font-display font-semibold uppercase">
+                  {status!.id === "duncan" ? "Downtown Duncan" : "Maple Bay"}
+                </span>
+                {status!.detail && (
+                  <span className="block text-xs text-muted-foreground">{status!.detail}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {holiday && (
         <section className="mb-4 rounded-2xl bg-surface-elevated p-5">
           <div className="mb-3 flex items-center gap-3">

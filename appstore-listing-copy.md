@@ -29,7 +29,7 @@ Maple Bay: 778.455.CULT
 barbershop, haircut, beard, Duncan, Maple Bay, Cowichan, barber, booking, men's grooming, society barbers
 
 ## Support URL
-https://societybarbersv2.lovable.app
+https://societybarbersv2.lovable.app/support
 
 ## Privacy Policy URL
 https://societybarbersv2.lovable.app/privacy

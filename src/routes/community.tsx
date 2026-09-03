@@ -16,6 +16,7 @@ import promoTile12 from "@/assets/promo-tile-12.jpg";
 import promoTile13 from "@/assets/promo-tile-13.jpg";
 import { CalendarOff, Instagram, Sparkles } from "lucide-react";
 import { getNextStatHoliday } from "@/lib/holidays";
+import { useFreshaStatus } from "@/lib/fresha-status";
 
 const PROPAGANDA_TILES = [
   { id: "obey", src: promoTile1, alt: "OBEY — Society Barbers" },

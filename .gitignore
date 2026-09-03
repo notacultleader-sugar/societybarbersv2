@@ -30,3 +30,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Android release signing material — NEVER commit these
+*.keystore
+*.jks
+android/keystore-credentials.txt
+keystore-credentials.txt

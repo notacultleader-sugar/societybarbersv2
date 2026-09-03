@@ -17,6 +17,8 @@ import promoTile13 from "@/assets/promo-tile-13.jpg";
 import { CalendarOff, Instagram, Sparkles } from "lucide-react";
 import { getNextStatHoliday } from "@/lib/holidays";
 import { useFreshaStatus } from "@/lib/fresha-status";
+import { detectFreshaClosures } from "@/lib/closure-detect";
+
 
 const PROPAGANDA_TILES = [
   { id: "obey", src: promoTile1, alt: "OBEY — Society Barbers" },
@@ -58,7 +60,9 @@ function CommunityPage() {
   const closedToday = [freshaStatus["duncan"], freshaStatus["maple-bay"]].filter(
     (s) => s && s.state !== "OPEN",
   );
+  const detected = detectFreshaClosures(freshaStatus).filter((c) => c.dates.length > 0);
   const [offset, setOffset] = useState(0);
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -105,6 +109,37 @@ function CommunityPage() {
           </ul>
         </section>
       )}
+
+      {detected.length > 0 && (
+        <section className="mb-4 rounded-2xl bg-surface-elevated p-5">
+          <div className="mb-3 flex items-center gap-3">
+            <div className="rounded-xl bg-gold/15 p-2.5 text-gold">
+              <CalendarOff className="h-5 w-5" />
+            </div>
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+              Upcoming closed days
+            </span>
+          </div>
+          <ul className="space-y-3">
+            {detected.map((closure) => (
+              <li key={closure.locationId} className="text-sm text-white">
+                <span className="font-display font-semibold uppercase">
+                  {closure.locationId === "duncan" ? "Downtown Duncan" : "Maple Bay"}
+                </span>
+                <span className="block text-xs text-muted-foreground">
+                  Closed {closure.labels.join(", ")}
+                  {closure.holidayNames.length > 0 && ` — ${closure.holidayNames.join(", ")}`}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-xs uppercase tracking-widest text-muted-foreground">
+            Read live from our booking calendar
+          </p>
+        </section>
+      )}
+
+
 
       {holiday && (
         <section className="mb-4 rounded-2xl bg-surface-elevated p-5">

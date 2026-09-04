@@ -45,7 +45,7 @@ const links = [
   {
     href: "https://www.fresha.com/activity?pId=3065198&tab=memberships",
     title: "My memberships",
-    subtitle: "Plan details and remaining visits",
+    subtitle: "In-shop haircut plans — visits remaining",
     icon: Star,
     accent: "text-gold",
     className: "bg-surface text-white",

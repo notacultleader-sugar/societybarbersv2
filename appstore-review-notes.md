@@ -1,60 +1,68 @@
-# App Review Reply — Society Barbers (build 7)
+# App Review Reply — Society Barbers (build 8)
 
-Three parts:
+Rejection of September 4, 2026 (version 1.0 (5)) raised two items:
 
-1. What to set in App Store Connect (owner actions)
-2. The Review Notes block to paste
-3. The App Privacy answers to select
+- Guideline 4 — Design: sign-in appeared to open the default web browser.
+- Guideline 2.1(b) — Information Needed: business-model questions.
 
-> These notes describe what is actually in the code as of September 3, 2026.
-> Do not reuse the build-5 or build-6 notes. Those claimed an App Tracking
-> Transparency prompt and tracking declarations. The app does no tracking, so
-> the ATT prompt, the tracking purpose string, and the Device ID declaration
-> have all been removed. Nothing in these notes may be pasted as "already done"
-> unless you have actually done it in App Store Connect.
+Both are answered below. Build 8 contains the code change for Guideline 4.
 
 ---
 
-## 1. App Store Connect checklist (owner actions — not done by code)
+## 1. What changed in build 8 (Guideline 4)
 
-- **Support URL** → `https://societybarbersv2.lovable.app/support`
-- **Privacy Policy URL** → `https://societybarbersv2.lovable.app/privacy`
-- **App Review Information → Sign-In Required: YES**
-  - Provide a real Fresha client account you have created and tested.
-  - Fresha signs in with an emailed one-time code, so also give a reviewer
-    contact number/email so a code can be relayed on request.
-- **App Privacy** → set to *no data collected* (part 3 below).
-- Upload build 7, then Submit for Review.
+Every link to Fresha — sign in, appointments, memberships, gift cards, booking —
+now opens strictly inside the app using **SFSafariViewController** (Capacitor
+Browser, presented as a sheet). On a device the app will never hand a URL to
+Safari: if the in-app browser cannot be presented, nothing opens instead of
+leaving the app. The customer sees the real URL and can inspect the SSL
+certificate before entering credentials, as Apple's guidance describes.
+
+The app has no accounts of its own: no in-app registration, no in-app profile,
+no credentials stored. Accounts belong to Fresha, our third-party booking
+provider, so there is no account to delete in the app; account deletion is
+handled by Fresha on its own site.
 
 ---
 
 ## 2. Review Notes (paste this)
 
-GUIDELINE 5.1.2(i) — TRACKING
-This app does not track. It contains no analytics SDKs, no advertising SDKs and
-no tracking code, never reads the IDFA, and sends no device data anywhere. There
-is therefore no App Tracking Transparency request, no
-NSUserTrackingUsageDescription, and PrivacyInfo.xcprivacy declares
-NSPrivacyTracking = false with no collected data types and no tracking domains.
-
-Booking, sign-in, memberships and gift cards open our booking provider Fresha's
-own website in SFSafariViewController (via Capacitor Browser). That browser runs
-out of process: the app cannot read the page, its cookies, its storage, or
-anything the user enters there. Per Apple's User Privacy and Data Use guidance,
-information a user provides to a website they browse in a browser presented by
-the app is not data collected by the app, so no tracking authorization applies.
-Our privacy policy at /privacy states this and links to Fresha's own privacy
-policy and cookie notice for the data Fresha handles.
-
-GUIDELINE 2.1(a) — ACCOUNT ACCESS
-Sign-in happens on Fresha's website, not in the app. Fresha authenticates with a
-one-time code emailed to the account, so a static password alone may not be
-enough to complete sign-in. A Fresha client account for App Review is provided
-in App Review Information; if a one-time code is needed we will relay it
-immediately at the contact below.
+GUIDELINE 4 — DESIGN / SIGN IN
+Sign-in is not an app account. Society Barbers uses Fresha as its booking
+provider, and Fresha authenticates the customer on its own website. In build 8
+every Fresha link — including sign in — is presented with
+SFSafariViewController inside the app (Capacitor Browser, sheet presentation), so
+the customer never leaves the app and can verify the URL and SSL certificate
+before entering anything. The app does not open the default browser on device.
+The app creates no accounts itself, stores no credentials, and therefore has no
+in-app account to delete; account deletion is performed by Fresha.
 Home, Book, Transmissions, Barbers, Contact, Support and Privacy are fully
-usable with no account and no sign-in. Only "My Account" links into Fresha
-sign-in, and booking works without signing in to the app in any way.
+usable with no sign-in of any kind.
+
+GUIDELINE 2.1(b) — BUSINESS MODEL
+1. Users: retail haircut customers of our two barbershops in Duncan and Maple
+   Bay, British Columbia, Canada. Anyone can use the whole app without an
+   account.
+2. Where purchases happen: nowhere in the app. All payment happens either in
+   person at the shop or on Fresha's own website in SFSafariViewController.
+   The app itself sells nothing and unlocks nothing.
+3. Previously purchased items a user can see: none inside the app. Appointments,
+   memberships and gift cards are shown by Fresha's website, in the browser view.
+   The app only links there.
+4. Paid content, subscriptions or features unlocked in the app without In-App
+   Purchase: none. There is no digital content, no subscription tier and no
+   paywalled feature anywhere in the app.
+5. Physical goods bundled with digital content: no. Everything sold is a real
+   world service performed in person by a barber (haircuts, beard trims), plus
+   gift cards and memberships that are redeemed only for those in-person
+   services. There is no digital content of any kind, so nothing is bundled.
+
+GUIDELINE 5.1.2(i) — TRACKING (for completeness)
+The app does not track. No analytics SDKs, no advertising SDKs, the IDFA is never
+read, and no device data is sent anywhere. PrivacyInfo.xcprivacy declares
+NSPrivacyTracking = false, no collected data types and no tracking domains.
+Anything the customer enters on Fresha's site is entered in an out-of-process
+browser view the app cannot read.
 
 GUIDELINE 1.5 — SUPPORT URL
 https://societybarbersv2.lovable.app/support lists both shop phone numbers, both
@@ -63,41 +71,34 @@ answers to common questions about bookings, accounts, memberships, gift cards
 and app problems.
 
 ABOUT THE APP
-Society Barbers is a free companion app for a two-location barbershop in Duncan
-and Maple Bay, British Columbia, Canada. It shows hours, locations, staff, shop
-artwork, our next closure date, and booking links. There is no user-generated
-content, no messaging, no social feed, and no in-app purchases or subscriptions.
-The app requests no permissions at all — no tracking, location, contacts,
-camera, microphone, photos or notifications. Behaviour is identical in all
-regions.
+Society Barbers is a free companion app for a two-location barbershop. It shows
+hours, locations, staff, shop artwork, closure notices and booking links. No
+user-generated content, no messaging, no social feed, no in-app purchases or
+subscriptions, and no permission requests at all.
 
 CONTACT
 society@notacult.ca — 250.597.0155
 
 ---
 
-## 3. App Privacy answers in App Store Connect
+## 3. App Store Connect checklist (owner actions)
 
-Set: **"No, we do not collect data from this app."**
-
-- No data types are collected.
-- Tracking question: **No, this app does not use data for tracking purposes.**
-
-Data the customer enters on Fresha's website is collected by Fresha, the
-third-party booking provider, on its own website — not by this app. As the
-business you book with, Society Barbers receives booking details through Fresha
-to provide the service; that is disclosed in the app's privacy policy.
-
-This matches `ios/App/App/PrivacyInfo.xcprivacy` exactly. If you change one,
-change both.
+- **Support URL** → `https://societybarbersv2.lovable.app/support`
+- **Privacy Policy URL** → `https://societybarbersv2.lovable.app/privacy`
+- **App Review Information → Sign-In Required: YES** — provide a real Fresha
+  client account you have created and tested, plus a contact so a one-time code
+  can be relayed (Fresha emails a code).
+- **App Privacy** → "No, we do not collect data from this app"; tracking → No.
+- **In-App Purchases** → none; do not add any.
+- Upload build 8, paste part 2 into Review Notes, Submit for Review.
 
 ---
 
 ## 4. Still pending — cannot be verified from code
 
-- Installed iPhone/iPad test of Fresha sign-in (one-time code) and booking.
+- Installed iPhone/iPad test that every Fresha link opens the in-app Safari
+  sheet (URL bar visible, "Done" button top-left) and never jumps to Safari.
 - A real Fresha reviewer account created and tested by the owner.
-- Confirmation of substitute closure dates in `src/lib/holidays.ts` (any entry
-  with a `note`).
-- A clean Codemagic Mac ARM `npm ci` + native build run.
-- App Store Connect field entry (support URL, privacy answers, reviewer notes).
+- Confirmation of substitute closure dates in `src/lib/holidays.ts`.
+- A Codemagic `ios-app-store` run producing build 8.
+- App Store Connect field entry.

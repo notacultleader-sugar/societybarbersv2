@@ -116,6 +116,45 @@ function AccountPage() {
 
       <section className="mt-6 rounded-2xl bg-surface-elevated p-5">
         <div className="mb-2 flex items-center gap-2">
+          <Star className="h-4 w-4 text-gold" />
+          <p className="font-display text-lg font-semibold text-white">
+            What memberships include
+          </p>
+        </div>
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          Memberships and gift cards cover barber services delivered in person at Society Barbers —
+          haircuts, beard trims and the like, redeemed in the shop. They do not unlock any premium
+          app features, digital content or subscriptions. Nothing in this app is sold or unlocked;
+          purchases happen at the shop or on Fresha's own website.
+        </p>
+      </section>
+
+      <section className="mt-4 rounded-2xl bg-surface p-5">
+        <div className="mb-2 flex items-center gap-2">
+          <Trash2 className="h-4 w-4 text-primary" />
+          <p className="font-display text-lg font-semibold text-white">Delete your account</p>
+        </div>
+        <p className="text-sm leading-relaxed text-muted-foreground">
+          This app has no account of its own — sign-in belongs to Fresha, our booking provider. To
+          delete your Fresha account, follow Fresha's own instructions. To have Society Barbers
+          remove your booking records with us, email{" "}
+          <a href="mailto:society@notacult.ca" className="text-neon-cyan underline">
+            society@notacult.ca
+          </a>
+          .
+        </p>
+        <button
+          type="button"
+          onClick={() => openInAppBrowser(FRESHA_DELETE_ACCOUNT)}
+          className="mt-3 inline-flex items-center gap-2 rounded-xl border border-primary/60 px-4 py-2 text-sm font-semibold uppercase tracking-wide text-primary"
+        >
+          <Trash2 className="h-4 w-4" />
+          Delete your Fresha account
+        </button>
+      </section>
+
+      <section className="mt-4 rounded-2xl bg-surface-elevated p-5">
+        <div className="mb-2 flex items-center gap-2">
           <ShieldCheck className="h-4 w-4 text-neon-cyan" />
           <p className="font-display text-lg font-semibold text-white">Your login stays private</p>
         </div>

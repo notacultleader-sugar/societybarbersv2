@@ -1,7 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
 import { openInAppBrowser } from "@/lib/browser";
-import { CalendarCheck, CreditCard, ExternalLink, LogIn, ShieldCheck, Star } from "lucide-react";
+import {
+  CalendarCheck,
+  CreditCard,
+  ExternalLink,
+  LogIn,
+  ShieldCheck,
+  Star,
+  Trash2,
+} from "lucide-react";
 
 export const Route = createFileRoute("/account")({
   head: () => ({
@@ -24,6 +32,9 @@ export const Route = createFileRoute("/account")({
 });
 
 const FRESHA_LOGIN = "https://www.fresha.com/auth?pId=3065198";
+/** Fresha's own published help article for deleting a personal Fresha account. */
+const FRESHA_DELETE_ACCOUNT =
+  "https://www.fresha.com/help-center/knowledge-base/personal-account/237-delete-your-personal-account";
 
 const links = [
   {
@@ -117,9 +128,7 @@ function AccountPage() {
       <section className="mt-6 rounded-2xl bg-surface-elevated p-5">
         <div className="mb-2 flex items-center gap-2">
           <Star className="h-4 w-4 text-gold" />
-          <p className="font-display text-lg font-semibold text-white">
-            What memberships include
-          </p>
+          <p className="font-display text-lg font-semibold text-white">What memberships include</p>
         </div>
         <p className="text-sm leading-relaxed text-muted-foreground">
           Memberships and gift cards cover barber services delivered in person at Society Barbers —

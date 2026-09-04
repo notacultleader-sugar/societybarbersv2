@@ -1,3 +1,5 @@
+import { toast } from "sonner";
+
 /**
  * Opens a URL without ever leaving the app.
  *
@@ -8,10 +10,11 @@
  * page, its cookies, or anything typed there — see ios/App/App/PrivacyInfo.xcprivacy.
  *
  * The `window.open` path is for the web build only. On a native platform we
- * never hand the URL to the system browser: if the in-app browser can't be
- * presented we do nothing rather than kicking the user out to Safari.
+ * never hand the URL to the system browser: if the in-app browser cannot be
+ * presented we surface an error with a retry action instead of opening Safari.
  */
-function isNative(): boolean {
+export function isNativeApp(): boolean {
+  if (typeof window === "undefined") return false;
   const cap = (window as unknown as { Capacitor?: { isNativePlatform?: () => boolean } }).Capacitor;
   return Boolean(cap?.isNativePlatform?.());
 }
@@ -19,7 +22,7 @@ function isNative(): boolean {
 export async function openInAppBrowser(url: string) {
   if (typeof window === "undefined") return;
 
-  const native = isNative();
+  const native = isNativeApp();
 
   try {
     const { Browser } = await import("@capacitor/browser");
@@ -34,6 +37,10 @@ export async function openInAppBrowser(url: string) {
     if (native) {
       // Stay in the app. Never redirect to the default browser on device.
       console.error("In-app browser unavailable", err);
+      toast.error("Couldn't open that page in the app", {
+        description: "Check your connection and try again.",
+        action: { label: "Retry", onClick: () => void openInAppBrowser(url) },
+      });
       return;
     }
   }

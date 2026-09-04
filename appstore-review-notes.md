@@ -18,10 +18,23 @@ Safari: if the in-app browser cannot be presented, nothing opens instead of
 leaving the app. The customer sees the real URL and can inspect the SSL
 certificate before entering credentials, as Apple's guidance describes.
 
+A global safety net also intercepts every http(s) link in the app (Instagram,
+maps, privacy links, all Fresha links) and re-presents it in the in-app Safari
+view, so no code path can hand off to Safari. If the in-app browser cannot be
+presented, an in-app error with a Retry action is shown instead.
+
 The app has no accounts of its own: no in-app registration, no in-app profile,
 no credentials stored. Accounts belong to Fresha, our third-party booking
-provider, so there is no account to delete in the app; account deletion is
-handled by Fresha on its own site.
+provider. My Account now has a clearly labelled "Delete your account" section
+with a "Delete your Fresha account" button that opens Fresha's own published
+instructions
+(https://www.fresha.com/help-center/knowledge-base/personal-account/237-delete-your-personal-account)
+plus society@notacult.ca to have Society Barbers remove booking records held by
+the shop.
+
+My Account also states plainly that memberships and gift cards cover barber
+services delivered in person at the shop and unlock no app features or digital
+content.
 
 ---
 
@@ -35,7 +48,9 @@ SFSafariViewController inside the app (Capacitor Browser, sheet presentation), s
 the customer never leaves the app and can verify the URL and SSL certificate
 before entering anything. The app does not open the default browser on device.
 The app creates no accounts itself, stores no credentials, and therefore has no
-in-app account to delete; account deletion is performed by Fresha.
+in-app account to delete. My Account nevertheless contains a clearly labelled
+"Delete your account" section linking to Fresha's own published account-deletion
+instructions, plus an email address for removing booking records held by the shop.
 Home, Book, Transmissions, Barbers, Contact, Support and Privacy are fully
 usable with no sign-in of any kind.
 

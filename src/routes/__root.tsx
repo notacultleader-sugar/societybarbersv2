@@ -13,6 +13,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import societyLogo from "@/assets/society-logo.png.asset.json";
 import { BootSplash } from "@/components/BootSplash";
+import { ExternalLinkGuard } from "@/components/ExternalLinkGuard";
+import { Toaster } from "@/components/ui/sonner";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Home, Calendar, Users, Megaphone, Phone, UserRound } from "lucide-react";
 

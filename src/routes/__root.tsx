@@ -151,6 +151,8 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <BootSplash />
+      <ExternalLinkGuard />
+      <Toaster />
       <div className="relative flex min-h-screen flex-col bg-background">
         {/* Angled, translucent logo watermark */}
         <div

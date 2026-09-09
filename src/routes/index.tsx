@@ -68,7 +68,7 @@ function HomeDashboard() {
               "https://www.fresha.com/providers/society-barbers-mfk1wznr?share=true&pId=3065198&allOffer=true&menu=true",
             )
           }
-          className="group relative col-span-2 overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-primary/70 p-5 text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]"
+          className="group relative col-span-2 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-primary/70 p-5 text-left text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]"
         >
           <div className="relative z-10 flex items-center justify-between">
             <div>

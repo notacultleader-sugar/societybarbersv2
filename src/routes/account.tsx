@@ -95,13 +95,10 @@ function AccountPage() {
         {links.map((link) => {
           const Icon = link.icon;
           return (
-            <a
+            <button
+              type="button"
               key={link.href}
-              href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                openInAppBrowser(link.href);
-              }}
+              onClick={() => void openInAppBrowser(link.href)}
               className={`flex items-center justify-between rounded-2xl p-5 ${link.className}`}
             >
               <div className="flex items-center gap-3">
@@ -120,7 +117,7 @@ function AccountPage() {
                 </div>
               </div>
               <ExternalLink className="h-5 w-5 opacity-70" />
-            </a>
+            </button>
           );
         })}
       </section>

@@ -61,12 +61,13 @@ function HomeDashboard() {
       {/* Bento grid */}
       <section className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
         {/* Book now — large tile */}
-        <a
-          href="https://www.fresha.com/providers/society-barbers-mfk1wznr?share=true&pId=3065198&allOffer=true&menu=true"
-          onClick={(event) => {
-            event.preventDefault();
-            openInAppBrowser(event.currentTarget.href);
-          }}
+        <button
+          type="button"
+          onClick={() =>
+            void openInAppBrowser(
+              "https://www.fresha.com/providers/society-barbers-mfk1wznr?share=true&pId=3065198&allOffer=true&menu=true",
+            )
+          }
           className="group relative col-span-2 overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-primary/70 p-5 text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]"
         >
           <div className="relative z-10 flex items-center justify-between">
@@ -82,7 +83,7 @@ function HomeDashboard() {
             </div>
           </div>
           <ArrowRight className="relative z-10 mt-4 h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </a>
+        </button>
 
         {/* Community */}
         <Link

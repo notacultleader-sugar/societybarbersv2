@@ -65,7 +65,7 @@ function BookPage() {
               "https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198",
             );
           }}
-          className="flex items-center justify-between rounded-2xl bg-primary p-5 text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]"
+          className="flex w-full items-center justify-between rounded-2xl bg-primary p-5 text-left text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]"
         >
           <div>
             <p className="font-display text-lg font-semibold">Book online</p>

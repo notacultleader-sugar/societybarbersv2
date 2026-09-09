@@ -55,7 +55,7 @@ const sections: Section[] = [
 
   {
     title: "Phone, email, and map links",
-    body: "Tapping a phone number, email address, or address opens your device's own phone, mail, or maps app. No information is sent to us by doing this.",
+    body: "Tapping a phone number or email address opens your device's phone or mail app. Tapping an address displays Google Maps in the secure in-app browser. The Society Barbers app does not read or store information from those services.",
   },
   {
     title: "Changes",

@@ -19,8 +19,6 @@ import { useFreshaStatus } from "@/lib/fresha-status";
 import { detectFreshaClosures } from "@/lib/closure-detect";
 import { getNextStatHoliday } from "@/lib/holidays";
 
-
-
 const PROPAGANDA_TILES = [
   { id: "obey", src: promoTile1, alt: "OBEY — Society Barbers" },
   { id: "consume", src: promoTile2, alt: "CONSUME — Society Barbers" },
@@ -63,7 +61,6 @@ function CommunityPage() {
   );
   const detected = detectFreshaClosures(freshaStatus).filter((c) => c.dates.length > 0);
   const [offset, setOffset] = useState(0);
-
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -110,7 +107,6 @@ function CommunityPage() {
           </ul>
         </section>
       )}
-
 
       {detected.length > 0 && (
         <section className="mb-4 rounded-2xl bg-surface-elevated p-5">

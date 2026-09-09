@@ -11,9 +11,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    // NOTE: This app is scene-based (see UIApplicationSceneManifest in Info.plist),
-    // so applicationDidBecomeActive is never called. The App Tracking Transparency
-    // prompt therefore lives in SceneDelegate.sceneDidBecomeActive.
+    // NOTE: This app is scene-based (see UIApplicationSceneManifest in Info.plist).
+    // Scene lifecycle forwarding is handled by SceneDelegate. The app does not
+    // track users and therefore does not request App Tracking Transparency access.
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate.

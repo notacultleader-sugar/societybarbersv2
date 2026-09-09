@@ -8,15 +8,7 @@ export type DetectedClosure = {
   holidayNames: string[];
 };
 
-const DAYS = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 /** Days of week each shop is normally open (0 = Sunday). */
 const REGULAR_SCHEDULE: Record<string, number[]> = {

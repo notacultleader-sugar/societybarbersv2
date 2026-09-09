@@ -5,7 +5,6 @@ import {
   CalendarCheck,
   CreditCard,
   ExternalLink,
-  LogIn,
   ShieldCheck,
   Star,
   Trash2,
@@ -31,20 +30,11 @@ export const Route = createFileRoute("/account")({
   component: AccountPage,
 });
 
-const FRESHA_LOGIN = "https://www.fresha.com/auth?pId=3065198";
 /** Fresha's own published help article for deleting a personal Fresha account. */
 const FRESHA_DELETE_ACCOUNT =
   "https://www.fresha.com/help-center/knowledge-base/personal-account/237-delete-your-personal-account";
 
 const links = [
-  {
-    href: FRESHA_LOGIN,
-    title: "Sign in to Fresha",
-    subtitle: "Use the email or phone you booked with",
-    icon: LogIn,
-    accent: "text-white",
-    className: "bg-primary text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]",
-  },
   {
     href: "https://www.fresha.com/activity?pId=3065198",
     title: "My appointments",

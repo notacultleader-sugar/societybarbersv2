@@ -82,6 +82,13 @@ function AccountPage() {
       </header>
 
       <section className="grid gap-3">
+        <div className="rounded-full border border-neon-cyan/50 bg-surface-elevated px-5 py-3 text-center shadow-[0_0_24px_rgba(0,255,255,0.12)]">
+          <p className="font-display text-xs font-bold uppercase tracking-widest text-neon-cyan">
+            Identity recognized // Sign in through any option once. Fresha will remember your
+            account.
+          </p>
+        </div>
+
         {links.map((link) => {
           const Icon = link.icon;
           return (

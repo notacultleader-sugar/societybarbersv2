@@ -46,7 +46,7 @@ const links = [
   {
     href: "https://www.fresha.com/activity?pId=3065198&tab=memberships",
     title: "My memberships",
-    subtitle: "In-shop haircut plans — visits remaining",
+    subtitle: "Are you a NOTACULT.member? Check your status here.",
     icon: Star,
     accent: "text-gold",
     className: "bg-surface text-white",

@@ -279,19 +279,14 @@ function BarbersPage() {
                       {barber.onLeave}
                     </span>
                   ) : !barber.management && !barber.hideBooking && barber.bookingUrl ? (
-                    <a
-                      href={barber.bookingUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        openInAppBrowser(barber.bookingUrl!);
-                      }}
+                    <button
+                      type="button"
+                      onClick={() => void openInAppBrowser(barber.bookingUrl!)}
                       className={`flex h-16 w-16 flex-col items-center justify-center rounded-full border-2 bg-background text-xs font-bold uppercase leading-none tracking-wide ${accentColor}`}
                     >
                       <span>BOOK</span>
                       <span className="mt-0.5">NOW</span>
-                    </a>
+                    </button>
                   ) : null}
                 </div>
               ) : null}

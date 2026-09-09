@@ -58,13 +58,10 @@ function BookPage() {
       </section>
 
       <section className="grid gap-3">
-        <a
-          href="https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198"
-          target="_blank"
-          rel="noreferrer"
-          onClick={(e) => {
-            e.preventDefault();
-            openInAppBrowser(
+        <button
+          type="button"
+          onClick={() => {
+            void openInAppBrowser(
               "https://www.fresha.com/book-now/society-barbers-mfk1wznr/all-offer?share=true&pId=3065198",
             );
           }}
@@ -75,7 +72,7 @@ function BookPage() {
             <p className="text-sm text-white/80">Reserve through our booking site</p>
           </div>
           <ExternalLink className="h-5 w-5" />
-        </a>
+        </button>
 
         <a
           href="tel:+12505970155"

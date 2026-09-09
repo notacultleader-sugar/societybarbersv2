@@ -153,7 +153,7 @@ function RootComponent() {
       <BootSplash />
       <ExternalLinkGuard />
       <Toaster />
-      <div className="relative flex min-h-screen flex-col bg-background">
+      <div className="relative flex h-dvh min-h-0 flex-col overflow-hidden bg-background">
         {/* Angled, translucent logo watermark */}
         <div
           aria-hidden="true"
@@ -165,7 +165,7 @@ function RootComponent() {
             className="w-[115%] max-w-[560px] -rotate-12 opacity-25 md:max-w-[820px]"
           />
         </div>
-        <div className="relative z-10 mx-auto w-full max-w-md flex-1 overflow-y-auto md:max-w-3xl lg:max-w-4xl">
+        <div className="relative z-10 mx-auto min-h-0 w-full max-w-md flex-1 overflow-y-auto overscroll-contain md:max-w-3xl lg:max-w-4xl">
           <Outlet />
         </div>
 
@@ -188,7 +188,7 @@ function BottomNav() {
   ];
 
   return (
-    <nav className="glass safe-bottom fixed bottom-0 left-0 right-0 z-50 border-t border-border">
+    <nav className="glass safe-bottom relative z-50 w-full shrink-0 border-t border-border">
       <div className="mx-auto flex max-w-md items-center justify-around px-2 pb-2 pt-3 md:max-w-3xl md:gap-6 md:px-8 lg:max-w-4xl">
         {tabs.map((tab) => {
           const isActive = pathname === tab.to;

@@ -96,7 +96,7 @@ function AccountPage() {
               type="button"
               key={link.href}
               onClick={() => void openInAppBrowser(link.href)}
-              className={`flex items-center justify-between rounded-2xl p-5 ${link.className}`}
+              className={`flex w-full items-center justify-between rounded-2xl p-5 text-left ${link.className}`}
             >
               <div className="flex items-center gap-3">
                 <Icon className={`h-5 w-5 ${link.accent}`} />

@@ -70,7 +70,7 @@ function CommunityPage() {
   }, []);
 
   return (
-    <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
+    <main className="min-h-full px-4 pb-28 safe-top">
       <header className="relative mb-8 -mx-4 px-4">
         <img
           src={astronaut.url}

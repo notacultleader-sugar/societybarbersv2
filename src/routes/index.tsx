@@ -38,7 +38,7 @@ function HomeDashboard() {
   const freshaStatus = useFreshaStatus();
 
   return (
-    <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
+    <main className="min-h-full px-4 pb-28 safe-top">
       {/* Option A — full-bleed hero, she stands beside the title */}
       <header className="relative mb-8 -mx-4 px-4">
         <img

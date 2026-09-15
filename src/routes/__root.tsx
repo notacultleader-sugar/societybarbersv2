@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       {
         name: "viewport",
-        content: "width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover",
+        content: "width=device-width, initial-scale=1, viewport-fit=cover",
       },
       { title: "Society Barbers" },
       {
@@ -153,7 +153,7 @@ function RootComponent() {
       <BootSplash />
       <ExternalLinkGuard />
       <Toaster />
-      <div className="relative flex h-dvh min-h-0 flex-col overflow-hidden bg-background">
+      <div className="app-viewport relative flex min-h-0 flex-col overflow-hidden bg-background">
         {/* Angled, translucent logo watermark */}
         <div
           aria-hidden="true"

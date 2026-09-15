@@ -83,13 +83,25 @@
 
   html {
     -webkit-tap-highlight-color: transparent;
+    height: 100%;
+    overscroll-behavior: none;
   }
 
   body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    -webkit-text-size-adjust: 100%;
     @apply antialiased;
+  }
+
+  button,
+  a {
+    touch-action: manipulation;
   }
 
   h1,
@@ -103,6 +115,11 @@
 }
 
 @layer utilities {
+  .app-viewport {
+    height: 100vh;
+    height: 100dvh;
+  }
+
   .text-glow {
     text-shadow: 0 0 16px rgba(255, 0, 160, 0.55);
   }

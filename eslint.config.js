@@ -6,7 +6,18 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist", ".output", ".vinxi"] },
+  {
+    // Capacitor copies the compiled web bundle into both native projects.
+    // These are generated build artifacts, not source files to lint.
+    ignores: [
+      "dist",
+      ".output",
+      ".vinxi",
+      ".wrangler",
+      "android/app/src/main/assets/public",
+      "ios/App/App/public",
+    ],
+  },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],

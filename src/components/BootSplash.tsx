@@ -38,13 +38,6 @@ export function BootSplash() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const reducedMotion =
-      typeof window.matchMedia === "function" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reducedMotion) {
-      setVisible(false);
-      return;
-    }
     const line = window.setInterval(() => {
       setCount((c) => (c >= BOOT_LINES.length ? c : c + 1));
     }, LINE_MS);

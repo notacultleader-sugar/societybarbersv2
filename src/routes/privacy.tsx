@@ -69,7 +69,7 @@ const sections: Section[] = [
 
 function PrivacyPage() {
   return (
-    <main className="min-h-screen px-4 pb-28 pt-6 safe-top">
+    <main className="min-h-full px-4 pb-28 safe-top">
       <header className="relative mb-8">
         <div className="relative pt-6">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">

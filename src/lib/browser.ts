@@ -28,8 +28,9 @@ export async function openInAppBrowser(url: string) {
     const { Browser } = await import("@capacitor/browser");
     await Browser.open({
       url,
-      // Sheet-style in-app Safari view; matches Apple's SFSafariViewController guidance.
-      presentationStyle: "popover",
+      // Full-screen avoids iPad popover presentation failures while keeping
+      // Fresha inside Apple's SFSafariViewController.
+      presentationStyle: "fullscreen",
       toolbarColor: "#000000",
     });
     return;

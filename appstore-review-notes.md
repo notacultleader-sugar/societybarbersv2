@@ -1,6 +1,6 @@
-# App Review Reply — Society Barbers (build 12)
+# App Review Reply — Society Barbers (build 13)
 
-Build 12 addresses the outstanding App Review issues under Guidelines 2.1(a), 4, and 5.1.2(i).
+Build 13 addresses the outstanding App Review issues under Guidelines 2.1(a), 4, and 5.1.2(i).
 
 ## Review Notes (paste into App Store Connect)
 
@@ -8,7 +8,7 @@ GUIDELINE 2.1(a) — REVIEW ACCESS
 Fresha, our third-party booking provider, sends a one-time code when a customer signs in. We have requested an App Review callback so we can provide the code during review. If the reviewer needs a new code, please use the review contact telephone number in App Review Information. All Society Barbers app content is usable without signing in; Fresha sign-in is needed only to view a customer's appointments, memberships, or gift cards.
 
 GUIDELINES 2.1(a) AND 4 — IPAD, SIGN-IN AND WEB CONTENT
-In build 12, every Fresha action is presented full-screen inside the app with SFSafariViewController through the Capacitor Browser plugin. Full-screen presentation replaces the previous iPad popover behavior that could display a blank screen. This includes Book a Chair on Home, Book Online on Book, each barber's BOOK NOW button, My appointments, My memberships, My gift cards, and Fresha's account-deletion instructions. A native global link guard also presents all other external http(s) links inside SFSafariViewController. The app does not hand these links to the standalone Safari app. The visible URL and browser controls allow the customer to verify Fresha before entering credentials.
+In build 13, every Fresha action is presented full-screen inside the app with SFSafariViewController through the Capacitor Browser plugin. Full-screen presentation replaces the previous iPad popover behavior that could display a blank screen. This includes Book a Chair on Home, Book Online on Book, each barber's BOOK NOW button, My appointments, My memberships, My gift cards, and Fresha's account-deletion instructions. A native global link guard also presents all other external http(s) links inside SFSafariViewController. The app does not hand these links to the standalone Safari app. The visible URL and browser controls allow the customer to verify Fresha before entering credentials.
 
 Society Barbers does not create or store app accounts or credentials. Accounts belong to Fresha. The Account screen explains this and provides Fresha's published account-deletion instructions and Society Barbers contact details.
 
@@ -43,7 +43,7 @@ society@notacult.ca — 250-597-0155
 
 ## App Store Connect checklist
 
-- Select build 12 for version 1.0. Do not resubmit an earlier build.
+- Select build 13 for version 1.0. Do not resubmit an earlier build.
 - App Review Information > Sign-in required: enable it and provide a tested Fresha customer login plus a telephone number that can receive the one-time code or coordinate the requested reviewer callback.
 - Paste the Review Notes above.
 - App Privacy: tracking No; Device ID not collected; if the questionnaire asks whether this app collects data, answer No based on the current binary.
@@ -53,7 +53,7 @@ society@notacult.ca — 250-597-0155
 
 ## Code-audit result
 
-- All nine routes reviewed: Home, Book, Transmissions, Barbers, Contact, Account, Support, Privacy, and the not-found/error screens.
+- All nine routes reviewed: Home, Book, The Feed, Barbers, Contact, Account, Support, Privacy, and the not-found/error screens.
 - Fresha buttons use the shared native in-app browser helper.
 - External http(s) anchors are covered by the native global link guard.
 - Phone and email links intentionally use iOS Phone/Mail handling.

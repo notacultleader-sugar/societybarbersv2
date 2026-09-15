@@ -38,15 +38,15 @@ const PROPAGANDA_TILES = [
 export const Route = createFileRoute("/community")({
   head: () => ({
     meta: [
-      { title: "Transmissions — Society Barbers" },
+      { title: "The Feed — Society Barbers" },
       {
         name: "description",
-        content: "Society Barbers transmissions, announcements, and community updates.",
+        content: "The Society Barbers feed for announcements and community updates.",
       },
-      { property: "og:title", content: "Transmissions — Society Barbers" },
+      { property: "og:title", content: "The Feed — Society Barbers" },
       {
         property: "og:description",
-        content: "Society Barbers transmissions, announcements, and community updates.",
+        content: "The Society Barbers feed for announcements and community updates.",
       },
     ],
   }),
@@ -80,7 +80,7 @@ function CommunityPage() {
         />
         <div className="relative max-w-[62%] pt-6 md:max-w-[70%]">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.25em] text-neon">
-            The Transmission
+            The Feed
           </p>
           <h1 className="font-display text-4xl font-bold leading-none tracking-tight text-white uppercase md:text-6xl">
             STAY TUNED. STAY AWAKE.

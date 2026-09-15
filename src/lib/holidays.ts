@@ -14,7 +14,7 @@ export type ShopClosure = {
  * feed. They were seeded from the BC statutory holiday calendar, and where a
  * statutory holiday falls on a Sunday the substitute Monday closure is listed
  * with a note. Add or remove entries here (vacations, staff days, etc.) and the
- * "next closure" notice on Transmissions updates automatically.
+ * "next closure" notice on The Feed updates automatically.
  *
  * OWNER CONFIRMATION NEEDED: every entry carrying a `note` is a substitute
  * closure that was assumed, not confirmed by the shop (e.g. 2027-12-27 for

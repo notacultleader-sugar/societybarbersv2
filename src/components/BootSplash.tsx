@@ -85,8 +85,8 @@ export function BootSplash() {
           className="absolute inset-0 overflow-hidden px-5 py-8 font-mono text-[11px] leading-[1.55] text-[#39ff8a] sm:text-[13px]"
           style={{ textShadow: "0 0 6px rgba(57,255,138,0.75), 0 0 18px rgba(57,255,138,0.35)" }}
         >
-          {lines.map((line, i) => (
-            <div key={i} className="whitespace-pre-wrap break-words">
+          {lines.map((line) => (
+            <div key={line} className="whitespace-pre-wrap break-words">
               {line}
             </div>
           ))}

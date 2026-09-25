@@ -1,10 +1,10 @@
 # Society Barbers V2.0
 
-Im looking to build an app for my barbershop that show community things, has booking links, shows my barbers instagrams, has our contact info, is just a cool coomunity space. my website is thesocietybarbers.com if you want to see our vibe
+Society Barbers is the companion app for our Duncan and Maple Bay barbershops. Customers can book appointments, meet the barbers, read shop updates, find contact information, and access their Fresha account from one place.
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://societybarbersv2.lovable.app
+**Live app:** https://societybarbersv2.lovable.app
 
 ## Build with Lovable
 
@@ -21,6 +21,6 @@ Prefer working locally? You need Node.js and npm — [install with nvm](https://
 ```sh
 git clone <this-repository-url>
 cd <repository-name>
-npm i
+npm ci
 npm run dev
 ```

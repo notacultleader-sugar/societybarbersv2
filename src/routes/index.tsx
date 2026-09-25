@@ -1,20 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  ArrowRight,
+  Calendar,
+  Instagram,
+  MapPin,
+  Megaphone,
+  Phone,
+  Scissors,
+  Users,
+} from "lucide-react";
+
 import astronaut from "@/assets/astronaut.png.asset.json";
 import duncanShopLogo from "@/assets/duncan_shop_2.png.asset.json";
 import mapleBayLogo from "@/assets/maple_bay.png.asset.json";
+import { StatusBadge } from "@/components/StatusBadge";
 import { openInAppBrowser } from "@/lib/browser";
 import { useFreshaStatus } from "@/lib/fresha-status";
-import { StatusBadge } from "@/components/StatusBadge";
-import {
-  Calendar,
-  Users,
-  Megaphone,
-  Phone,
-  MapPin,
-  Instagram,
-  Scissors,
-  ArrowRight,
-} from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,7 +40,7 @@ function HomeDashboard() {
 
   return (
     <main className="min-h-full px-4 pb-28 safe-top">
-      {/* Option A — full-bleed hero, she stands beside the title */}
+      {/* Full-bleed hero */}
       <header className="relative mb-8 -mx-4 px-4">
         <img
           src={astronaut.url}

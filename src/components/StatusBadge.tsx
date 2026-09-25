@@ -1,13 +1,12 @@
 import type { FreshaLocationStatus } from "@/lib/fresha-status";
 
 /** Small OPEN NOW / CLOSED pill fed by Fresha's live status. */
-export function StatusBadge({
-  status,
-  className = "",
-}: {
-  status?: FreshaLocationStatus | undefined;
-  className?: string | undefined;
-}) {
+type StatusBadgeProps = {
+  status: FreshaLocationStatus | undefined;
+  className?: string;
+};
+
+export function StatusBadge({ status, className = "" }: StatusBadgeProps) {
   if (!status) return null;
   const open = status.state === "OPEN";
   return (

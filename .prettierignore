@@ -2,6 +2,11 @@ node_modules
 dist
 .output
 .vinxi
+.lovable
+android/app/src/main/assets/public
+ios/App/App/Assets.xcassets
+ios/App/App/public
+AGENTS.md
 pnpm-lock.yaml
 package-lock.json
 bun.lock

@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CalendarOff, Instagram, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
+
 import astronaut from "@/assets/astronaut.png.asset.json";
 import promoTile1 from "@/assets/promo-tile-1.jpg";
 import promoTile2 from "@/assets/promo-tile-2.jpg";
@@ -14,9 +16,8 @@ import promoTile10 from "@/assets/promo-tile-10.jpg";
 import promoTile11 from "@/assets/promo-tile-11.jpg";
 import promoTile12 from "@/assets/promo-tile-12.jpg";
 import promoTile13 from "@/assets/promo-tile-13.jpg";
-import { CalendarOff, Instagram, Sparkles } from "lucide-react";
-import { useFreshaStatus } from "@/lib/fresha-status";
 import { detectFreshaClosures } from "@/lib/closure-detect";
+import { useFreshaStatus } from "@/lib/fresha-status";
 import { getNextStatHoliday } from "@/lib/holidays";
 
 const PROPAGANDA_TILES = [

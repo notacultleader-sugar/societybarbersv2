@@ -1,18 +1,23 @@
 # App Store Listing Copy — Society Barbers
 
 ## App Name
+
 Society Barbers
 
 ## Subtitle (30 characters max)
+
 Barbershop. Community. Edge.
 
 ## Promotional Text (170 characters max)
+
 Two shops, one signal. Book your cut, meet the crew, and tune in to what's happening at Society Barbers in Duncan and Maple Bay.
 
 ## Full Description
-Society Barbers is the companion app for our shops in Duncan and Maple Bay, BC. Whether you're booking your next cut, browsing the team, or checking the latest transmissions, everything you need is right here.
+
+Society Barbers is the companion app for our shops in Duncan and Maple Bay, BC. Whether you're booking your next cut, browsing the team, or checking the latest updates, everything you need is right here.
 
 WHAT YOU CAN DO
+
 - Book appointments fast through our Fresha booking links
 - Meet every barber and find the right chair for your style
 - View full opening hours for both shops, plus our next closure date
@@ -26,13 +31,17 @@ Duncan: 250.597.0155
 Maple Bay: 778.455.CULT
 
 ## Keywords (100 characters max)
+
 barbershop, haircut, beard, Duncan, Maple Bay, Cowichan, barber, booking, men's grooming, society barbers
 
 ## Support URL
+
 https://societybarbersv2.lovable.app/support
 
 ## Privacy Policy URL
+
 https://societybarbersv2.lovable.app/privacy
 
 ## Support Email
+
 society@notacult.ca

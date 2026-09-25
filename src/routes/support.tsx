@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { LifeBuoy, Mail, MapPin, Phone, Clock, HelpCircle } from "lucide-react";
+import { Clock, HelpCircle, LifeBuoy, Mail, MapPin, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/support")({
   head: () => ({

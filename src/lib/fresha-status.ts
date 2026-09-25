@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { isNativeApp } from "@/lib/browser";
+
 export type FreshaLocationStatus = {
   id: string;
   name: string;
@@ -18,12 +20,7 @@ const REMOTE_ENDPOINT = "https://societybarbersv2.lovable.app/api/public/fresha-
 
 function endpoint(): string {
   if (typeof window === "undefined") return REMOTE_ENDPOINT;
-  const isNative = Boolean(
-    (
-      window as unknown as { Capacitor?: { isNativePlatform?: () => boolean } }
-    ).Capacitor?.isNativePlatform?.(),
-  );
-  return isNative ? REMOTE_ENDPOINT : "/api/public/fresha-status";
+  return isNativeApp() ? REMOTE_ENDPOINT : "/api/public/fresha-status";
 }
 
 /**

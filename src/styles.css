@@ -129,11 +129,15 @@
   }
 
   .glow-border {
-    box-shadow: 0 0 0 1px rgba(255, 0, 160, 0.25), 0 0 24px rgba(255, 0, 160, 0.15);
+    box-shadow:
+      0 0 0 1px rgba(255, 0, 160, 0.25),
+      0 0 24px rgba(255, 0, 160, 0.15);
   }
 
   .glow-border-cyan {
-    box-shadow: 0 0 0 1px rgba(0, 229, 229, 0.25), 0 0 24px rgba(0, 229, 229, 0.15);
+    box-shadow:
+      0 0 0 1px rgba(0, 229, 229, 0.25),
+      0 0 24px rgba(0, 229, 229, 0.15);
   }
 
   .glass {
@@ -157,9 +161,7 @@
   }
 
   .crt-screen {
-    background:
-      radial-gradient(100% 80% at 50% 40%, rgba(20, 60, 35, 0.35), #000 70%),
-      #000;
+    background: radial-gradient(100% 80% at 50% 40%, rgba(20, 60, 35, 0.35), #000 70%), #000;
   }
 
   .crt-scanlines {

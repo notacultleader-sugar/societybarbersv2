@@ -19,10 +19,8 @@ export function isNativeApp(): boolean {
   return Boolean(cap?.isNativePlatform?.());
 }
 
-export async function openInAppBrowser(url: string) {
+export async function openInAppBrowser(url: string): Promise<void> {
   if (typeof window === "undefined") return;
-
-  const native = isNativeApp();
 
   let safeUrl: URL;
   try {
@@ -35,7 +33,7 @@ export async function openInAppBrowser(url: string) {
   }
 
   // Keep web clicks synchronous so popup blockers do not swallow them.
-  if (!native) {
+  if (!isNativeApp()) {
     window.open(safeUrl.href, "_blank", "noopener,noreferrer");
     return;
   }
@@ -51,13 +49,11 @@ export async function openInAppBrowser(url: string) {
     });
     return;
   } catch (err) {
-    if (native) {
-      // Stay in the app. Never redirect to the default browser on device.
-      console.error("In-app browser unavailable", err);
-      toast.error("Couldn't open that page in the app", {
-        description: "Check your connection and try again.",
-        action: { label: "Retry", onClick: () => void openInAppBrowser(safeUrl.href) },
-      });
-    }
+    // Stay in the app. Never redirect to the default browser on device.
+    console.error("In-app browser unavailable", err);
+    toast.error("Couldn't open that page in the app", {
+      description: "Check your connection and try again.",
+      action: { label: "Retry", onClick: () => void openInAppBrowser(safeUrl.href) },
+    });
   }
 }

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { openInAppBrowser, isNativeApp } from "@/lib/browser";
+
+import { isNativeApp, openInAppBrowser } from "@/lib/browser";
 
 /**
  * Safety net for Guideline 4: on the native app, no http(s) link may ever hand

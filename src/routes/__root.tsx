@@ -1,22 +1,31 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
-  Outlet,
+  HeadContent,
   Link,
+  Outlet,
+  Scripts,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
   useRouterState,
 } from "@tanstack/react-router";
+import { Calendar, Home, Megaphone, Phone, UserRound, Users } from "lucide-react";
 import { useEffect, type ReactNode } from "react";
 
-import appCss from "../styles.css?url";
 import societyLogo from "@/assets/society-logo.png.asset.json";
 import { BootSplash } from "@/components/BootSplash";
 import { ExternalLinkGuard } from "@/components/ExternalLinkGuard";
 import { Toaster } from "@/components/ui/sonner";
-import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Home, Calendar, Users, Megaphone, Phone, UserRound } from "lucide-react";
+import { reportLovableError } from "@/lib/lovable-error-reporting";
+import appCss from "../styles.css?url";
+
+const NAV_ITEMS = [
+  { to: "/", label: "Home", icon: Home },
+  { to: "/book", label: "Book", icon: Calendar },
+  { to: "/community", label: "Feed", icon: Megaphone },
+  { to: "/barbers", label: "Barbers", icon: Users },
+  { to: "/contact", label: "Contact", icon: Phone },
+  { to: "/account", label: "Account", icon: UserRound },
+] as const;
 
 function NotFoundComponent() {
   return (
@@ -41,9 +50,10 @@ function NotFoundComponent() {
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
   const router = useRouter();
+
   useEffect(() => {
+    console.error(error);
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
@@ -178,19 +188,10 @@ function RootComponent() {
 function BottomNav() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
-  const tabs = [
-    { to: "/", label: "Home", icon: Home },
-    { to: "/book", label: "Book", icon: Calendar },
-    { to: "/community", label: "Feed", icon: Megaphone },
-    { to: "/barbers", label: "Barbers", icon: Users },
-    { to: "/contact", label: "Contact", icon: Phone },
-    { to: "/account", label: "Account", icon: UserRound },
-  ];
-
   return (
     <nav className="glass safe-bottom relative z-50 w-full shrink-0 border-t border-border">
       <div className="mx-auto flex max-w-md items-center justify-around px-2 pb-2 pt-3 md:max-w-3xl md:gap-6 md:px-8 lg:max-w-4xl">
-        {tabs.map((tab) => {
+        {NAV_ITEMS.map((tab) => {
           const isActive = pathname === tab.to;
           const Icon = tab.icon;
           return (

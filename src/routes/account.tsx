@@ -1,6 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import astronaut from "@/assets/astronaut.png.asset.json";
-import { isNativeApp, openInAppBrowser } from "@/lib/browser";
 import {
   CalendarCheck,
   CreditCard,
@@ -10,6 +8,9 @@ import {
   Star,
   Trash2,
 } from "lucide-react";
+
+import astronaut from "@/assets/astronaut.png.asset.json";
+import { isNativeApp, openInAppBrowser } from "@/lib/browser";
 
 export const Route = createFileRoute("/account")({
   head: () => ({

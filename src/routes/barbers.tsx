@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import astronaut from "@/assets/astronaut.png.asset.json";
-import { openInAppBrowser } from "@/lib/browser";
 import { Instagram, Monitor, Scissors } from "lucide-react";
+
+import astronaut from "@/assets/astronaut.png.asset.json";
 import portraitFallbackAsset from "@/assets/society-logo.png.asset.json";
+import { openInAppBrowser } from "@/lib/browser";
 
 const portraitFallback = portraitFallbackAsset.url;
 

@@ -25,7 +25,7 @@ export type FreshaLocationStatus = {
   detail: string | null;
 };
 
-export type FreshaStatusResponse = {
+type FreshaStatusResponse = {
   fetchedAt: string;
   locations: FreshaLocationStatus[];
 };

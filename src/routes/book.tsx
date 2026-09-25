@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Clock, ExternalLink, Phone } from "lucide-react";
+
 import astronaut from "@/assets/astronaut.png.asset.json";
 import { openInAppBrowser } from "@/lib/browser";
-import { Clock, ExternalLink, Phone } from "lucide-react";
 
 export const Route = createFileRoute("/book")({
   head: () => ({

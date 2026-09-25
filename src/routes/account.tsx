@@ -1,7 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import astronaut from "@/assets/astronaut.png.asset.json";
-import { openInAppBrowser } from "@/lib/browser";
-import { CalendarCheck, CreditCard, ExternalLink, ShieldCheck, Star, Trash2 } from "lucide-react";
+import { isNativeApp, openInAppBrowser } from "@/lib/browser";
+import {
+  CalendarCheck,
+  CreditCard,
+  ExternalLink,
+  LogIn,
+  ShieldCheck,
+  Star,
+  Trash2,
+} from "lucide-react";
 
 export const Route = createFileRoute("/account")({
   head: () => ({
@@ -24,6 +32,7 @@ export const Route = createFileRoute("/account")({
 });
 
 /** Fresha's own published help article for deleting a personal Fresha account. */
+const FRESHA_LOGIN = "https://www.fresha.com/auth?pId=3065198";
 const FRESHA_DELETE_ACCOUNT =
   "https://www.fresha.com/help-center/knowledge-base/personal-account/237-delete-your-personal-account";
 
@@ -55,6 +64,8 @@ const links = [
 ];
 
 function AccountPage() {
+  const showWebLogin = !isNativeApp();
+
   return (
     <main className="min-h-full px-4 pb-28 safe-top">
       <header className="relative mb-8 -mx-4 px-4">
@@ -75,6 +86,24 @@ function AccountPage() {
       </header>
 
       <section className="grid gap-3">
+        {showWebLogin ? (
+          <a
+            href={FRESHA_LOGIN}
+            target="_blank"
+            rel="noreferrer"
+            className="flex w-full items-center justify-between rounded-2xl bg-primary p-5 text-left text-white shadow-[0_0_30px_rgba(255,0,160,0.25)]"
+          >
+            <div className="flex items-center gap-3">
+              <LogIn className="h-5 w-5 text-white" />
+              <div>
+                <p className="font-display text-lg font-semibold">Sign in to Fresha</p>
+                <p className="text-sm text-white/80">Use the email or phone you booked with</p>
+              </div>
+            </div>
+            <ExternalLink className="h-5 w-5 opacity-70" />
+          </a>
+        ) : null}
+
         <div className="rounded-full border border-neon-cyan/50 bg-surface-elevated px-5 py-3 text-center shadow-[0_0_24px_rgba(0,255,255,0.12)]">
           <p className="font-display text-xs font-bold uppercase tracking-widest text-neon-cyan">
             Identity recognized // Sign in through any option once. Fresha will remember your

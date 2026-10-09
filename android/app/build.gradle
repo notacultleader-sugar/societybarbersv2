@@ -4,7 +4,7 @@ android {
     namespace = "com.thesocietybarbers.app"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.thesocietybarbers.app"
+        applicationId "com.societybarbersv2.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode = (project.findProperty("versionCode") ?: "1").toInteger()

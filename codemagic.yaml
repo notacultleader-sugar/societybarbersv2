@@ -73,3 +73,50 @@ workflows:
         key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
         issuer_id: $APP_STORE_CONNECT_ISSUER_ID
         submit_to_testflight: true
+
+  android-google-play:
+    name: Society Barbers Android — Google Play Bundle
+    instance_type: linux_x2
+    max_build_duration: 60
+    environment:
+      node: v22
+      java: 21
+      android_signing:
+        - society_barbers_upload
+    scripts:
+      - name: Verify Android signing credentials
+        script: |
+          set -eu
+          test -f "${CM_KEYSTORE_PATH:-}" || { echo "Upload the Android keystore with reference society_barbers_upload in Codemagic."; exit 1; }
+          test -n "${CM_KEYSTORE_PASSWORD:-}" || { echo "Missing keystore password"; exit 1; }
+          test -n "${CM_KEY_ALIAS:-}" || { echo "Missing key alias"; exit 1; }
+          test -n "${CM_KEY_PASSWORD:-}" || { echo "Missing key password"; exit 1; }
+      - name: Install dependencies
+        script: npm ci
+      - name: Check TypeScript
+        script: npx tsc --noEmit
+      - name: Build and sync Android app
+        script: |
+          set -eu
+          npx vite build --config vite.mobile.config.ts
+          npx cap sync android
+      - name: Install Android SDK
+        script: |
+          set -eu
+          sdkmanager "platforms;android-36" "build-tools;36.0.0"
+          printf 'sdk.dir=%s\n' "$ANDROID_SDK_ROOT" > android/local.properties
+      - name: Build signed Google Play bundle
+        script: |
+          set -eu
+          cd android
+          chmod +x gradlew
+          ./gradlew bundleRelease -PversionCode="$((BUILD_NUMBER + 1))" --stacktrace
+          test -s app/build/outputs/bundle/release/app-release.aab
+      - name: Verify bundle signature
+        script: |
+          set -eu
+          BUNDLE=android/app/build/outputs/bundle/release/app-release.aab
+          unzip -Z1 "$BUNDLE" | grep -Eq '^META-INF/.*\.(RSA|DSA|EC)$'
+          jarsigner -verify "$BUNDLE"
+    artifacts:
+      - android/app/build/outputs/bundle/release/*.aab

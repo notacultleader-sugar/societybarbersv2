@@ -182,16 +182,6 @@ const barbers: Barber[] = [
     color: "neon",
   },
   {
-    name: "Ashton",
-    handle: "@societybarbers",
-    role: "Apprentice",
-    management: true,
-    nickname: "Society Barbers",
-    image:
-      "https://static.wixstatic.com/media/47ba99_dc92f58dcf8d4aaf953e3994c99a023f~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8017_PNG.png",
-    color: "neon-cyan",
-  },
-  {
     name: "Locke",
     handle: "@ianlocke",
     role: "Artificial Intelligence",

@@ -7,6 +7,7 @@ import {
   createRootRouteWithContext,
   useRouter,
   useRouterState,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { Calendar, Home, Megaphone, Phone, UserRound, Users } from "lucide-react";
 import { useEffect, type ReactNode } from "react";
@@ -49,7 +50,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   const router = useRouter();
 
   useEffect(() => {

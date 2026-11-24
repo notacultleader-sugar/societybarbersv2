@@ -102,7 +102,7 @@ const barbers: Barber[] = [
   },
   {
     name: "Skyler",
-    handle: "",
+    handle: "@sky.leduc",
     role: "Barber",
     nickname: "Skyler",
     image: portraitFallback,

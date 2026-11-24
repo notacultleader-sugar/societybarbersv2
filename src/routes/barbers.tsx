@@ -3,7 +3,7 @@ import { Instagram, Monitor, Scissors } from "lucide-react";
 
 import astronaut from "@/assets/astronaut.png.asset.json";
 import portraitFallbackAsset from "@/assets/society-logo.png.asset.json";
-import skylerPhoto from "@/assets/skyler.jpg.asset.json";
+import skylerPhoto from "@/assets/skyler-portrait.png.asset.json";
 import { openInAppBrowser } from "@/lib/browser";
 
 const portraitFallback = portraitFallbackAsset.url;

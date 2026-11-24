@@ -137,7 +137,7 @@ const barbers: Barber[] = [
     handle: "@beautywblades.b",
     role: "Barber",
     nickname: "B",
-    onLeave: "Coming soon",
+    bookingUrl: "https://l.fresha.com/39sbhjsz8",
     image:
       "https://static.wixstatic.com/media/47ba99_bd611021625844149d4e0f519bfb3264~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8041_PNG.png",
     color: "gold",

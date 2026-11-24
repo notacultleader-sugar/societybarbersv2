@@ -123,7 +123,7 @@ const barbers: Barber[] = [
     name: "Jordan",
     handle: "@the.black.shear",
     role: "Barber",
-    nickname: "The Black Sheep",
+    nickname: "The Black Shear",
     image:
       "https://static.wixstatic.com/media/47ba99_8697b4accfbc4ebc9be599fc5bdc5b1d~mv2.png/v1/fill/w_313,h_313,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8768_PNG.png",
     color: "neon-cyan",
